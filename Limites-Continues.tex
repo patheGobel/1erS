@@ -1,0 +1,184 @@
+\documentclass[12pt]{article}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{verbatim}
+
+\usepackage{color, soul}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\author{Destinés à la 1\textsuperscript{ère}S2\\Au Lycée de Dindéferlo}
+\title{\textbf{Limites-Et-continuité}}
+\date{\today}
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+
+% Commande pour la couleur d'accentuation
+\newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\begin{document}
+\maketitle
+\newpage
+
+\section*{\underline{\textbf{\textcolor{red}{I.Limites}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{1.Limites infinies à l'infinie}}}}
+\definecolor{qqwuqq}{rgb}{0,0.39215686274509803,0}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+  x=1cm, y=1cm,
+  axis lines=middle,
+  ymajorgrids=true,
+  xmajorgrids=true,
+  xmin=-7, xmax=7,
+  ymin=-8, ymax=8,
+  xtick={-2,-15,...,30},
+  ytick={-18,-16,...,12},
+]
+
+\draw[line width=2pt,color=qqwuqq,smooth,samples=100,domain=-8:3] plot(\x,{(\x)^(2)});
+
+\begin{scriptsize}
+  \draw[color=qqwuqq] (-6,2) node {$f$};
+\end{scriptsize}
+
+\end{axis}
+\end{tikzpicture}
+\subsection*{\underline{\textbf{\textcolor{red}{2. Limites finie à l'infinie}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{3. Limites finie en $x_{0}$}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{4. Limites infinie en $x_{0}$}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{5. Limites à gauche et à droite}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{Remarque}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{II.Calcule de limite}}}}
+
+\subsection*{\underline{\textbf{\textcolor{red}{1.limite en $x_{0}$ d'une fonction écrite avec une seul expression}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{2.Limite à l'infinie de $x^{n}$ n $\in\mathbb{N}$}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{3.Opération sur les limites}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{a.Limite d'une somme}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{b.Limite d'un produit}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{c.Limite d'un quotient}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{d.Technique de calcul de limite}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{4.Limites à l'infinie d'une fonction polynôme}}}}
+La limite à l'infini d'une fonction polynomiale est égale à la limite à l'infini de son terme(monôme) de plus haut degré.
+\subsection*{\underline{\textbf{\textcolor{red}{5.Limites à l'infinie d'un quotient}}}}
+La limite à l'infini d'une fonction rationnelle est égale à la limite du quotient des termes de plus haut degré.
+\subsection*{\underline{\textbf{\textcolor{red}{6.théorèmes}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{a.Théorème de comparaison}}}}
+Soit f tel que $f:I\longrightarrow \mathbb{R}$ ; $x_{0} \in I$ où $x_{0}=-+\infty$\\
+Si au voisinage de $x_{0}$, $f(x)\leq g(x)$ On a:\\
+$\bullet$ Si  $\lim_{x \to x_{0}}f(x)=+\infty$ alors $\lim_{x \to x_{0}}g(x)=+\infty$\\
+$\bullet$ Si  $\lim_{x \to x_{0}}f(x)=-\infty$ alors $\lim_{x \to x_{0}}g(x)=-\infty$
+\subsection*{\underline{\textbf{\textcolor{red}{b.Théorème des gendarmes}}}}
+Si aux voisinage de $x_{0}$ on a $g(x) \leq f(x) \leq h(x)$ et que 
+$\lim_{x \to x_{0}}f(x)=\lim_{x \to x_{0}}h(x)=l$(finie ou non) alors $\lim_{x \to x_{0}}f(x)=l$
+\subsection*{\underline{\textbf{\textcolor{blue}{Exemple}}}}
+a)\[\lim_{x \to 0} x^{2} sin(\frac{1}{x})\]\\
+b)\[\lim_{x \to +\infty} \frac{sinx + x^{4}}{x^{2}+1}\]
+\subsection*{\underline{\textbf{\textcolor{red}{c.Corollaire}}}}
+Si au voisinage de $x_{0}$ $|f(x)-l| \leq g(x)$ et $\lim_{x \to x_{0}}g(x)=0$ alors \\
+$\lim_{x \to x_{0}}f(x)=l$
+\subsection*{\underline{\textbf{\textcolor{red}{7.Limite en zéro d'une fonction trigonométrique}}}}
+\[\lim_{x \to 0} \frac{sinx}{x} = 1\]
+\[\lim_{x \to 0} \frac{sinax}{ax} = 1\] avec $a\in\mathbb{R}$
+\[\lim_{x \to 0} \frac{tanx}{x} = 1\]
+\[\lim_{x \to 0} \frac{cosx-1}{x} = 0\]
+\[\lim_{x \to 0} \frac{cosx-1}{x^{2}} = -\frac{1}{2}\]
+\[\lim_{x \to 0} \frac{tanax}{ax} = 1\]
+\subsection*{\underline{\textbf{\textcolor{red}{Application}}}}
+Calculer les limites suivantes\\
+a)\[\lim_{x \to x_{0}} \frac{sin5x}{sin3x}\]
+b)\[\lim_{x \to x_{0}} \frac{\sqrt{1-cosx}}{tan2x}\]
+c)\[\lim_{x \to x_{0}} \frac{2sin^{2}x-2(1-cosx)}{5x^{2}}\]
+d)\[\lim_{x \to x_{0}} \frac{sinx}{\sqrt{x}} = 0\]
+\subsection*{\underline{\textbf{\textcolor{red}{Solution}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{III.Continuité}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{1.Définition}}}}
+Soit f une fonction definie en $x_{0}$ on dit que f est continue en $x_{0}$ si
+$\lim_{x \to x_{0}} f(x)=f(x_{0})$.
+\subsection*{\underline{\textbf{\textcolor{red}{Exemple}}}}
+Etudions la continuité de f en $x_{0}$ dans chacun des cas.\\
+a)$f(x)=2x-1$ ; en $x_{0}=3$\\
+b)\[ f(x) = \begin{cases} 
+  \frac{x^2-1}{x-1}, & \text{si } x \neq 1 \\
+  f(1)=2, & \text{si } x = 1 
+\end{cases} \]
+en $x_{0}=1$\\
+c)\[ f(x) = \begin{cases} 
+  \frac{sinx}{x}, & \text{si } x \neq 0 \\
+  -1, & \text{si } x=0 
+\end{cases} \]
+en $x_{0}=0$
+\subsection*{\underline{\textbf{\textcolor{red}{Solution}}}}
+a)A-t-on $\lim_{x \to 3}f(x)=f(3)$?\\
+$\lim_{x \to 3}f(x)=\lim_{x \to 3}2x-1=5$ or $f(3)=5$\\
+Ainsi, on a $\lim_{x \to 3}f(x)=f(3)=5$\\
+Donc f est continue en 3.\\
+b)A-t-on $\lim_{x \to 1}f(x)=f(1)$?\\
+$D_{f}=\mathbb{R}$\\
+$\lim_{x \to 1}f(x)=\lim_{x \to 1}\frac{x^2-1}{x-1}=\lim_{x \to 1}x+1=2$ or f(1)=2\\
+Ainsi, on a $\lim_{x \to 1}f(x)=f(1)=2$. Donc f est une fonction continue en 1.
+c)A-t-on $\lim_{x \to 0}f(x)=f(0)$?\\
+$\lim_{x \to 0}f(x)=\lim_{x \to 0}\frac{sinx}{x}=1$ or f(0)=-1\\
+Ainsi, on a $\lim_{x \to 0}f(x) \neq f(0)$. Donc f n'est pas conitnue en 0
+\subsection*{\underline{\textbf{\textcolor{red}{2.Continuité à gauche, continuité à droite}}}}
+Soit f une fonction definie en $x_{0}$\\ 
+f est continue à \textcolor{blue}{gauche} de $x_{0} \Leftrightarrow \lim_{x \to x_{0}^{-}}f(x)=f(x_{0})$\\
+Soit f une fonction definie en $x_{0}$\\ 
+f est continue à \textcolor{blue}{droite} de $x_{0} \Leftrightarrow \lim_{x \to x_{0}^{+}}f(x)=f(x_{0})$\\
+f est continue en $x_{0} \Leftrightarrow \lim_{x \to x_{0}^{-}}f(x)=\lim_{x \to x_{0}^{+}}f(x)=f(x_{0})$
+\subsection*{\underline{\textbf{\textcolor{red}{Exemple}}}}
+Etudions la continuite de f en $x_{0}$\\
+\[ f(x) = \begin{cases} 
+  \frac{x^2-4}{x+2}, & \text{si } x > 2 \\
+  3x-6, & \text{si } x\leq 2
+\end{cases} \]
+en $x_{0}=2$
+\subsection*{\underline{\textbf{\textcolor{red}{Solution}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{3.Continuité sur un intervalle}}}}
+Une fonction f est continue sur un intervalle I si elle est continue en tout point de I.\\
+$\bullet$ Tout fonction polynôme est continue sur $\mathbb{R}$.\\
+$\bullet$ Les fonctions rationnelle et irrationnelle sont continues sur leur ensemble de définition.\\
+$\bullet$ La somme et le produit de deux fonctions continues sur un intervalle I sont continue sur cet intervalle I.\\
+$\bullet$  Si f et g sont deux fonctions continues sur I alors $f \times g$ est continue sur I de meme $\alpha \times f$ est continue où $\alpha \in \mathbb{R}$.\\
+$\bullet$ Si f et g sont deux fonctions continue sur I alors f+g est cotinue et si $\forall x \in I$ 
+g(x)$\neq 0$  alors $\frac{f(x)}{g(x)}$ est continue sur I\\
+
+\subsection*{\underline{\textbf{\textcolor{red}{Exemple}}}}
+Etudions la continuite de f sur son $D_{f}$\\
+\[ f(x) = \begin{cases} 
+  \frac{x^2-1}{x-1}, & \text{si } x < 1 \\
+   2x,\quad\quad\quad\quad\quad \text{si } 1 \leq x \leq 2\\
+  \sqrt{x+2}, & \text{si } > 2
+\end{cases} \]
+\subsection*{\underline{\textbf{\textcolor{red}{4.Prolongement par continuité en u point $x_{0}$}}}}
+Soit f une fonction non definie en $x_{0}$ ($x_{0} \in \mathbb{R}$) tel que $\lim_{x \to x_{0}}f(x)=l \in \mathbb{R}$\\
+La fonction Definie par 
+\[ g(x) = \begin{cases} 
+  f(x), & \text{si } x \neq x_{0} \\
+  l, & \text{si } x= x_{0}
+\end{cases} \]
+g est appelée prolongement par conitinuite de f en $ x_{0} $
+\subsection*{\underline{\textbf{\textcolor{red}{Exemple}}}}
+Soit $f(x)=\frac{x^{2}-1}{x-1}$.\\
+f est-elle prolongeable par continuité en $ x_{0}=1$
+\subsection*{\underline{\textbf{\textcolor{red}{Solution}}}}
+$D_{f}=\mathbb{R}\setminus\{1\}$\\
+On a $1 \notin D_{f}$ et $\lim_{x \to 2}\frac{x^{2}-1}{x-1}=\lim_{x \to 2} x+1=2$\\
+Donc f est prologeable par continuité en $x_{0}=1$ et son prolongement par continuité en $x_{0}=1$ est 
+\[ g(x) = \begin{cases} 
+  f(x), & \text{si } x \neq 1 \\
+  2, & \text{si } x= 1
+\end{cases} \]
+\subsection*{\underline{\textbf{\textcolor{red}{}}}}
+\end{document}
