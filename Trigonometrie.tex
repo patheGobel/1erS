@@ -1,0 +1,183 @@
+\documentclass[12pt]{article}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{verbatim}
+
+\usepackage{color, soul}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\author{Destinés à la 1\textsuperscript{ère}S2\\Au Lycée de Dindéferlo}
+\title{\textbf{Fonctions Numériques}}
+\date{\today}
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+
+% Commande pour la couleur d'accentuation
+\newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\begin{document}
+\maketitle
+\newpage
+
+\section*{\underline{\textbf{\textcolor{red}{I.Angles orientés}}}}
+
+\subsection*{\underline{\textbf{\textcolor{blue}{1.1 Orientation du plan}}}}
+Considérons un cercle C dans le plan muni d'un repère orthonormé. Soient A, B, et C des points appartenant à C. À partir du point  A, on peut se déplacer le long du cercle en direction de B ou de C.
+Le sens positif est défini comme étant celui qui va à l'encontre des aiguilles d'une montre, tandis que le sens négatif est défini comme celui qui suit le sens des aiguilles d'une montre.
+\underline{\textbf{\textcolor{red}{NB}}}\\
+
+Sur un cercle, on appelle \textcolor{green}{sens direct}, \textcolor{green}{sens positif} ou \textcolor{green}{sens trigonométrique} le sens contraire des aiguilles d'une montre.
+\subsection*{\underline{\textbf{\textcolor{blue}{1.2 Angles orientés de vecteurs}}}}
+Soient $\vec{u}$ et $\vec{v}$ deux vecteurs, $O$ un point du plan, $[Ox)$ et $[Oy)$ deux demi-droites telles que $\vec{u}$ soit un vecteur directeur de $[Ox)$ et $\vec{v}$ celui de $[Oy)$.
+On a : $(\vec{u}, \vec{v}) = ([Ox),[Oy))$
+\subsection*{\underline{\textbf{\textcolor{blue}{1.2 Propriétés}}}}
+\begin{itemize}
+\item[1] $(\vec{u}, \vec{v})= -(\vec{v}, \vec{u})$
+\end{itemize}
+\section*{\underline{\textbf{\textcolor{red}{II.Trigonométrie}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{2.1 Cercle trigonométrique}}}}
+Dans le plan muni d'un repère orthonormé $(O$ ; $\vec{i}$ ; $\vec{j})$ et orienté dans le sens direct, le cercle trigonométrique est le cercle de centre O et rayon 1.
+L'idée est de pouvoir se reperer sur le celcle trigonométrique c'est-dire mettre une graduation bien régulière sur le cercle.
+
+\begin{tikzpicture}[scale=1.5]
+  % Repère avec les axes Ox (i) et Oy (j)
+  \draw[->] (-1,0) -- (1,0) node[right] {$i$};
+  \draw[->] (0,-1) -- (0,1) node[above] {$j$};
+  
+  % Dessiner un cercle centré à l'origine avec un rayon de 1
+  \draw (0,0) circle (1) node[below left] {$O$};
+  
+  % Placer le nombre "1" sur l'axe i
+  \node at (1,0) [below left] {1};
+  \node at (-1,0) [below left] {-1};
+  % Placer le nombre "1" sur l'axe j
+  \node at (0,1) [above left] {1};
+  \node at (0,-1) [above left] {-1};
+\end{tikzpicture}
+
+\begin{tikzpicture}[scale=2]
+  % Repère avec les axes Ox (i) et Oy (j)
+  \draw[->] (-1.5,0) -- (1.5,0) node[right] {$i$};
+  \draw[->] (0,-1.5) -- (0,1.5) node[above] {$j$};
+  
+  % Dessiner un cercle centré à l'origine avec un rayon de 1
+  \draw (0,0) circle (1);
+  
+  % Marquer les angles principaux et relier les points
+  \foreach \angle/\label in {30/\frac{\pi}{6}, 45/\frac{\pi}{4}, 60/\frac{\pi}{3}, 90/\frac{\pi}{2}, 120/\frac{2\pi}{3}, 135/\frac{3\pi}{4}, 150/\frac{5\pi}{6}, 180/\pi, 210/\frac{7\pi}{6}, 225/\frac{5\pi}{4}, 240/\frac{4\pi}{3}, 270/\frac{3\pi}{2}, 300/\frac{5\pi}{3}, 315/\frac{7\pi}{4}, 330/\frac{11\pi}{6}, 360/2\pi}
+  {
+    \draw ({cos(\angle)}, {sin(\angle)}) -- ({cos(\angle)*1.15}, {sin(\angle)*1.15});
+    \node[anchor=\angle-90] at ({cos(\angle)*1.3}, {sin(\angle)*1.3}) {$\label$};    
+  }
+\end{tikzpicture}
+\underline{\textbf{\textcolor{red}{Exercices1}}}\\
+On considère un triangle ABC, rectangle en A, de sens direct, tel que $\frac{\pi}{6}$ est une mesure de $\widehat{(\vec{BC}, \vec{BA})}$. Donner trois mesures de chacun des angles orientés suivants:\\
+$\widehat{(\vec{AB}, \vec{AC})}$, $\widehat{(\vec{AB}, \vec{CB})}$, $\widehat{(\vec{AC}, \vec{AB})}$, $\widehat{(\vec{AC}, \vec{BC})}$, $\widehat{(\vec{BC}, \vec{AB})}$, 
+$\widehat{(\vec{CB}, \vec{AB})}$, $\widehat{(\vec{BC}, \vec{AC})}$, $\widehat{(\vec{BC}, \vec{CA})}$.\\
+\underline{\textbf{\textcolor{red}{Exercices2}}}\\
+$\vec{u}$ et $\vec{v}$ sont deux vecteurs non nuls els que $\widehat{(\vec{u},\vec{v})}=\frac{2\pi}{3}$.
+Donner trois mesures de chacun des angles orientés suivants:\\
+$\widehat{(-\vec{u},\vec{v})}$ , $\widehat{(\vec{u},-\vec{v})}$ , $\widehat{(-\vec{u},-\vec{v})}$ , $\widehat{(\vec{v},-\vec{u})}$
+\subsection*{\underline{\textbf{\textcolor{red}{2.2 Mesure principale d'un angle}}}}
+\underline{\textbf{\textcolor{red}{Approche de la notion}}}\\
+
+\begin{tikzpicture}
+  % Repère (O, I, J)
+  \draw[->] (-2.5,0) -- (2.5,0) node[right] {$I$};
+  \draw[->] (0,-2.5) -- (0,2.5) node[above] {$J$};
+  \node at (0,0) [below left] {$O$};
+
+  % Dessiner un cercle
+  \draw (0,0) circle (2cm);
+  
+  % Marquer un point sur le cercle
+  \fill (160:2) circle (2pt) node[above right] {$A$};
+    % Tracer la droite OA
+  \draw[->, thick] (0,0) -- (160:2) node[midway, above left] {$O$};
+\end{tikzpicture}
+
+Considérons un point mobile M, qui , partant de I, se déplace sur le cercle trigonométrique $(\mathcal{C})$.\\
+A chaque déplacement de M, on associe un nombre réel égal à:\\
+\\
+La distance parcourue si le déplacement se fait dans le sens direct\\
+L'opposé de la distance parcourue si le déplacement se fait dans le sens indirect.\\
+Rappelons que le périmettre du cercle trigonométrique est $2\pi$.\\
+Déterminons les nombres réels associés aux différents passages de M en A et plaçons ces nombres réels sur une droite graduée $(D)$ (l'unité étant celle des axes du repère orthonormé direct (O,I,J).\\
+\\
+\begin{tikzpicture}
+  % Repère (O, I)
+  \draw[->] (-2.5,0) -- (5,0) node[right] {$I$};
+  
+  % Tracer la droite graduée
+  \draw[|-|] (-2,0) -- (4,0) node[below right] {$x$};
+  
+  % Graduations
+  \foreach \x in {-2,-1,0,1,2,3,4}
+    \draw (\x,0.1) -- (\x,-0.1) node[below] {$\x$};
+\end{tikzpicture}\\
+$\bullet$ On montre par ce schéma que :\\
+à tout angle orienté $(\hat{\alpha})$ de mesure principale $\alpha$ on peut associer une infinité de nombre réels:\\
+..$\alpha - 8\pi $ ; $\alpha - 6\pi $ ; $\alpha - 4\pi $; $\alpha - 2\pi $; $\alpha + 2\pi $ ; $\alpha + 4\pi $ ; $\alpha + 6\pi $ $\alpha + 8\pi $...\\
+
+Ces nombres sont de la forme: $\alpha+k \times 2\pi$, k étant un élément de $\mathbb{Z}$\\
+On écrira plus simplement: $\alpha+k \times 2\pi$ $[k\in\mathbb{Z}]$\\
+$\bullet$ On remarque qu'un seul d'entre eux, $\alpha$, est élément de l'intervalle $]-\pi ; \pi]$.\\
+C'est pouquoi $\alpha$ est appelée la mesure principale de l'angle orienté 
+$(\hat{\alpha})$.\\
+\underline{\textbf{\textcolor{red}{2.3 Définition}}}\\
+\textbf{La} mesure principale d'un angle est comprise entre dans l'intervalle $]-\pi ; \pi]$
+\subsection*{\underline{\textbf{\textcolor{red}{2.4 Détermination de la mesure principale d'un angle orienté}}}}
+\underline{\textbf{\textcolor{red}{Exemple d'approche}}}\\
+$(\hat{\alpha})$ est un angle orienté dont une mesure est $\frac{27\pi}{5}$. Nous allons déterminer la mesure principale de $(\hat{\alpha})$.\\
+\underline{\textbf{\textcolor{red}{Résolution}}}\\
+Nous allons soustraire $2\pi$ à $\frac{27\pi}{5}$ de proche ne proche jusqu'a obtenir un angle appartenenat à $]-\pi ; \pi]$\\
+En effet,\\ posons $\frac{27\pi}{5} \notin ]-\pi ; \pi]$\\
+$\frac{27\pi}{5}-2\pi=\frac{17\pi}{5} \notin ]-\pi ; \pi]$\\
+$\frac{17\pi}{5}-2\pi=\frac{7\pi}{5} \notin ]-\pi ; \pi]$\\
+$\frac{7\pi}{5}-2\pi=\frac{-3\pi}{5} \notin ]-\pi ; \pi]$\\
+$\frac{7\pi}{5}-2\pi=\frac{-3\pi}{5} \in ]-\pi ; \pi]$\\
+\underline{\textbf{\textcolor{red}{NB}}}\\
+Si $(\hat{\alpha})$ est négatif, on ajoute $-2\pi$ de proche en proche jusqu'a ce que l'on trouve un angle appartennat en $]-\pi ; \pi]$\\
+\underline{\textbf{\textcolor{red}{Exercice}}}\\
+Détermine la mesure principale de $\frac{-17\pi}{3}$\\
+\underline{\textbf{\textcolor{red}{Correction}}}\\
+\underline{\textbf{\textcolor{red}{Autre approche}}}\\
+Déterminons la mesure principale de $\frac{25\pi}{3}$\\
+Soit $\alpha$ la mesure principale alors, $\alpha \in ]-\pi ; \pi]$ et soit $k\in\mathbb{Z}$\\
+Ponsons $\frac{25\pi}{3}=\alpha+2k\pi \Longrightarrow $ $\alpha=\frac{25\pi}{3}-2k\pi$ alors on a:\\
+$-\pi<\frac{25\pi}{3}-2k\pi\leq \pi$\\
+\\
+$3.66 \leq k < 4.66$\\
+On obtient : $k=4 \Longrightarrow \alpha = \frac{\pi}{3}$\\
+\underline{\textbf{\textcolor{red}{Exercice}}}\\
+Détermine la mesure principale de $\frac{77\pi}{4}$\\
+\underline{\textbf{\textcolor{red}{Correction}}}\\
+On obtient : $k=10 \Longleftrightarrow \alpha=\frac{-3\pi}{4}$\\
+\underline{\textbf{\textcolor{red}{Remarque}}}\\ 
+Si deux réels $\alpha$ et $\beta$ sont les mesures d'un même point alors, $\alpha$ et $\beta$ différent d'un multiple entier de $2\pi$; $\alpha-\beta = 2k\pi$
+\section*{\underline{\textbf{\textcolor{red}{III. Angles associés et relations trigonométriques}}}}
+Soit le cercle trigonométrique $\mathcal{C}(O,1)$\\
+\begin{center}
+\underline{\textbf{\textcolor{red}{Figure}}}\\
+\end{center}
+\subsection*{\underline{\textbf{\textcolor{red}{3.1 Expressions en fonction de $cos\alpha$ ou $sin\alpha$}}}}
+$cos(\alpha+2k\pi)=cos\alpha$\\
+$sin(\alpha+2k\pi)=sin\alpha$\\
+$cos(-\alpha)=cos\alpha$\\
+$sin(-\alpha)=-sin\alpha$\\
+
+\underline{\textbf{\textcolor{red}{Exercice d'application }}}\\
+\underline{\textbf{\textcolor{red}{Résolution }}}
+\subsection*{\underline{\textbf{\textcolor{red}{3.2 Quelques relations trigonométriques}}}}
+\underline{\textbf{\textcolor{red}{$\ast$Formules d'addition}}}\\
+
+\end{document}
