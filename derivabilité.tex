@@ -1,0 +1,136 @@
+\documentclass[12pt]{article}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{verbatim}
+
+\usepackage{color, soul}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\author{Destinés à la 1\textsuperscript{ère}S2\\Au Lycée de Dindéferlo}
+\title{\textbf{Dérivée et Application}}
+\date{\today}
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+
+% Commande pour la couleur d'accentuation
+\newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\begin{document}
+\maketitle
+\newpage
+\section*{\underline{\textbf{\textcolor{red}{I.Dérivabilité en un point}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{1.Définition}}}}
+une fonction f définie sur I contenant $x_{0}$ est dérivable en $x_{0}$ si\\ 
+\[\lim_{x \to x_{0}}\frac{f(x)-f(x_{0})}{x-x_{0}}=l\] avec $(l\in\mathbb{R})$\\
+$l$ est appelé nombre dérivée de la fonction $f$ en $x_{0}$ et est noté $f'(x_{0})$
+\subsection*{\underline{\textbf{\textcolor{red}{Exemple}}}}
+Soit $f(x)=x^{2}+1$  Etudier la dérivabilité de $f$ en -2.\\
+\subsection*{\underline{\textbf{\textcolor{red}{Solution}}}}
+\[\lim_{x \to -2}\frac{f(x)-f(-2)}{x-2}=\lim_{x \to -2}\frac{x^{2}+1-5}{x+2}=
+\lim_{x \to -2}\frac{(x-2)(x+2)}{x+2}=\lim_{x \to -2}\frac{(x-2)(x+2)}{x+2}=-4\]
+Donc\[\lim_{x \to -2}\frac{f(x)-f(-2)}{x-2}=-4\]
+Donc f est dérivable en $-2$ et $f'(-2)=-4$ 
+\subsection*{\underline{\textbf{\textcolor{red}{2.Dérivabilté à gauche-Dérivabilté à droite}}}}
+Soit f une fonction définie sur u intervalle I contenant $x_{0}$ et l un réel.\\
+$f$ est dérivable à gauche de $x_{0}$ si\[\lim_{x \to x_{0^{-}}}\frac{f(x)-f(x_{0})}{x-x_{0}}=l\]
+$f$ est dérivable à droite de $x_{0}$ si\[\lim_{x \to x_{0^{+}}}\frac{f(x)-f(x_{0})}{x-x_{0}}=l\]
+$f$ est dérivable en $x_{0}$ si\[\lim_{x \to x_{0^{-}}}\frac{f(x)-f(x_{0})}{x-x_{0}}=\lim_{x \to x_{0^{+}}}\frac{f(x)-f(x_{0})}{x-x_{0}}=l\]
+\subsection*{\underline{\textbf{\textcolor{red}{Notation}}}}
+Si f est dérivable à gauche de $x_{0}$  alors\[\lim_{x \to x_{0^{-}}}\frac{f(x)-f(x_{0})}{x-x_{0}}=f'_{g}(x)\](nombre dérivé de f à gauche de $x_{0}$)\\
+Si f est dérivable à droite de $x_{0}$  alors\[\lim_{x \to x_{0^{+}}}\frac{f(x)-f(x_{0})}{x-x_{0}}=f'_{d}(x)\](nombre dérivé de f à droite de $x_{0}$)
+\subsection*{\underline{\textbf{\textcolor{red}{Exemple}}}}
+Etudier la dérivabilté de f\\
+\[ f(x) = \begin{cases} 
+  3x^{2}, & \text{si } x \leq 0 \\
+  -2x^{2}, & \text{si } x > 0 
+\end{cases} \]
+\subsection*{\underline{\textbf{\textcolor{red}{II.Interprétation géométrique du nombre dérivé}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{1.Définition et Théorème}}}}
+Soit f une fonction dérivable en $x_{0}$ et $A(x_{0},f(x_{0}))$ le point d'abscise $x_{0}$ de $\mathcal{C}_{f}$ la tangeante à la courbe $\mathcal{C}_{f}$ au point A est la droite passant par A et de coefficient de directeur $f'(x_{0})$\\
+\definecolor{qqwuqq}{rgb}{0,0.39215686274509803,0}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+  x=1cm, y=1cm,
+  axis lines=middle,
+  ymajorgrids=true,
+  xmajorgrids=true,
+  xmin=-7, xmax=7,
+  ymin=-8, ymax=8,
+  xtick={-2,-15,...,30},
+  ytick={-18,-16,...,12},
+]
+
+\draw[line width=2pt,color=qqwuqq,smooth,samples=100,domain=-8:3] plot(\x,{(\x)^(2)});
+\draw[line width=2pt,color=qqwuqq,smooth,samples=100,domain=-2:3] plot(\x,{(\x*2-1)});
+\begin{scriptsize}
+  \draw[color=qqwuqq] (-6,2) node {$f$};
+\end{scriptsize}
+
+\end{axis}
+\end{tikzpicture}
+L'éaqution réduite de cette tangeante est (T):$y=f'(x)(x-x_{0})+f(x_{0})$
+\subsection*{\underline{\textbf{\textcolor{red}{Exemple}}}}
+Soit $f(x)=x^{2}+1$, Etudier la dérivabilité de f en 1\\
+Determiner l'équation de la tangeante à $C_{f}$ au point d'abscisse 1.\\
+\subsection*{\underline{\textbf{\textcolor{red}{2.Théorème}}}}
+Toute Fonction dérivable en $x_{0}$ est continue en $x_{0}$
+\section*{\underline{\textbf{\textcolor{red}{III.Fonction dérivée}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{1.définition}}}}
+On dit que la fonction f(x) est dérivable sur I lorsqu'elle est dérivable en tout point de I.\\
+La fonction qui a tout x élément de I associe le nombre dérivé de  f s'appele fonction dérivé de f et est notée\\
+$f':x\mapsto f'(x)$
+\subsection*{\underline{\textbf{\textcolor{red}{2.Fonction dérivée de quelques fonctions usuelles}}}}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+Fonction &Dimaine de Dérivabilité &  Dérivée   \\
+\hline
+$f(x) = k$& $\mathbb{R}$ & $f'(x)=0$ \\
+\hline
+$f(x) = x$& $\mathbb{R}$ & $f'(x) = 1$ \\
+\hline
+$f(x) = x^{n}$& $\mathbb{R}$ & $f'(x) = nx^{n-1}$ \\
+\hline
+$f(x) = \frac{1}{x}$& $\mathbb{R}^{*}$ & $f'(x) = -\frac{1}{x^{2}}$ \\
+\hline
+$f(x) = \sqrt{x}$& $\mathbb{R}^{*}_{+}$ & $f'(x) = \frac{1}{2\sqrt{x}}$ \\
+\hline
+\end{tabular}
+\end{center}
+\subsection*{\underline{\textbf{\textcolor{red}{3.Opération sur les fonctions dérivables}}}}
+Soient u et v deux fonctions dérivables sur I et dont les fonctions dérivées sont notées u' et v'.
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+Fonction &Dimaine de Dérivabilité &  Dérivée   \\
+\hline
+$ku;k\in \mathbb{R}$& $I$ & $ku'$ \\
+\hline
+$u^{n}, \forall n \in \mathbb{N}\setminus{0,1}$ & $I$ &$nu'u^{n-1}$\\
+\hline
+$u+v$& $I$ & $u'+v'$ \\
+\hline
+$uv$& $I$ & $u'v+v'u$ \\
+\hline
+$\frac{1}{v}$& $\forall \in I; v(x) \neq 0$ & $-\frac{v'}{v^{2}}$ \\
+\hline
+$\frac{u}{v}$& $\forall \in I; v(x) \neq 0$ & $\frac{u'v-v'u}{v^{2}}$ \\
+\hline
+$\sqrt{u}$& $\forall \in I; u(x) > 0$ & $\frac{u'}{2\sqrt{u}}$ \\
+\hline
+\end{tabular}
+\end{center}
+\end{document}
