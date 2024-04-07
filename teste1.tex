@@ -1,0 +1,20 @@
+\documentclass[standalone, tikz]{standalone}
+\usepackage{amsmath}
+
+\begin{document}
+\begin{tikzpicture}[>=stealth, scale=2]
+    % Rectangle correspondant à pi/3
+    \fill[red!20] (0,0) -- (60:1.5) -- (120:1.5) -- cycle;
+    \draw[red, thick, ->] (0,0) -- (60:1.5) node[midway, above] {$\frac{\pi}{3}$};
+    \draw[red, thick, ->] (60:1.5) -- (120:1.5) node[midway, right] {$\frac{2\pi}{3}$};
+    \draw[red, thick, ->] (0,0) -- (120:1.5) node[midway, below left] {$-\frac{\pi}{3}$};
+
+    % Indications sur le cercle
+    \draw (0,0) circle (1.5);
+    \foreach \angle/\lab in {60/{$\frac{\pi}{3}$}, 120/{$\frac{2\pi}{3}$}, 180/{$\pi$},
+        240/{$-\frac{2\pi}{3}$}, 300/{$-\frac{\pi}{3}$}, 360/{$2\pi$}} {
+        \draw (\angle:1.7) node {$\lab$};
+    }
+\end{tikzpicture}
+\end{document}
+
