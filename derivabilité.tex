@@ -33,33 +33,46 @@
 \newpage
 \section*{\underline{\textbf{\textcolor{red}{I.Dérivabilité en un point}}}}
 \subsection*{\underline{\textbf{\textcolor{red}{1.Définition}}}}
-une fonction f définie sur I contenant $x_{0}$ est dérivable en $x_{0}$ si\\ 
-\[\lim_{x \to x_{0}}\frac{f(x)-f(x_{0})}{x-x_{0}}=l\] avec $(l\in\mathbb{R})$\\
-$l$ est appelé nombre dérivée de la fonction $f$ en $x_{0}$ et est noté $f'(x_{0})$
+une fonction f définie sur $I$ contenant $x_{0}$ est dérivable en $x_{0}$ si\\ 
+\[\lim_{x \to x_{0}}\frac{f(x)-f(x_{0})}{x-x_{0}}=\ell \] avec $(\ell \in\mathbb{R})$\\
+$\ell$ est appelé nombre dérivée de la fonction $f$ en $x_{0}$ et est noté $f'(x_{0})$
 \subsection*{\underline{\textbf{\textcolor{red}{Exemple}}}}
-Soit $f(x)=x^{2}+1$  Etudier la dérivabilité de $f$ en -2.\\
+Soit $f(x)=x^{2}+1$  Etudier la dérivabilité de $f$ en $x_{0}=-2.$\\
 \subsection*{\underline{\textbf{\textcolor{red}{Solution}}}}
-\[\lim_{x \to -2}\frac{f(x)-f(-2)}{x-2}=\lim_{x \to -2}\frac{x^{2}+1-5}{x+2}=
+\[\lim_{x \to -2}\frac{f(x)-f(-2)}{x-(-2)}=\lim_{x \to -2}\frac{x^{2}+1-5}{x+2}=
 \lim_{x \to -2}\frac{(x-2)(x+2)}{x+2}=\lim_{x \to -2}\frac{(x-2)(x+2)}{x+2}=-4\]
-Donc\[\lim_{x \to -2}\frac{f(x)-f(-2)}{x-2}=-4\]
-Donc f est dérivable en $-2$ et $f'(-2)=-4$ 
+Donc\[\lim_{x \to -2}\frac{f(x)-f(-2)}{x+2}=-4\]
+Donc f est dérivable en $-2$ et sa dérivée en $-2$ est $-4$\\ On écrit $f'(-2)=-4$ 
 \subsection*{\underline{\textbf{\textcolor{red}{2.Dérivabilté à gauche-Dérivabilté à droite}}}}
-Soit f une fonction définie sur u intervalle I contenant $x_{0}$ et l un réel.\\
-$f$ est dérivable à gauche de $x_{0}$ si\[\lim_{x \to x_{0^{-}}}\frac{f(x)-f(x_{0})}{x-x_{0}}=l\]
-$f$ est dérivable à droite de $x_{0}$ si\[\lim_{x \to x_{0^{+}}}\frac{f(x)-f(x_{0})}{x-x_{0}}=l\]
-$f$ est dérivable en $x_{0}$ si\[\lim_{x \to x_{0^{-}}}\frac{f(x)-f(x_{0})}{x-x_{0}}=\lim_{x \to x_{0^{+}}}\frac{f(x)-f(x_{0})}{x-x_{0}}=l\]
+Soit f une fonction définie sur un intervalle I contenant $x_{0}$ et $\ell$ un réel.\\
+$f$ est dérivable à gauche de $x_{0}$ si\[\lim_{x \to x_{0}^{-}}\frac{f(x)-f(x_{0})}{x-x_{0}}=\ell\]
+$f$ est dérivable à droite de $x_{0}$ si\[\lim_{x \to x_{0}^{+}}\frac{f(x)-f(x_{0})}{x-x_{0}}=\ell\]
+$f$ est dérivable en $x_{0}$ si\[\lim_{x \to x_{0}^{-}}\frac{f(x)-f(x_{0})}{x-x_{0}}=\lim_{x \to x_{0}^{+}}\frac{f(x)-f(x_{0})}{x-x_{0}}=\ell\]
 \subsection*{\underline{\textbf{\textcolor{red}{Notation}}}}
-Si f est dérivable à gauche de $x_{0}$  alors\[\lim_{x \to x_{0^{-}}}\frac{f(x)-f(x_{0})}{x-x_{0}}=f'_{g}(x)\](nombre dérivé de f à gauche de $x_{0}$)\\
-Si f est dérivable à droite de $x_{0}$  alors\[\lim_{x \to x_{0^{+}}}\frac{f(x)-f(x_{0})}{x-x_{0}}=f'_{d}(x)\](nombre dérivé de f à droite de $x_{0}$)
+Si f est dérivable à gauche de $x_{0}$  alors\[\lim_{x \to x_{0}^{-}}\frac{f(x)-f(x_{0})}{x-x_{0}}=f'_{g}(x)\](nombre dérivé de f à gauche de $x_{0}$)\\
+Si f est dérivable à droite de $x_{0}$  alors\[\lim_{x \to x_{0}^{+}}\frac{f(x)-f(x_{0})}{x-x_{0}}=f'_{d}(x)\](nombre dérivé de f à droite de $x_{0}$)
 \subsection*{\underline{\textbf{\textcolor{red}{Exemple}}}}
-Etudier la dérivabilté de f\\
+Etudier la dérivabilté de f en $x_{0}=0$\\
 \[ f(x) = \begin{cases} 
   3x^{2}, & \text{si } x \leq 0 \\
   -2x^{2}, & \text{si } x > 0 
 \end{cases} \]
-\subsection*{\underline{\textbf{\textcolor{red}{II.Interprétation géométrique du nombre dérivé}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{Solution}}}}
+Posons \[ f(x) = \begin{cases} 
+  f(x)_{1}=3x^{2}, & \text{si } x \leq 0 \\
+  f(x)_{2}=-2x^{2}, & \text{si } x > 0 
+\end{cases} \]
+$f$ est dérivable en 0 ssi \[\lim_{x \to 0^{-}}\frac{f(x)-f(x_{0})}{x-0}=\lim_{x \to 0^{+}}\frac{f(x)-f(x_{0})}{x-0}=\ell\]
+En $0^{-}$, $f(x)=f(x)_{1}=3x^{2}$: \\
+\[\lim_{x \to 0^{-}}\frac{f(x)-f(x_{0})}{x-0}=\lim_{x \to 0^{-}}\frac{f(x))}{x}=\lim_{x \to 0^{-}}3x=0\]
+Ainsi \[\lim_{x \to 0^{-}}\frac{f(x)-f(x_{0})}{x-0}\]
+Donc $f$ est dérivable en $0^{-}$\\
+En $0^{-}$, $f(x)=f(x)_{1}=3x^{2}$: \\
+
+\[\lim_{x \to 0^{-}}\frac{f(x)-f(x_{0})}{x-0}=\lim_{x \to 0^{-}}\frac{f(x))}{x}=\lim_{x \to 0^{-}}3x=0\]
+\section*{\underline{\textbf{\textcolor{red}{II.Interprétation géométrique du nombre dérivé}}}}
 \subsection*{\underline{\textbf{\textcolor{red}{1.Définition et Théorème}}}}
-Soit f une fonction dérivable en $x_{0}$ et $A(x_{0},f(x_{0}))$ le point d'abscise $x_{0}$ de $\mathcal{C}_{f}$ la tangeante à la courbe $\mathcal{C}_{f}$ au point A est la droite passant par A et de coefficient de directeur $f'(x_{0})$\\
+Soit $f$ une fonction dérivable en $x_0$. Notons $A(x_0, f(x_0))$ le point de coordonnées $(x_0, f(x_0))$ sur la courbe $\mathcal{C}_f$ de $f$. La tangente à la courbe $\mathcal{C}_f$ au point $A$ est la droite passant par $A$ et ayant pour coefficient directeur $f'(x_0)$.\\
 \definecolor{qqwuqq}{rgb}{0,0.39215686274509803,0}
 \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
 \begin{axis}[
@@ -81,7 +94,7 @@ Soit f une fonction dérivable en $x_{0}$ et $A(x_{0},f(x_{0}))$ le point d'absc
 
 \end{axis}
 \end{tikzpicture}
-L'éaqution réduite de cette tangeante est (T):$y=f'(x)(x-x_{0})+f(x_{0})$
+L'éaqution réduite de cette tangeante est (T):$y=f'(x_{0})(x-x_{0})+f(x_{0})$
 \subsection*{\underline{\textbf{\textcolor{red}{Exemple}}}}
 Soit $f(x)=x^{2}+1$, Etudier la dérivabilité de f en 1\\
 Determiner l'équation de la tangeante à $C_{f}$ au point d'abscisse 1.\\
