@@ -100,16 +100,33 @@ Soit $f(x)=x^{2}+1$, Etudier la dérivabilité de f en 1\\
 Determiner l'équation de la tangeante à $C_{f}$ au point d'abscisse 1.\\
 \subsection*{\underline{\textbf{\textcolor{red}{2.Théorème}}}}
 Toute Fonction dérivable en $x_{0}$ est continue en $x_{0}$
+\subsection*{\underline{\textbf{\textcolor{red}{Remarque}}}}
+La réciproque n'est pas toujours vraie c'est-à-dire, une fonction continue en $x_{0}$ peut ne pas être dérivable en $x_{0}$.
+\subsection*{\underline{\textbf{\textcolor{red}{Exemple}}}}
+La fonction $f(x)=|x|$ est-elle dérivable en $0$
+\subsection*{\underline{\textbf{\textcolor{red}{Solution}}}}
+\begin{itemize}
+\item[•] Continuité de f en $0$\\
+ \[\textbf{A-t-on}\lim_{x \to 0}f(x)=f(x_{0})?\]
+ Oui donc f est continue en 0
+ \item[•] Dérivabilité de f en $0$\\
+ \[\textbf{A-t-on}\lim_{x \to 0}\frac{f(x)-f(x_{0})}{x-0}=\ell?\]
+  \[\lim_{x \to 0}\frac{f(x)-f(x_{0})}{x-0}=\lim_{x \to 0}\frac{|x|}{x}\]
+  Cherchons la limite a gauche et a droite de 0.
+   \[\lim_{x \to 0}\frac{|x|}{x}=\lim_{x \to 0^{-}}\frac{-x}{x}=-1\]
+     \[\lim_{x \to 0}\frac{|x|}{x}=\lim_{x \to 0^{+}}\frac{-x}{x}=1\]
+     Comme \[\lim_{x \to 0^{-}}\frac{f(x)-f(0)}{x-0}\neq \lim_{x \to 0^{+}}\frac{f(x)-f(0)}{x-0}\] donc f n(est pas dérivable en 0
+\end{itemize}
 \section*{\underline{\textbf{\textcolor{red}{III.Fonction dérivée}}}}
 \subsection*{\underline{\textbf{\textcolor{red}{1.définition}}}}
-On dit que la fonction f(x) est dérivable sur I lorsqu'elle est dérivable en tout point de I.\\
+On dit que la fonction $f$ est dérivable sur I lorsqu'elle est dérivable en tout point de I.\\
 La fonction qui a tout x élément de I associe le nombre dérivé de  f s'appele fonction dérivé de f et est notée\\
 $f':x\mapsto f'(x)$
 \subsection*{\underline{\textbf{\textcolor{red}{2.Fonction dérivée de quelques fonctions usuelles}}}}
 \begin{center}
 \begin{tabular}{|c|c|c|}
 \hline
-Fonction &Dimaine de Dérivabilité &  Dérivée   \\
+Fonction &Domaine de Dérivabilité &  Dérivée   \\
 \hline
 $f(x) = k$& $\mathbb{R}$ & $f'(x)=0$ \\
 \hline
@@ -128,7 +145,7 @@ Soient u et v deux fonctions dérivables sur I et dont les fonctions dérivées 
 \begin{center}
 \begin{tabular}{|c|c|c|}
 \hline
-Fonction &Dimaine de Dérivabilité &  Dérivée   \\
+Fonction &Domaine de Dérivabilité &  Dérivée   \\
 \hline
 $ku;k\in \mathbb{R}$& $I$ & $ku'$ \\
 \hline
