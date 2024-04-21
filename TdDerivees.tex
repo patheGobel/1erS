@@ -1,0 +1,142 @@
+\documentclass[12pt]{article}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{verbatim}
+
+\usepackage{color, soul}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\author{\\Lycée de Dindéfelo\\Mr BA}
+\title{\textbf{Dérivabilité}}
+\date{\today}
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+
+% Commande pour la couleur d'accentuation
+\newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\begin{document}
+\maketitle
+\newpage
+\section*{\underline{\textbf{\textcolor{red}{Exercice 1}}}}
+Dans chacun des cas suivants, calculer la dérivé et donner son signe.
+
+(1) \[f(x)=3x^{2}-5x+2\]
+
+(2) \[f(x)=-x^{2}+x-3\]
+
+(3) \[f(x)=-\frac{1}{3}x^{3}-x^{2}+1\]
+
+(4) \[f(x)=x^{4}-2x^{2}+1\]
+
+(5) \[f(x)=x^{3}-\frac{1}{3}x^{2}+x-2\]
+
+(6) \[f(x)=-\frac{3}{4}x^{4}+\frac{1}{3}x^{3}+2\]
+
+(7) \[f(x)=\frac{1}{2}x^{4}+\frac{5}{3}x^{3}-x^{2}-5x\]
+
+(8) \[f(x)=(x^{2}+1)(5x-7)\]
+\section*{\underline{\textbf{\textcolor{red}{Exercice 2}}}}
+Dans chacun des cas suivants, calculer la dérivé et donner son signe.
+\[(1).f(x)=\frac{-2x+1}{3x+5}\]
+\[(2).f(x)=x+3+\frac{4}{x-1}\]
+\[(3).f(x)=\sqrt{2x+1}\]
+\[(4).f(x)=\frac{1}{\sqrt{3x-1}}\]
+\section*{\underline{\textbf{\textcolor{red}{Exercice 3}}}}
+$f$ étant la fonction de $\mathbb{R}$ vers $\mathbb{R}$, calculer les nombres dérivés dans chacun des cas suivants.
+
+(1)$f'(-3)$ et $f'(2)$ : $f(x)=|1+x|+2x^{2}$
+
+(2)$f'(-2)$ et $f'(0)$ : $f(x)=|1-x^{2}|-x$
+\section*{\underline{\textbf{\textcolor{red}{Exercice 4}}}}
+$f$ étant une fonction de $\mathbb{R}$ vers $\mathbb{R}$, calculer les nombres dérivés en $a$, dans chacun des cas suivants:
+
+(1) \[f(x)=3x^{4}+5x^{2}+1\quad ;\quad \alpha =-2\]
+
+(2) \[f(x)=\frac{3x-1}{x^{2}+2}\quad ;\quad \alpha =-1\]
+
+(3) \[f(x)=2x^{3}+\frac{4}{x^{2}+1}\quad ;\quad \alpha =-1\]
+
+(4) \[f(x)=\sqrt{3x+5}\quad ;\quad \alpha =0\]
+
+(5) \[f(x)=\frac{1}{\sqrt{1-2x}}\quad ;\quad \alpha =0\]
+
+(6) \[f(x)=\cos x +\sin x\quad ;\quad \alpha =\frac{\pi}{6}\]
+
+(7) \[f(x)=x\sin x +1\quad ;\quad \alpha =\frac{\pi}{3}\]
+
+(8) \[f(x)=(x^{2}+1)\tan x\quad ;\quad \alpha =\frac{\pi}{4}\]
+
+(7) \[f(x)=\sin^{2}x-3\sin x\quad ;\quad \alpha =\frac{5\pi}{6}\]
+
+(8) \[f(x)=\cos(x-2)\quad ;\quad \alpha = \frac{\pi}{3}+2 \]
+\section*{\underline{\textbf{\textcolor{red}{Exercice 5 : Dérivabilité en a}}}}
+Dans chacun des cas suivants, $f$ est uen fonction de $\mathbb{R}$ vers $\mathbb{R}$ définie par son expression explicite.
+
+A l'aide du taux de variation de $f$ en $1$, étudier la dérivabilité de $f$ en $1$
+
+\[(1) f(x)=-2x+7\quad \quad (4)f(x)=\sqrt{x+1}\]
+
+\[(2) f(x)=3x^{2}+5\quad ;\quad (5)f(x)=\frac{1}{x^{2}+1}\]
+
+\[(3) f(x)=2x^{3}-9\quad ;\quad (6)f(x)=\frac{x^{2}}{x+1}\]
+\section*{\underline{\textbf{\textcolor{red}{Exercice 6 : Dérivabilité en a}}}}
+Etudier la dérivabilité en $0$ de chacune des fonctions $f$, $g$, $h$ définié par :
+
+\[f(x)=|x^{3}|\quad\quad ;\quad\quad g(x)=x|x|\quad\quad ;\quad\quad h(x)=\sqrt{|x|}\]
+
+\section*{\underline{\textbf{\textcolor{red}{Exercice 7 : Fonction dérivée}}}}
+Démontrer que la fonction $f$ est dérivable de $\mathbb{R}$ vers $\mathbb{R}$ définie par:\\
+$f(x)=|x|x^{2}$ est dérivable sur $\mathbb{R}$.
+
+déterminer $f'$
+
+Dans le plan, muni d'un repère orthogonal, contruire les représentation graphiques de $f$ et de $f'$.
+\section*{\underline{\textbf{\textcolor{red}{Exercice 8 : Fonction dérivée}}}}
+Démontrer que la fonction $f$ de $\mathbb{R}$ vers $\mathbb{R}$ définie par: $f(x)=x^{2}\sqrt{x}$ est dérivable en $0$ et sur $]0; +\infty[$. 
+
+Déterminer $f'.$
+\section*{\underline{\textbf{\textcolor{red}{Exercice 9 : Fonction dérivée}}}}
+Le plan est muni d'un repère (O, I, J). La courbe $C_{f}$ est la représentation graphiquede la fonction f définie par $f(x)=x^{4}-2x^{2}+2x$.
+
+Démontrer que la droite $(\Delta)$ d'équation $y=2x-1$ est tangente en deux points de la courbe $C_{f}$
+\section*{\underline{\textbf{\textcolor{red}{Exercice 10 : Opération sur les fonctions dérivables}}}}
+$f$ étant une fonction polyôme, déterminer sa dérivée dans chacun des cas suivants.
+
+\[(1).\quad f(x)=-3x+1\]
+
+\[(2).\quad f(x)=-3x^{2}+\frac{1}{2}x-2\]
+
+\[(3).\quad f(x)=(3x-2)^{3}\]
+
+\[(4).\quad f(x)=2x^{2}+6x-1\]
+
+\[(5).\quad f(x)=(x^{2-1})^{4}\]
+
+\[(6).\quad f(x)=3x(x-4)^{2}(3x+1)^{3}\]
+
+\[(7).\quad f(x)=-\frac{1}{4}x^{4}+\frac{2}{3}x^{2}-\frac{3}{4}x-5\]
+
+\[(8).\quad f(x)=(2x+1)^{3}(1-5x)^{4}\]
+
+\[(9).\quad f(x)=\frac{1}{3}x^{3}+3x^{2}-\frac{3}{4}x-5\]
+
+\[(10).\quad f(x)=x^{4}-x^{3}+3x^{2}-7\]
+
+\[(11).\quad f(x)=-\frac{3}{5}x^{3}-5x^{2}+\frac{2}{3}x-2\]
+
+\[(8).\quad f(x)=x^{4}(x^{3}+4x-3)^{3}\]
+\end{document}
