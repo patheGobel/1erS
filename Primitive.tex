@@ -18,8 +18,8 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{tkz-tab}
-\author{Destinés à la 1\textsuperscript{ère}S2\\Au Lycée de Dindéferlo}
-\title{\textbf{Primitive}}
+\author{Destiné à la 1\textsuperscript{ère}S2\\Au Lycée de Dindéfelo}
+\title{\textbf{Primitives}}
 \date{\today}
 \usepackage{tikz}
 \usetikzlibrary{arrows, shapes.geometric, fit}
@@ -39,9 +39,9 @@ On a : $F'(x)=f(x)$
 \subsection*{\underline{\textbf{\textcolor{red}{Autrement dit :}}}}
 $F$ est une primitive de $f$ sur $I$ si $f$ est la dérivée de $F$ sur $I$.
 \subsection*{\underline{\textbf{\textcolor{red}{Théorème}}}}
-Toute fonction continue sur un intervalle I admet une primitive sur I.
+Toute fonction continue sur un intervalle $I$ admet une primitive sur $I$.
 \subsection*{\underline{\textbf{\textcolor{red}{Remarque :}}}}
-Si f admet une primitive sur I alors elle en admet une infinité.
+Si $f$ admet une primitive sur $I$ alors elle en admet une infinité.
 \subsection*{\underline{\textbf{\textcolor{red}{Théorème}}}}
 Deux primitives d'une même fonction sur un même intervalle diffèrent d'une constante.
  
@@ -55,74 +55,67 @@ Chacune des primitives de $f$ sur $I$ est déterminée par sa valeur en un point
 \subsection*{\underline{\textbf{\textcolor{red}{Remarque}}}}
 Toute primitive de $f$ sur $I$ est dérivable sur $I$.
  
-Il serait utile de connaitre les résultats figurant sur le tableau suivant :
+
 \begin{center}
-\begin{tabular}{|c|c|c|c|}
+\textbf{Tableau des primitives usuelles}
+\begin{tabular}{|c|c|c|}
 \hline
-I=Intervalle &Remarques ou restrictions & Fonction $f$ & Primitive F où k une constante \\
+Fonction $f$ & Primitive F où k une constante &Intervalles \\
 \hline
-$I \subset \mathbb{R}$& $x\mapsto 0$ & $x\mapsto k$ &\\
+$f(x)=0$ &$F(x)=k$ & $\mathbb{R}$\\
 \hline
-$I \subset \mathbb{R}$ & & &\\
+$f(x)=a$ & $F(x)=ax+k$ & $\mathbb{R}$\\
 \hline
-$I \subset \mathbb{R}$& & &\\
+$f(x)=x$ & $F(x)=\frac{1}{2}x^{2}+k$ & $\mathbb{R}$\\
 \hline
-$I \subset \mathbb{R}$& & &\\
+$f(x)=ax+b$ & $F(x)=\frac{1}{2}ax^{2}+bx+k$ & $\mathbb{R}$\\
 \hline
-$I \subset \mathbb{R}$& & &\\
+$f(x)=x^{n}, n\neq -1$  & $F(x)=\frac{x^{n+1}}{n+1}+k$ & $\mathbb{R}$,si $n>0.\mathbb{R}\setminus,$si $n\leq -2$ \\
 \hline
-$I \subset \mathbb{R}$& & &\\
+$fx)=\frac{1}{x^{2}}$ & $F(x)=-\frac{1}{x}+k$ & $\mathbb{R}^{*}$ \\
 \hline
-$I \subset \mathbb{R}$& & &\\
+$f(x)=\frac{1}{\sqrt{x}}$ & $F(x)=2\sqrt{x}+k$ & $\mathbb{R}^{*}_{+}$\\
 \hline
-$I \subset \mathbb{R}$ & & &\\
+$f(x)=x^{\alpha}\quad \alpha \neq -1$  & $F(x)=\frac{1}{\alpha+1}x^{\alpha+1}+k$ & Selon les valeurs de $\alpha$\\
 \hline
-$I \subset \mathbb{R}$& & &\\
+$f(x)= \sin(x)$ & $F(x)= -\cos(x)+k$ & $\mathbb{R}$\\
 \hline
-$I \subset \mathbb{R}$& & &\\
+$f(x)= \cos(x)$ & $F(x)= \sin(x)+k$ & $\mathbb{R}$\\
 \hline
-$I \subset \mathbb{R}$& & &\\
+$f(x)= \sin(ax+b)$ & $F(x)= -\frac{1}{a}\cos(ax+b)+k$ & $\mathbb{R}$\\
 \hline
-$I \subset \mathbb{R}$& & &\\
+$f(x)= \sin(ax+b)$ & $F(x)= -\frac{1}{a}\cos(ax+b)+k$ &$\mathbb{R}$\\
 \hline
-$I \subset \mathbb{R}$& & &\\
+$f(x)= \frac{1}{\cos^{2}(x)}$ & $F(x)= \tan(x)+k$ & $\left]-\frac{\pi}{2};\frac{\pi}{2}\right[,[2\pi] $\\
+\hline
+$f(x)= \sqrt{x}$ & $F(x)= \frac{2}{3}x\sqrt{x}+k$ & $\mathbb{R}^{*}_{+}$\\
+\hline
+$f(x)= (ax+b)$ & $F(x)= \frac{1}{a}\frac{(ax+b)^{n+1}}{n+1}+k$ & $\mathbb{R}$\\
 \hline
 \end{tabular}
 \end{center}
-
-Primitive d'une de quelque fonction usuelles
-
+\subsection*{\underline{\textbf{\textcolor{red}{Exercice d'application 1}}}}
 \begin{center}
-\begin{tabular}{|c|c|c|c|}
+\textbf{Primitives et Opérations}
+\begin{tabular}{|c|c|c|}
 \hline
-I=Intervalle &Remarques ou restrictions & Fonction $f$ & Primitive F où k une constante \\
+Fonction $f$ & Primitive F où k une constante &Intervalles \\
 \hline
-$I \subset \mathbb{R}$& & &\\
+$f=u+v$ &$F=U+V$ & $\mathbb{R}$\\
 \hline
-$I \subset \mathbb{R}$ & & &\\
+$f=ku$ & $F=kU$ & $\mathbb{R}$\\
 \hline
-$I \subset \mathbb{R}$& & &\\
+$f=u'u^{n}$ ($n\neq -1$) & $F=-\frac{1}{n+1}u^{n+1}$ & $\mathbb{R}$\\
 \hline
-$I \subset \mathbb{R}$& & &\\
+$f=\frac{u'}{u^{2}}$ & $F=-\frac{1}{u}$ & u ne s'annule pas sur I\\
 \hline
-$I \subset \mathbb{R}$& & &\\
+$f=\frac{u'}{\sqrt{u}}$ & $F=2\sqrt{u}$ & $u>0$\\
 \hline
-$I \subset \mathbb{R}$& & &\\
+$f(x)=u'\sin(u)$ & $F(x)= -\cos(u)+k$ & $\mathbb{R}$\\
 \hline
-$I \subset \mathbb{R}$& & &\\
-\hline
-$I \subset \mathbb{R}$ & & &\\
-\hline
-$I \subset \mathbb{R}$& & &\\
-\hline
-$I \subset \mathbb{R}$& & &\\
-\hline
-$I \subset \mathbb{R}$& & &\\
-\hline
-$I \subset \mathbb{R}$&  & &\\
-\hline
-$I \subset \mathbb{R}$&  &  &\\
+$f(x)=u'\cos(u)$ & $F(x)= \sin(u)+k$ & $\mathbb{R}$\\
 \hline
 \end{tabular}
 \end{center}
+\subsection*{\underline{\textbf{\textcolor{red}{Exercice d'application 2}}}}
 \end{document}
