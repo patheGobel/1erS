@@ -1,0 +1,128 @@
+\documentclass[12pt]{article}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{verbatim}
+
+\usepackage{color, soul}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\author{Destinés à la 1\textsuperscript{ère}S2\\Au Lycée de Dindéferlo}
+\title{\textbf{Primitive}}
+\date{\today}
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+
+% Commande pour la couleur d'accentuation
+\newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\begin{document}
+\maketitle
+\newpage
+\section*{\underline{\textbf{\textcolor{red}{Définition}}}}
+Soit $F$ une fonction dérivable sur un intervalle $I$ et soit $f$ une fonction définie et continue sur $I$.
+
+On dit que $F$ est une primitive de $f$ sur $I$ si pour tout $x$ élément de $I$\\
+On a : $F'(x)=f(x)$
+\subsection*{\underline{\textbf{\textcolor{red}{Autrement dit :}}}}
+$F$ est une primitive de $f$ sur $I$ si $f$ est la dérivée de $F$ sur $I$.
+\subsection*{\underline{\textbf{\textcolor{red}{Théorème}}}}
+Toute fonction continue sur un intervalle I admet une primitive sur I.
+\subsection*{\underline{\textbf{\textcolor{red}{Remarque :}}}}
+Si f admet une primitive sur I alors elle en admet une infinité.
+\subsection*{\underline{\textbf{\textcolor{red}{Théorème}}}}
+Deux primitives d'une même fonction sur un même intervalle diffèrent d'une constante.
+ 
+Donc si $F$ et $G$ sont des primitives de $f$ sur $I$ alors il existe une constante réelle $k$ telle que pour tout $x$ élément de $I$ $F(x)=G(x)+k$
+
+Pour la preuve voir la variation des fonctions avec l'utilisation des dérivées.
+ 
+On en déduit que : 
+ 
+Chacune des primitives de $f$ sur $I$ est déterminée par sa valeur en un point de $I$.
+\subsection*{\underline{\textbf{\textcolor{red}{Remarque}}}}
+Toute primitive de $f$ sur $I$ est dérivable sur $I$.
+ 
+Il serait utile de connaitre les résultats figurant sur le tableau suivant :
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+I=Intervalle &Remarques ou restrictions & Fonction $f$ & Primitive F où k une constante \\
+\hline
+$I \subset \mathbb{R}$& $x\mapsto 0$ & $x\mapsto k$ &\\
+\hline
+$I \subset \mathbb{R}$ & & &\\
+\hline
+$I \subset \mathbb{R}$& & &\\
+\hline
+$I \subset \mathbb{R}$& & &\\
+\hline
+$I \subset \mathbb{R}$& & &\\
+\hline
+$I \subset \mathbb{R}$& & &\\
+\hline
+$I \subset \mathbb{R}$& & &\\
+\hline
+$I \subset \mathbb{R}$ & & &\\
+\hline
+$I \subset \mathbb{R}$& & &\\
+\hline
+$I \subset \mathbb{R}$& & &\\
+\hline
+$I \subset \mathbb{R}$& & &\\
+\hline
+$I \subset \mathbb{R}$& & &\\
+\hline
+$I \subset \mathbb{R}$& & &\\
+\hline
+\end{tabular}
+\end{center}
+
+Primitive d'une de quelque fonction usuelles
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+I=Intervalle &Remarques ou restrictions & Fonction $f$ & Primitive F où k une constante \\
+\hline
+$I \subset \mathbb{R}$& & &\\
+\hline
+$I \subset \mathbb{R}$ & & &\\
+\hline
+$I \subset \mathbb{R}$& & &\\
+\hline
+$I \subset \mathbb{R}$& & &\\
+\hline
+$I \subset \mathbb{R}$& & &\\
+\hline
+$I \subset \mathbb{R}$& & &\\
+\hline
+$I \subset \mathbb{R}$& & &\\
+\hline
+$I \subset \mathbb{R}$ & & &\\
+\hline
+$I \subset \mathbb{R}$& & &\\
+\hline
+$I \subset \mathbb{R}$& & &\\
+\hline
+$I \subset \mathbb{R}$& & &\\
+\hline
+$I \subset \mathbb{R}$&  & &\\
+\hline
+$I \subset \mathbb{R}$&  &  &\\
+\hline
+\end{tabular}
+\end{center}
+\end{document}
