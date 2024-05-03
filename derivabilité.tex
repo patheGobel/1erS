@@ -73,6 +73,7 @@ En $0^{-}$, $f(x)=f(x)_{1}=3x^{2}$: \\
 \section*{\underline{\textbf{\textcolor{red}{II.Interprétation géométrique du nombre dérivé}}}}
 \subsection*{\underline{\textbf{\textcolor{red}{1.Définition et Théorème}}}}
 Soit $f$ une fonction dérivable en $x_0$. Notons $A(x_0, f(x_0))$ le point de coordonnées $(x_0, f(x_0))$ sur la courbe $\mathcal{C}_f$ de $f$. La tangente à la courbe $\mathcal{C}_f$ au point $A$ est la droite passant par $A$ et ayant pour coefficient directeur $f'(x_0)$.\\
+
 \definecolor{qqwuqq}{rgb}{0,0.39215686274509803,0}
 \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
 \begin{axis}[
@@ -94,6 +95,7 @@ Soit $f$ une fonction dérivable en $x_0$. Notons $A(x_0, f(x_0))$ le point de c
 
 \end{axis}
 \end{tikzpicture}
+
 L'éaqution réduite de cette tangeante est (T):$y=f'(x_{0})(x-x_{0})+f(x_{0})$
 \subsection*{\underline{\textbf{\textcolor{red}{Exemple}}}}
 Soit $f(x)=x^{2}+1$, Etudier la dérivabilité de f en 1\\
@@ -171,7 +173,7 @@ $\sqrt{u}$& $\forall \in I; u(x) > 0$ & $\frac{u'}{2\sqrt{u}}$ \\
 \subsection*{\underline{\textbf{\textcolor{red}{5.Propriété}}}}
 \subsection*{\underline{\textbf{\textcolor{red}{6.Dérivée d'une fonction trigonométrique}}}}
 \subsection*{\underline{\textbf{\textcolor{red}{7.Dérivée d'une fonction composée}}}}
-\subsection*{\underline{\textbf{\textcolor{red}{II.Variation d'une fonction numérique}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{II.Variation d'une fonction numérique et courbe d'une fonction}}}}
 \subsection*{\underline{\textbf{\textcolor{red}{1)Variation d'une fonction numérique}}}}
 Soit $f$ une fonction dérivable sur un intervalle $I$.
 \begin{enumerate}
@@ -259,6 +261,28 @@ $\forall x\in \left] -1 , +\infty \right[$, $f'(x)>0$ donc $f$ est croissante
 \draw (-8,3.9) node[anchor=north west] {$+\infty$};
 \end{tikzpicture}
 
+\subsection*{\underline{\textbf{\textcolor{red}{Courbe de la fonction $f$)}}}}
+
+\definecolor{qqwuqq}{rgb}{0,0.39215686274509803,0}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=-7,
+xmax=7,
+ymin=-8,
+ymax=8,
+xtick={-2,-15,...,30},
+ ytick={-18,-16,...,12},]
+\draw[line width=2pt,color=qqwuqq,smooth,samples=100,domain=-8:3] plot(\x,{(\x)^(2)+2*(\x)-3});
+\begin{scriptsize}
+\draw[color=qqwuqq] (-6,2) node {$f$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+
 Pour $g(x)=\frac{2x+2}{x-3}$:
 
 $D_{g}=\mathbb{R}\setminus\left\lbrace 3\right\rbrace $. 
@@ -330,7 +354,28 @@ Les bornes de $D_{g}$ sont $+\infty$, 3 et $-\infty$
 \draw (-8,-1) node[anchor=north west] {$2$};
 \end{tikzpicture}
 
-\subsection*{\underline{\textbf{\textcolor{red}{III.Théorèmes}}}}
+\definecolor{ccqqqq}{rgb}{0.8,0,0}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=-4.8,
+xmax=23.6,
+ymin=-7.8,
+ymax=6.9,
+xtick={-4,-3,...,23},
+ytick={-7,-6,...,6},]
+\clip(-4.8,-7.8) rectangle (23.6,6.9);
+\draw[line width=2pt,color=ccqqqq,smooth,samples=100,domain=-4.8569002927688985:23.616121721840784] plot(\x,{(2*(\x)+2)/((\x)-3)});
+\begin{scriptsize}
+\draw[color=ccqqqq] (-4.6,1.15) node {$g$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+
+\section*{\underline{\textbf{\textcolor{red}{III.Théorèmes}}}}
 \subsection*{\underline{\textbf{\textcolor{red}{1)Théorème 1(théorème de la bijection)}}}}
 Si $f$ est une fonction continue et strictement monotone sur un intervalle $I$ alors elle réalise une bijection de $I$ vers $f(I)$.
 \subsection*{\underline{\textbf{\textcolor{red}{2)Théorème 2(théorème des valeurs intermédiares)}}}}
@@ -375,7 +420,7 @@ $f'(x)=2x+2$
 
 \draw [->,line width=2pt] (-12.5,-1.3) -- (-8,3.5);
 \draw (-8,3.9) node[anchor=north west] {$+\infty$};
-\end{tikzpicture} d
+\end{tikzpicture}
 
-$f'$ s'annule et change de signe en $-1$ alors $f$ présente un minimum en -1 et cet mininum est $f(-1)=-4$
+$f'$ s'annule et change de signe en $-1$ alors $f$ présente un minimum en $-1$ et cet mininum est $f(-1)=-4$
 \end{document}
