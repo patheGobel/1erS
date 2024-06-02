@@ -1,0 +1,249 @@
+\documentclass{beamer}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{verbatim}
+\usepackage{color, soul}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mdframed}
+\usepackage{tkz-tab}
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+
+\title{\textbf{Suites Numériques}}
+\author{Destinés à la 1erS\\Au Lycée de Dindéferlo}
+\date{\today}
+
+% Commande pour la couleur d'accentuation
+\newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\section{Généralités}
+\begin{frame}{I. Généralités}
+    \begin{block}{1. Définition}
+        On appelle \textit{suite numérique} toute fonction définie de $\mathbb{N}$ ou d'une partie $E$ de $\mathbb{N}$ vers $\mathbb{R}$. \\
+        On note : $U : \mathbb{N} \rightarrow \mathbb{R}$ \\
+        \hspace*{3.3cm}$n \mapsto U_{n}$ \\
+        Le réel $U_n$ est appelé \textcolor{red}{\textit{terme général}} ou \textcolor{red}{\textit{terme d'indice $n$}}.
+        L'ensemble des termes de la suite est noté $(U_n)$ et $n \in \mathbb{N}$ ou $(U_{n})n\in\mathbb{N}$.
+    \end{block}
+\end{frame}
+
+\begin{frame}{2. Modes de définition d'une suite}
+    \begin{block}{2.1. Suite explicite}
+    \end{block}
+    \begin{block}{2.2. Définition}
+        Lorsqu'une suite $(U_{n})$ est exprimée en fonction de $n$, alors on dit que la suite $(U_{n})$ est définie par une \textcolor{red}{\textit{formule explicite}} et on note $U_{n} = f(n)$.
+    \end{block}
+    \begin{exampleblock}{Exemple}
+        Soit la suite $\left(u_{n}\right)$ définie par : $u_{n}=n^{2}-5n+3.$
+        \begin{itemize}
+            \item $u_{0}=0^{2}-(5\times 0)+3=3$
+            \item $u_{1}=1^{2}-(5\times 1)+3=-1$
+            \item $u_{2}=2^{2}-(5\times 2)+3=-3$
+            \item $u_{10}=10^{2}-(5\times 10)+3=53$
+            \item $u_{50}=50^{2}-(5\times 50)+3=2253$
+        \end{itemize}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}{3. Suite définie par récurrence}
+    \begin{block}{3.1. Définition}
+        Lorsque la suite $(U_n)$ est définie par une relation entre $U_n$ et $U_{n+1}$, alors on dit que $(U_n)$ est définie par une \textcolor{red}{\textit{relation de récurrence}}.
+    \end{block}
+    \begin{exampleblock}{Exemple 1}
+        \[
+        \begin{cases}
+            u_{0}=2 \\
+            U_{n + 1}=\frac{2U_n + 3}{U_n + 1}
+        \end{cases}
+        \]
+        Calculer les cinq premiers termes de $u_{n}$.
+    \end{exampleblock}
+    \begin{block}{Solution}
+        ...
+    \end{block}
+    \begin{exampleblock}{Exemple 2}
+        Soit la suite $\left(u_{n}\right)$ définie par : $u_{n+1}=2u_{n}+3\text{ et }u_{0}=-1.$
+        \begin{itemize}
+            \item $u_{1}=u_{0+1}=2u_{0}+3=1$
+            \item $u_{2}=u_{1+1}=2u_{1}+3=5$
+            \item $u_{3}=u_{2+1}=2u_{2}+3=13$
+        \end{itemize}
+        Par exemple, pour calculer $u_{50}$, il faudrait faire $50$ calculs successifs.
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Exercice d'application}
+    Dans chacun des cas suivants, calculer les $6$ premiers termes de la suite $U_{n}$.
+    \begin{itemize}
+        \item $U_{n} = 7n^{2} - 5n + 2$, $n \in \mathbb{N}$.
+        \item $U_{n}=\frac{3n-5}{n+2}$, $n \in \mathbb{N}$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{4. Sens de variation d'une suite}
+    \begin{block}{Définition}
+        Une suite $\left(u_{n}\right)$ est dite :
+        \begin{itemize}
+            \item Croissante si : $\forall\;n\;,\ :\ u_{n+1}\geq u_{n} .$ c'est-à-dire, $\ u_{n+1}- u_{n}>0$
+            \item Décroissante si : $\forall\;n;,\ :\ u_{n+1}\leq u_{n}$. c'est-à-dire, $\ u_{n+1}- u_{n}<0$
+            \item Monotone si elle est croissante ou décroissante.
+            \item Constante si : $\forall\;n\;,\ :\ u_{n+1}=u_{n}.$
+        \end{itemize}
+    \end{block}
+    \begin{block}{Règle}
+        Pour étudier le sens de variation d'une suite $\left(u_{n}\right)$, on compare deux termes consécutifs, pour cela, on peut étudier le signe de leur différence, ou, s'il s'agit de nombres strictement positifs, comparer leur quotient à $1.$
+    \end{block}
+    \begin{exampleblock}{Exemple}
+        Soit la suite $\left(u_{n}\right)$ définie par : $u_{n}=\dfrac{n+2}{2n+1}$
+        \begin{itemize}
+            \item $u_{n+1}=\dfrac{(n+1)+2}{2(n+1)+1}=\dfrac{n+3}{2n+3}$
+            \item $u_{n+1}-u_{n}=\dfrac{n+3}{2n+3}-\dfrac{n+2}{2n+1}=\dfrac{-3}{(2n+1)(2n+3})$
+        \end{itemize}
+        Pour tout entier naturel $n$, on a donc : $u_{n+1}-u_{n} < 0.$
+        La suite étudiée est par conséquent décroissante.
+    \end{exampleblock}
+\end{frame}
+
+\section{Suite arithmétiques}
+\begin{frame}{II. Suite arithmétiques}
+    Une suite $\left(u_{n}\right)$ est \textcolor{red}{arithmétique} si chaque terme s'obtient en ajoutant au précédent un même nombre \textcolor{red}{$r$} appelé raison : 
+    \textcolor{red}{$u_{n+1}=u_{n}+r.$}
+\end{frame}
+
+\begin{frame}{1. Expression du terme général}
+    \begin{itemize}
+        \item Si $\left(u_{n}\right)$ est une suite arithmétique de premier terme $u_{0}$ et de raison $r$, alors :
+            \[u_{n}=u_{0}+nr\]
+        \item Si le premier terme est $u_{1}$, alors :
+            \[u_{n}=u_{1}+(n-1)r\]
+        \item Si $(U_n)$ une suite arithmétique de raison $r$ et de premier terme $U_{p}$, alors :
+            \[U_{n}=U_{p}+(n-p)r\]
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{2. Sens de variation}
+    \begin{itemize}
+        \item Si $r>0$, la suite $\left(u_{n}\right)$ est croissante.
+        \item Si $r<0$, la suite $\left(u_{n}\right)$ est décroissante.
+        \item Si $r=0$, la suite $\left(u_{n}\right)$ est constante.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Exemples}
+    \begin{exampleblock}{Exemple 1}
+        Soit $\left(u_{n}\right)$ une suite arithmétique de raison $r$ et de premier terme $u_{0}$. Calculer les 5 premiers termes et les écrire sous la forme : $u_{n}=u_{0}+nr.$
+    \end{exampleblock}
+    \begin{exampleblock}{Exemple 2}
+        Soit $\left(u_{n}\right)$ une suite arithmétique de raison $r=3$ et de premier terme $u_{0}=1$. 
+        \begin{itemize}
+            \item $u_{0}=1$
+            \item $u_{1}=1+1\times 3=4$
+            \item $u_{2}=1+2\times 3=7$
+            \item $u_{3}=1+3\times 3=10$
+            \item $u_{4}=1+4\times 3=13$
+            \item $u_{n}=1+3n.$
+        \end{itemize}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Propriété}
+    \begin{itemize}
+        \item \textbf{Somme de termes d'une suite arithmétique :}
+            Si $\left(u_{n}\right)$ est une suite arithmétique de premier terme $u_{0}$ et de raison $r$, alors, pour tout entier naturel $n$, on a :
+            \[
+            S_{n}=u_{0}+u_{1}+\cdots +u_{n}=\left(n+1\right)u_{0}+\dfrac{nr\left(n+1\right)}{2}
+            \]
+        \item Si le premier terme est $u_{1}$, alors :
+            \[
+            S_{n}=\left(n+1\right)u_{1}+\dfrac{rn\left(n-1\right)}{2}
+            \]
+    \end{itemize}
+\end{frame}
+
+\section{Suites géométriques}
+\begin{frame}{III. Suites géométriques}
+    \begin{block}{Définition}
+        Une suite $\left(u_{n}\right)$ est \textcolor{red}{géométrique} si chaque terme s'obtient en multipliant le précédent par un même nombre \textcolor{red}{$q$} appelé \textcolor{red}{raison} :
+        \[
+        u_{n+1}=u_{n}\times q
+        \]
+    \end{block}
+\end{frame}
+
+\begin{frame}{1. Expression du terme général}
+    \begin{itemize}
+        \item Si $\left(u_{n}\right)$ est une suite géométrique de premier terme $u_{0}$ et de raison $q$, alors :
+            \[u_{n}=u_{0}\times q^{n}\]
+        \item Si le premier terme est $u_{1}$, alors :
+            \[u_{n}=u_{1}\times q^{n-1}\]
+        \item Si $(U_n)$ est une suite géométrique de raison $q$ et de premier terme $U_{p}$, alors :
+            \[U_{n}=U_{p}\times q^{n-p}\]
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{2. Sens de variation}
+    \begin{itemize}
+        \item Si $0 < q < 1$, la suite $\left(u_{n}\right)$ est décroissante.
+        \item Si $q > 1$, la suite $\left(u_{n}\right)$ est croissante.
+        \item Si $q=1$, la suite $\left(u_{n}\right)$ est constante.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Exemples}
+    \begin{exampleblock}{Exemple 1}
+        Soit $\left(u_{n}\right)$ une suite géométrique de raison $q$ et de premier terme $u_{0}$. Calculer les 5 premiers termes et les écrire sous la forme : $u_{n}=u_{0}\times q^{n}$
+    \end{exampleblock}
+    \begin{exampleblock}{Exemple 2}
+        Soit $\left(u_{n}\right)$ une suite géométrique de raison $q=2$ et de premier terme $u_{0}=1$. 
+        \begin{itemize}
+            \item $u_{0}=1$
+            \item $u_{1}=1\times 2^{1}=2$
+            \item $u_{2}=1\times 2^{2}=4$
+            \item $u_{3}=1\times 2^{3}=8$
+            \item $u_{4}=1\times 2^{4}=16$
+            \item $u_{n}=2^{n}$
+        \end{itemize}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Propriété}
+    \begin{itemize}
+        \item \textbf{Somme de termes d'une suite géométrique :}
+            Si $\left(u_{n}\right)$ est une suite géométrique de premier terme $u_{0}$ et de raison $q$, alors, pour tout entier naturel $n$, on a :
+            \[
+            S_{n}=u_{0}+u_{1}+\cdots +u_{n}=u_{0}\times \dfrac{1-q^{n+1}}{1-q}
+            \]
+        \item Si le premier terme est $u_{1}$, alors :
+            \[
+            S_{n}=u_{1}\times \dfrac{1-q^{n}}{1-q}
+            \]
+    \end{itemize}
+\end{frame}
+
+\section{Exercices}
+\begin{frame}{Exercices}
+    \begin{exampleblock}{Exercice 1}
+        Calculer les $6$ premiers termes de la suite $U_{n}$ définie par : \\
+        $U_{n}=3n^{2} - 5n + 1$, $n \in \mathbb{N}$.
+    \end{exampleblock}
+    \begin{exampleblock}{Exercice 2}
+        Calculer les $6$ premiers termes de la suite $U_{n}$ définie par : \\
+        $U_{n}=\dfrac{3n-2}{n+1}$, $n \in \mathbb{N}$.
+    \end{exampleblock}
+\end{frame}
+
+\end{document}
