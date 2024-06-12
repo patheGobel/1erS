@@ -1,0 +1,165 @@
+\documentclass[12pt]{article}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{verbatim}
+
+\usepackage{color, soul}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\author{\\Lycée de Dindéfelo\\Mr BA}
+\title{\textbf{Dénombrement 1erS2}}
+\date{\today}
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+
+% Commande pour la couleur d'accentuation
+\newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\begin{document}
+\maketitle
+\newpage
+\section*{Exercice 1 :}
+    a) Combien de nombres distincts de 4 chiffres peut-on former en utilisant que 2, 4, 5, 6,8  et 9 ?
+    
+    b) Combien de nombres distincts de 4 chiffres peut on former à l’aide des chiffres 2, 4, 5, 6,8 et 9 chacun étant utilisé au plus une seule fois ?
+    
+    c) On dispose de 6 plaquettes sur lesquels sont inscrits les chiffres 2, 4, 5, 6,8 et 9 combien de nombres distincts peut on former en les utilisant toutes une et une seule fois ?
+\section*{Exercice 2 :}
+On jette 6 fois de suite une pièce de monnaie et on note successivement les faces obtenues.
+
+    1) Déterminer le nombre de résultats distincts.
+    
+    2) Déterminer le nombre de résultats comportant :
+    
+    a) au moins 4lettres P      b) au plus 5lettres P                    c) au moins 4P au plus 5P
+\section*{Exercice 3 :}
+On jette 3 fois de suite un dé à 6 faces numérotées de 1à 6 et on note successivement les chiffres obtenus sur la face supérieure.
+
+Déterminer le nombre de résultats :
+
+    a) comportant 3 chiffres identiques                   b) comportant 3 chiffres distincts
+    
+    b) comportant 2 et 2 seuls chiffres identiques      
+    
+ d) pour lesquels la somme des chiffres obtenus soit égale à 6.
+\section*{Exercice 4 :}
+Un numéro de téléphone de TIGO sénégal est un nombre à 9 chiffres dont les deux premiers dans l’ordre est 76.
+
+Quelle est la capacité du réseau (c'est-à-dire le nombre de numéros théoriquement possible).
+\section*{Exercice 5 :}
+On choisit 5 cartes dans un jeu de 32 cartes .Déterminer le nombre de résultats comportant :
+
+    a) exactement deux valets     b) aucun as      c) au moins 3 dames    d) 2 trèfles et 3 carreaux
+    
+e) 2 cartes d’une valeur et 3 d’une autre        f) au moins un roi.
+
+\section*{Exercice 6 :}
+On tire successivement 4 boules d’un sac contenant 10 boules : 3 vertes et 7jaunes.
+
+Déterminer le nombre de tirages comportant :
+
+a)4boules jaunes     b) 4 boules vertes         c) 3 jaunes et 1 verte, dans cet ordre 
+
+d) 3jaunes et 1 verte       e)2 jaunes et 2 vertes dans cet ordre       f) 2 jaunes et vertes g) au moins 3 vertes 		h) au plus 3 jaunes.
+\section*{Exercice 7 :}
+Une assemblée de 16 personnes dont 6 femmes et 10 hommes veulent désigner une délégation de 3 personnes parmi ses membres.
+
+    1) Dénombrer les délégations possibles.
+    
+    2) Combien peut on former de délégations comportant exactement 2femmes ?
+    
+    3) Dans cette assemblée on veut élire un bureau comprenant un président, un secrétaire et un trésorier. Combien y a-t-il de bureaux possibles :
+    
+           a) En tout ?  b) Sachant que monsieur X ne veut pas être président ?
+           
+           c) Sachant que le poste de trésorier doit être occupé par une femme ?
+           
+          d) Sachant que madame X refuse de siéger avec monsieur Y dans le même bureau ? 
+\section*{Exercice 8 :}
+Une caisse contient 6 tee-shirts bleus et 4 tee-shirts rouges
+
+1) Un non-voyant tire au hasard et simultanément trois tee-shirts de la caisse qu’il donne à trois de ses amis non-voyants.
+
+Calculer le  nombre de possibilités dans les cas suivants :
+
+  a)  Les 3 tee-shirts sont rouges .
+  
+  b) Au moins un des tee-shirts tirés est rouge .
+  
+  c) Le non-voyant a tiré plus de tee-shirts bleus que de tee-shirts rouges.
+  
+ 2) Cette fois ci le non-voyant procède à un tirage successif avec remise de 3 tee-shirts de la caisse.
+ 
+    Calculer le nombre de possibilité dans chacun des cas suivants :
+    
+  a) Le premier et le dernier tee-shirt tirés sont bleus.
+  
+  b)  il n’a tiré aucun tee-shirt bleu.
+\section*{Exercice 9 :}
+La confédération internationale  de football décide de classer par ordre les 3 meilleurs joueurs de l’année 2007, parmi un groupe de 10 joueurs choisis par les journalistes sportifs. 
+
+ Parmi les 10 joueurs figurent 3 Africains :Drogba, Eto et Essien :
+ 
+  1) Calculer le nombre de classements possibles.
+  
+  2) Calculer le nombre de classements tels que :
+  
+  a) Les 3 joueurs choisis soient  tous des Africains.
+  
+  b) Drogba soit élu meilleur joueur parmi les 3 joueurs choisis.
+  
+  c) Eto figure parmi les 3 joueurs choisis.
+  
+  d) Seul le premier des 3 joueurs choisis, est Africain.
+  
+  e) Il y a au moins un africain parmi les 3 joueurs choisis.
+\section*{Exercice 10 :}  
+Une urne contient 3 jetons portant les lettres. A P E
+
+On suppose qu’un mot est un assemblage de lettres distinctes ou non, ayant un sens ou non. 
+
+ 1) On tire successivement 5 jetons dans l’urne, en remettant après  chaque tirage le jeton tiré  dans l’urne .On note dans l’ordre les jetons tirés pour former un mot de 5 lettres.
+ 
+ a) Déterminer le nombre de possibilité de former un mot commençant par une voyelle.
+ 
+ b) Déterminer le nombre de possibilité de former un mot commençant par A  et contenant exactement 1 voyelle.
+ 
+2) On tire successivement 3 jetons de l’urne, sans remettre le jeton tiré dans l’urne et on les aligne dans l’ordre de tirage pour former un mot de 3 lettres.
+
+ a) Déterminer le nombre de possibilité de tirer un mot commençant par une voyelle et se terminant par une  voyelle.
+ 
+ b) Déterminer le nombre de possibilité de former le mot A P E. 
+\section*{Exercice 11 :}
+Une pièce de théâtre est jouée par un groupe de 10 acteurs (et actrices) désignés au hasard dans un troupe de 25 artistes comportant 14 femmes et 11 hommes dont DIEK et NGOR.
+
+1) De combien de façons peut-on choisir le groupe de 10 acteurs pour jouer la pièce ?
+
+2) Combien y a-t-il de groupes comprenant seulement 3 hommes ? 
+
+3) Combien y a-t-il de groupes comprenant autant de femmes que d’hommes ?
+
+4) combien y a-t-il de groupes comprenant au moins 2 femmes ?
+
+5) Combien y a-t-il de groupes comprenant NGOR ?
+
+6) Combien y a-t-il de groupes comprenant NGOR et DIEK ?
+
+7) Combien y a-t-il de groupes comprenant NGOR ou DIEK ?
+
+8)  Combien y a-t-il de groupes comprenant ni NGOR ni DIEK ?      
+
+9   Combien y a-t-il de groupes comprenant NGOR et pas DIEK ?                                                                                                                                     
+\end{document} 
