@@ -1,0 +1,101 @@
+\documentclass[12pt]{article}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{verbatim}
+\usepackage{color,soul}
+\usepackage{amsmath}
+\usepackage[table]{xcolor}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{systeme}
+\usepackage{tkz-tab}
+\author{Destiné à la 1èrS2\\Au Lycée de Dindéfelo}
+\title{\textbf{Dénombrement}}
+\date{\today}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage[a4paper,left=20mm,right=20mm,top=15mm,bottom=15mm]{geometry}
+\usepackage{mathtools}
+\usepackage{systeme}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+
+\DecimalMathComma
+
+\begin{document}
+
+\maketitle
+\newpage
+\section*{\underline{\textbf{\textcolor{red}{I. Equations}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{1. Compléments sur les trinômes du \( 2^{nd} \)degré}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{2. Equations irrationnelles}}}}
+\subsubsection*{\underline{\textbf{\textcolor{red}{a. Equations du type \( \sqrt{f(x)} = \sqrt{g(x)} \) }}}}
+\( \sqrt{x^{2}+3x-1} = \sqrt{x+2} \) est une équation irrationnelle du type \( \sqrt{f(x)} = \sqrt{g(x)} \) avec 
+
+\( f(x) = x^{2}+3x-1 \) et \( g(x) = x+2 \).
+
+Pour résoudre une équation du type \( \sqrt{f(x)} = \sqrt{g(x)} \) on peut utiliser deux méthodes :
+
+\begin{itemize}
+\item[•]\textbf{Méthode par implication}
+
+\begin{itemize}
+ \item \textbf{1ère étape :}
+ \[ 
+ \text{On écrit } \sqrt{f(x)} = \sqrt{g(x)} \implies f(x) = g(x) \text{ puis on résout l’équation }f(x) = g(x)
+ \] 
+ \[ \text{ Les solutions éventuelles de } f(x) = g(x) \text{ sont les potentiels candidats } \]
+ \[ \text{pour être solution de l’équation} \sqrt{f(x)} = \sqrt{g(x)}\]
+ \item \textbf{2ème étape :}
+ \[ 
+ \text{Parmi les éventuelles solutions de l’équation } f(x) = g(x) \implies f(x) = g(x),\] 
+ \[ \text{ on cherche celles qui vérifient }\sqrt{f(x)} = \sqrt{g(x)} \] 
+ \[ \text{ Ce sont ces réels qui sont les solutions de l’équation } \sqrt{f(x)} = \sqrt{g(x)} \]
+
+\end{itemize}
+\textbf{Exemple} 
+\textbf{Exercice d’application}
+\item[•]\textbf{Méthode par équivalence}
+
+\begin{itemize}
+ \item \textbf{1ère étape :}
+	\[ \text{On écrit :} \sqrt{ f(x)} = \sqrt{ g(x)} \Leftrightarrow \begin{cases} f(x) \geq 0 \\ f(x) = g(x) \end{cases} \text{ou bien } \sqrt{ f(x)} = \sqrt{ g(x)} \Leftrightarrow \begin{cases} g(x) \geq 0 \\ f(x) = g(x) \end{cases}\]
+ \item \textbf{2ème étape :}
+  \[ \text{On résout le système }\begin{cases}f(x) \geq 0 \\ f(x) = g(x) \end{cases} \text{ou bien le système} \begin{cases}f(x) \geq 0 \\ f(x) = g(x) \end{cases} \] 
+ \[ \text{L’ensemble des solutions de l’un de ces systèmes est l’ensemble des solutions de l’équation } \]
+ \[ \sqrt{ f(x)} = \sqrt{ g(x)} \]
+ \textbf{Exemple} 
+ 
+	Résoudre dans \( \mathbb{R} \) l’équation suivante: \( \sqrt{f(x)} = \sqrt{g(x)} \)
+	
+	\textbf{Exercice d’application}
+	
+Résoudre dans \( \mathbb{R} \) l’équation suivante: \( \sqrt{f(x)} = \sqrt{g(x)} \)
+\end{itemize}
+
+\end{itemize}
+
+\subsubsection*{\underline{\textbf{\textcolor{red}{b. Equations du type \( \sqrt{f(x)} = ax+b \) }}}}
+
+\section*{\underline{\textbf{\textcolor{red}{II. Inéquations irrationnelles}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{1. Inéquations du type \( \sqrt{f(x)} \leq ax+b \) }}}}
+\subsection*{\underline{\textbf{\textcolor{red}{2. Inéquations du type \( \sqrt{f(x)} \geq ax+b \) }}}}
+\subsection*{\underline{\textbf{\textcolor{red}{3. Inéquations du type \( \sqrt{f(x)} \leq  \sqrt{g(x)} \) }}}}
+
+\section*{\underline{\textbf{\textcolor{red}{III. Systèmes}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{1. Systèmes de 3 équations linéaires à trois inconnues}}}}
+\subsubsection*{\underline{\textbf{\textcolor{red}{a. Exemple}}}}
+\subsubsection*{\underline{\textbf{\textcolor{red}{b. Méthode du pivot de Gauss }}}}
+\subsection*{\underline{\textbf{\textcolor{red}{2. Systèmes d’inéquations linéaires }}}}
+\subsubsection*{\underline{\textbf{\textcolor{red}{a. Inéquations linéaires à deux inconnues}}}}
+\subsubsection*{\underline{\textbf{\textcolor{red}{b. Système de deux inéquations linéaires à deux inconnues }}}}
+\end{document}
