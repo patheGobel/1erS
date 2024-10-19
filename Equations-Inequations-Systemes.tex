@@ -31,6 +31,15 @@
 
 \DecimalMathComma
 
+\usepackage{eso-pic} % Pour ajouter des éléments en arrière-plan
+
+% Commande pour ajouter du texte en arrière-plan, centré au milieu de chaque page
+\AddToShipoutPicture{
+    \AtPageCenter{%
+        \makebox(0,0)[c]{\rotatebox{60}{\textcolor[gray]{0.9}{\fontsize{2cm}{2cm}\selectfont Pathé Gobel BA}}}
+    }
+}
+
 \begin{document}
 
 \maketitle
