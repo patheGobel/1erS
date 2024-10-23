@@ -185,7 +185,6 @@ x^2 + 3x - 1 = x + 2 \quad \Leftrightarrow \quad x^2 + 2x - 3 = 0
 \textbf{Conclusion :} La seule solution est \( x = 1 \).
 
 \textbf{\exerciceapp}
-
 Résoudre l'équation:
 
 \( \sqrt{2x^{2}+4x-6} = 2x - 1 \)
@@ -311,9 +310,132 @@ Les solutions de cette équation sont \( x = 1 \) et \( x = -3 \).
 
 \textbf{Conclusion :} La seule solution est \( x = 1 \).
 
+\textbf{\exerciceapp}
+
+Résoudre l'équation:
+
 \section*{\underline{\textbf{\textcolor{red}{II. Inéquations irrationnelles}}}}
 \subsection*{\underline{\textbf{\textcolor{red}{1. Inéquations du type \( \sqrt{f(x)} \leq ax+b \) }}}}
-\subsection*{\underline{\textbf{\textcolor{red}{2. Inéquations du type \( \sqrt{f(x)} \geq ax+b \) }}}}
+
+\[\text{On a les équivalences suivantes :}\]
+
+\[
+\sqrt{f(x)} \leq g(x) \Leftrightarrow \begin{cases} 
+f(x) \geq 0 \\
+g(x) \geq 0 \\
+f(x) \leq g(x)^{2}
+\end{cases}
+\]
+
+**Explication :**  
+
+- **\( f(x) \geq 0 \)** : L'expression sous la racine carrée doit être positive ou nulle pour que la racine soit définie.
+
+- **\( g(x) \geq 0 \)** : Comme la racine carrée est toujours positive ou nulle, il est nécessaire que l'expression \( g(x) \), ici \( ax + b \), soit aussi positive ou nulle.
+
+- **\( f(x) \leq g(x)^2 \)** : On élève les deux membres de l'inéquation au carré pour éliminer la racine, ce qui donne l'inéquation \( f(x) \leq g(x)^2 \).
+
+En simplifiant, on obtient :
+
+\[
+\Leftrightarrow \begin{cases}
+g(x) \geq 0 \\
+f(x) \leq g(x)^{2}
+\end{cases}
+\]
+
+**Explication :**  
+
+Il est souvent possible de ne vérifier que \( g(x) \geq 0 \), car si \( f(x) \leq g(x)^2 \), cela garantit que \( f(x) \geq 0 \) quand \( g(x) \geq 0 \).
+
+\textcolor{green}{\textbf{Exemple 1}}
+
+Résolvons l'inéquation \( \sqrt{2x+1} \leq x+3 \).
+
+\begin{itemize}
+    \item \textbf{Étape 1 : Conditions de validité \( D_v \)}
+\end{itemize}
+
+L'inéquation est définie si \( 2x + 1 \geq 0 \) et \( x + 3 \geq 0 \).
+
+- \( 2x + 1 \geq 0 \) donne \( x \geq -\frac{1}{2} \).
+
+- \( x + 3 \geq 0 \) donne \( x \geq -3 \).
+
+Le domaine de validité de l'inéquation est donc \( D_v = [-\frac{1}{2}; +\infty[ \).
+
+\begin{itemize}
+    \item \textbf{Étape 2 : Résolution de l'inéquation}
+\end{itemize}
+
+On élève les deux membres de l'inéquation au carré :
+
+\[
+2x + 1 \leq (x + 3)^2
+\]
+
+Cela revient à résoudre l'inéquation :
+
+\[
+2x + 1 \leq (x + 3)^2 \quad \Leftrightarrow \quad 2x + 1 \leq x^2 + 6x + 9.
+\]
+
+En simplifiant, on obtient :
+
+\[
+0 \leq x^2 + 4x + 8.
+\]
+
+Cette inéquation est toujours vraie pour tout \( x \in \mathbb{R} \), donc elle est vérifiée pour tout \( x \geq -\frac{1}{2} \).
+
+\textbf{Conclusion :} L'ensemble des solutions est \( S = [-\frac{1}{2}; +\infty[ \).
+
+\textbf{\exemple}
+
+Résolvons l'inéquation \( \sqrt{x^{2}+3x-1} \leq x+2 \).
+
+\textbf{\solution}
+
+\begin{itemize}
+    \item \textbf{Étape 1 : Conditions de validité \( D_v \)}
+\end{itemize}
+
+L'inéquation est définie si \( x^{2} + 3x - 1 \geq 0 \) et \( x + 2 \geq 0 \).
+
+- \( x + 2 \geq 0 \) donne \( x \geq -2 \).
+
+- Pour \( x^{2} + 3x - 1 \geq 0 \), on trouve les racines du polynôme : \( x = -3.41 \) et \( x = 0.41 \).
+
+Le domaine de validité est donc \( D_v = [-2; +\infty[ \).
+
+\begin{itemize}
+    \item \textbf{Étape 2 : Résolution de l'inéquation}
+\end{itemize}
+
+On élève les deux membres de l'inéquation au carré :
+
+\[
+x^{2} + 3x - 1 \leq (x + 2)^{2}
+\]
+
+Cela revient à résoudre l'inéquation :
+
+\[
+x^{2} + 3x - 1 \leq (x + 2)^{2} \quad \Leftrightarrow \quad x^{2} + 3x - 1 \leq x^{2} + 4x + 4.
+\]
+
+En simplifiant, on obtient :
+
+\[
+0 \leq x + 5.
+\]
+
+Cette inéquation est vérifiée pour tout \( x \geq -5 \).
+
+\textbf{Conclusion :} L'ensemble des solutions est \( S = [-2; +\infty[ \), car il faut tenir compte des conditions initiales.
+
+
+
 \subsection*{\underline{\textbf{\textcolor{red}{3. Inéquations du type \( \sqrt{f(x)} \leq  \sqrt{g(x)} \) }}}}
 
 \section*{\underline{\textbf{\textcolor{red}{III. Systèmes}}}}
