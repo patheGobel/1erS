@@ -467,28 +467,28 @@ f(x) \geq 0 \\
 g(x) \geq 0 \\
 f(x) \geq g(x)^{2}
 \end{cases}
-\]
-
-**Explication :**  
-
-- **\( f(x) \geq 0 \)** : Comme la racine carrée \( \sqrt{f(x)} \) doit être définie, il est nécessaire que l'expression sous la racine soit positive ou nulle.
-
-- **\( g(x) \geq 0 \)** : La racine carrée étant toujours positive ou nulle, il faut également que \( g(x) = ax + b \) soit positive ou nulle.
-
-- **\( f(x) \geq g(x)^2 \)** : En élevant les deux membres de l'inéquation au carré, on obtient \( f(x) \geq g(x)^2 \).
-
-En simplifiant, on obtient :
-
-\[
-\Leftrightarrow \begin{cases}
-g(x) \geq 0 \\
-f(x) \geq g(x)^{2}
+\textbf{ ou }
+\begin{cases}
+f(x) \geq 0 \\
+g(x) \leq 0
 \end{cases}
 \]
 
 **Explication :**  
 
-La condition \( f(x) \geq 0 \) devient souvent implicite, car si \( f(x) \geq g(x)^2 \) et que \( g(x) \geq 0 \), alors \( f(x) \) est automatiquement positif ou nul.
+- **\( f(x) \geq 0 \)** : Comme la racine carrée \( \sqrt{f(x)} \) doit être définie, il est nécessaire que
+
+ l'expression sous la racine soit positive ou nulle.
+
+- **\( g(x) \geq 0 \)** : La racine carrée étant toujours positive ou nulle, il faut également que 
+
+\( g(x) = ax + b \) soit positive ou nulle.
+
+- **\( f(x) \geq g(x)^2 \)** : En élevant les deux membres de l'inéquation au carré, on obtient 
+
+\( f(x) \geq g(x)^2 \).
+
+En simplifiant, on obtient :
 
 \textbf{\exemple}
 
@@ -496,87 +496,85 @@ Résolvons l'inéquation \( \sqrt{2x+1} \geq x+3 \).
 
 \textbf{\solution}
 
-\begin{itemize}
-    \item \textbf{Étape 1 : Conditions de validité \( D_v \)}
-\end{itemize}
-
-L'inéquation est définie si \( 2x + 1 \geq 0 \) et \( x + 3 \geq 0 \).
-
-- \( 2x + 1 \geq 0 \) donne \( x \geq -\frac{1}{2} \).
-
-- \( x + 3 \geq 0 \) donne \( x \geq -3 \).
-
-Le domaine de validité de l'inéquation est donc \( D_v = [-\frac{1}{2}; +\infty[ \).
-
-\begin{itemize}
-    \item \textbf{Étape 2 : Résolution de l'inéquation}
-\end{itemize}
-
-On élève les deux membres de l'inéquation au carré :
 
 \[
-2x + 1 \geq (x + 3)^2
+\textbf{Posons }
+S_{1}:
+\begin{cases} 
+f(x) \geq 0 \\
+g(x) \geq 0 \\
+f(x) \geq g(x)^{2}
+\end{cases}
+\textbf{Posons }
+S_{2}:
+\begin{cases}
+f(x) \geq 0 \\
+g(x) \leq 0
+\end{cases}
 \]
 
-Cela revient à résoudre l'inéquation :
+Ce qui correspond à :
 
 \[
-2x + 1 \geq (x + 3)^2 \quad \Leftrightarrow \quad 2x + 1 \geq x^2 + 6x + 9.
+\textbf{Posons }
+S_{1}:
+\begin{cases} 
+2x + 1 \geq 0 \\
+x + 3 \geq 0 \\
+2x + 1 \geq x + 3
+\end{cases}
+\textbf{Posons }
+S_{2}:
+\begin{cases}
+2x + 1 \geq 0 \\ \\
+x + 3 \leq 0 
+\end{cases}
 \]
 
-En simplifiant, on obtient :
+\underline{Résolvons \( S_1 \)} :
+
+1. \( 2x + 1 \geq 0 \) :  
+   \( x \geq -\frac{1}{2} \).
+
+2. \( x + 3 \geq 0 \) :  
+   \( x \geq -3 \).
+
+3. \( 2x + 1 \geq (x + 3)^2 \) :  
+   Développons \( (x + 3)^2 \) :  
+   \[
+   (x + 3)^2 = x^2 + 6x + 9.
+   \]
+   Nous obtenons l'inéquation suivante :  
+   \[
+   2x + 1 \geq x^2 + 6x + 9.
+   \]
+   Cela revient à résoudre :
+   \[
+   0 \geq x^2 + 4x + 8.
+   \]
+   Le discriminant de \( x^2 + 4x + 8 \) est :
+   \[
+   \Delta = 4^2 - 4 \times 1 \times 8 = 16 - 32 = -16.
+   \]
+   Comme le discriminant est négatif, cette équation n'a pas de solution réelle. Ainsi, il n'existe aucune valeur de \( x \) pour laquelle \( 2x + 1 \geq (x + 3)^2 \).
 
 \[
-0 \geq x^2 + 4x + 8,
+S_1 = \varnothing.
 \]
 
-qui n'admet pas de solution réelle, car un polynôme de la forme \( x^2 + 4x + 8 \) est toujours strictement positif.
+\underline{Résolvons \( S_2 \)} :
 
-\textbf{Conclusion :} Il n'y a pas de solution pour cette inéquation.
+1. \( 2x + 1 \geq 0 \) :  
+   \( x \geq -\frac{1}{2} \).
 
-\textbf{\exemple}
+2. \( x + 3 \leq 0 \) :  
+   \( x \leq -3 \).
 
-Résolvons l'inéquation \( \sqrt{x^{2}+3x-1} \geq x+2 \).
-
-\textbf{\solution}
-
-\begin{itemize}
-    \item \textbf{Étape 1 : Conditions de validité \( D_v \)}
-\end{itemize}
-
-L'inéquation est définie si \( x^{2} + 3x - 1 \geq 0 \) et \( x + 2 \geq 0 \).
-
-- \( x + 2 \geq 0 \) donne \( x \geq -2 \).
-
-- Pour \( x^{2} + 3x - 1 \geq 0 \), on trouve les racines du polynôme : \( x = -3.41 \) et \( x = 0.41 \).
-
-Le domaine de validité est donc \( D_v = [-2; +\infty[ \).
-
-\begin{itemize}
-    \item \textbf{Étape 2 : Résolution de l'inéquation}
-\end{itemize}
-
-On élève les deux membres de l'inéquation au carré :
+Les deux conditions \( x \geq -\frac{1}{2} \) et \( x \leq -3 \) sont contradictoires, donc :
 
 \[
-x^{2} + 3x - 1 \geq (x + 2)^{2}
+S_2 = \varnothing.
 \]
-
-Cela revient à résoudre l'inéquation :
-
-\[
-x^{2} + 3x - 1 \geq (x + 2)^{2} \quad \Leftrightarrow \quad x^{2} + 3x - 1 \geq x^{2} + 4x + 4.
-\]
-
-En simplifiant, on obtient :
-
-\[
-0 \geq x + 5.
-\]
-
-Cette inéquation est vérifiée pour \( x \leq -5 \), mais comme le domaine de validité est \( D_v = [-2; +\infty[ \), il n'y a pas de solution réelle à cette inéquation.
-
-\textbf{Conclusion :} L'inéquation n'admet pas de solution réelle sur le domaine donné.
 
 \subsection*{\underline{\textbf{\textcolor{red}{3. Inéquations du type \( \sqrt{f(x)} \leq  \sqrt{g(x)} \) }}}}
 
