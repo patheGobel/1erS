@@ -577,8 +577,41 @@ S_2 = \varnothing.
 \]
 
 \subsection*{\underline{\textbf{\textcolor{red}{3. Inéquations du type \( \sqrt{f(x)} \leq  \sqrt{g(x)} \) }}}}
+On a : $\sqrt{f(x)}\leq\sqrt{g(x)}\;\Leftrightarrow\;\left\lbrace\begin{array}{lll} f(x) \geq 0 \\ g(x)\geq 0\\ f(x)\leq g(x)\end{array}\right.$
+
+\textbf{\exemple}
+
+Résoudre dans $\mathbb{R}\;\sqrt{x^{2}-4x}\leq\sqrt{x+7}$.
+
+\textbf{\solution}
+
+$\begin{array}{rcl} \sqrt{x^{2}-4x}\leq\sqrt{x+7} & \Leftrightarrow & \left\lbrace\begin{array}{rcl} x^{2}-4x&\geq&0 \\ x+7&\geq&0 \\ (\sqrt{x^{2}-4x})^{2}&\leq&(\sqrt{x+7})^{2} \end{array}\right. \\ \\ & \Leftrightarrow & \left\lbrace\begin{array}{rcl} x(x-4)&\geq&0 \\ x&\geq&-7 \\ x^{2}-4x&\leq&x+7 \end{array}\right. \\ \\ & \Leftrightarrow & \left\lbrace\begin{array}{lll} x\in\;(]-\infty\;;\ 0]\cup[4\;;\ +\infty[)\cap[-7\;;\ +\infty[ \\ x^{2}-5x-7\leq 0 \end{array}\right. \\ \\  & \Leftrightarrow & \left\lbrace\begin{array}{lll} x\in\;D_{E}=]-7\;;\ 0]\cup[4\;;\ +\infty[ \\ x^{2}-5x-7\leq 0 \end{array}\right. \end{array}$
+
+Soit l'équation $x^{2}-5x-7=0$
+
+On a : $\Delta=25+28=53\;\Rightarrow\;\sqrt{\Delta}=\sqrt{53}.$
+
+Soient $x_{1}$ et $x_{2}$ les solutions distinctes de $x^{2}-5x-7=0$.
+
+Alors, $x_{1}=\dfrac{5-\sqrt{53}}{2}\ $ et $\ x_{2}=\dfrac{5+\sqrt{53}}{2}$
+
+Ainsi, sans aucune contrainte, l'inéquation $x^{2}-5x-7\leq 0$ admettra comme solution $S_{1}=[x_{1}\;;\ x_{2}]$
+
+$$\begin{array}{|c|lclclclclcr|} \hline x & -7 & & x_{1} &  & 0 &  & 4 & & x_{2} & & +\infty \\ \hline x^{2}-4x & & + & | & + & 0 & - & 0 & + &|& + & \\ \hline x^{2}-5x-7 &  & + & 0 & - & | & - & | & - & 0 & + & \\ \hline S &  & + & 0 & (-) & | & + & |& (-) & 0 & + & \\ \hline \end{array}$$
+
+Donc en tenant compte des conditions initiales, l'ensemble des solutions du problème sera donné par $$S=S_{1}\cap D_{E}=[x_{1}\;;\ 0]\cup[4\;;\ x_{2}]$$
+
+$\centerdot\ \ \sqrt{f(x)}\geq g(x)$
+
+On a : $\sqrt{f(x)}\geq g(x)\;\Leftrightarrow\;\left\lbrace\begin{array}{lll} g(x)\geq 0\\ f(x)\geq (g(x))^{2} \end{array}\right.\quad\text{ou}\quad\left\lbrace\begin{array}{lll} f(x)\geq 0 \\ g(x)&lt; 0\end{array}\right.$
+
+Donc, on obtient deux solutions $S_{1}$ et $S_{2}.$
+
+Ainsi, la solution finale est donnée par $S=S_{1}\cup S_{2}.$
+
 
 \textbf{\exerciceapp}
+
 Résoudre dans \( \mathbb{R} \)
 
 \begin{itemize}
@@ -587,12 +620,52 @@ Résoudre dans \( \mathbb{R} \)
 \item \( \sqrt{x+3} \leq \sqrt{-2x+4} \)
 \item \( \sqrt{x^{2}-4} \leq x+1 \)
 \item \( \sqrt{x^{2}+2x -3} \leq x-2 \)
+\item \( \sqrt{x^{2}-6x}=\sqrt{x-6} \)
 \end{itemize}
 \textbf{\correction}
 \section*{\underline{\textbf{\textcolor{red}{III. Systèmes}}}}
 \subsection*{\underline{\textbf{\textcolor{red}{1. Systèmes de 3 équations linéaires à trois inconnues}}}}
-\subsubsection*{\underline{\textbf{\textcolor{red}{a. Exemple}}}}
+
+Le système 
+\[
+\begin{cases}
+a_1x + b_1y + c_1z = d_1 \\
+a_2x + b_2y + c_2z = d_2 \\
+a_3x + b_3y + c_3z = d_3
+\end{cases}
+\]
+est formé de trois équations. Chacune d’elle contient trois inconnues \(x\), \(y\) et \(z\) avec des exposants tous égaux à 1. On dit qu’on a un système de trois équations linéaires à trois inconnues \(x\), \(y\) et \(z\).
+
+Résoudre un tel système c’est trouver tous les triplets \((x, y, z)\) de nombres réels qui vérifient les trois équations du système.
+
+\subsubsection*{\underline{\textbf{\textcolor{red}{ Exemple }}}}
+
+Exemple de système :
+
+\[
+\begin{cases}
+2x + y - z = 3 \\
+x - 2y + 3z = -4 \\
+3x + y + 2z = 7
+\end{cases}
+\]
+
+\subsubsection*{\underline{\textbf{\textcolor{red}{Exemple de système triangulaire}}}}
+
+Un système triangulaire supérieur est un système d'équations où chaque équation contient une inconnue de moins que la précédente, formant un triangle.
+
+\[
+\begin{cases}
+2x + 3y - z = 5 \\
+0 \cdot x + y + 4z = -2 \\
+0 \cdot x + 0 \cdot y + z = 3
+\end{cases}
+\]
+
+Dans ce système, la dernière équation contient seulement \( z \), ce qui permet de le résoudre directement, puis de remonter en substituant dans les équations précédentes pour obtenir \( y \) et \( x \).
+
 \subsubsection*{\underline{\textbf{\textcolor{red}{b. Méthode du pivot de Gauss }}}}
+
 \subsection*{\underline{\textbf{\textcolor{red}{2. Systèmes d’inéquations linéaires }}}}
 \subsubsection*{\underline{\textbf{\textcolor{red}{a. Inéquations linéaires à deux inconnues}}}}
 \subsubsection*{\underline{\textbf{\textcolor{red}{b. Système de deux inéquations linéaires à deux inconnues }}}}
