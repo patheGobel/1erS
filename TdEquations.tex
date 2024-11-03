@@ -1,0 +1,93 @@
+\documentclass[12pt]{article}
+\usepackage{lmodern} % Pour une police plus nette
+\usepackage{stmaryrd}
+\usepackage{graphicx} % Pour l'insertion d'images
+\usepackage{float}    % Pour contrôler précisément le placement
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{verbatim}
+\usepackage{color, soul}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18} % Version plus récente de pgfplots
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+%\author{Destiné aux élèves de Terminale S\\Lycée de Dindéfelo\\Présenté par M. BA}
+%\title{\textbf{Rappels et compléments sur les fonctions numériques}}
+%\date{\today}
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+% Commande pour la couleur d'accentuation
+\newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\usepackage[margin=2.5cm]{geometry} % Ajustement des marges
+\usepackage{eso-pic} % Pour ajouter des éléments en arrière-plan
+
+% Commande pour ajouter du texte en arrière-plan, centré au milieu de chaque page
+\AddToShipoutPicture{
+    \AtPageCenter{%
+        \makebox(0,0)[c]{\rotatebox{60}{\textcolor[gray]{0.9}{\fontsize{2cm}{2cm}\selectfont Pathé Gobel BA}}}
+    }
+}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+\raggedright
+\textbf{Ministère de l'Éducation Nationale}\\
+Inspection Académique de Kédougou\\
+Lycée Dindéfelo\\
+Cellule de Mathématiques
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\raggedleft
+\textbf{Année scolaire 2024-2025}\\
+Date : 03/10/2024\\
+Classe : 1er S2\\
+Professeur : M. BA
+\end{minipage}
+
+\vspace{1cm}
+\section*{Exercice 1}
+\begin{enumerate}
+\item Résoudre dans \( \mathbb{R} \) les équations et inéquations suivantes :
+
+\[ \text{a)} \sqrt{2x-1}-\sqrt{x-5} = 0    \quad\quad;\quad\quad   \text{b)} \sqrt{4x^{2}+x+5}=\sqrt{2x+1} \]
+
+\[ \text{c)} \sqrt{-x^{2}+x+1} \leq x-2 = 0    \quad\quad;\quad\quad   \text{d)} \sqrt{x^{2}+6x+6} \geq 2x+1 \]
+
+\end{enumerate}
+\section*{Exercice 2}
+\begin{enumerate}
+\item Soit \( m \) un nombre réel. On considère l’équation d’inconnue \( x \) :
+
+\( E \) \( (x+3)x^{2} +2mx + m + 5 = 0\)
+\item[a)] Discuter suivant les valeurs de \( m \), l’existence, le nombre et le signe des racines de \( (E) \) 
+
+Dans le cas où \( (E) \) admet deux racines distinctes \( x_{2} \) et \( x_{2} \) , peut-on déterminer \( m \) pour que:
+
+\( ( 2x_{1} - 1 ) (2x_{2}-1) = 6 \) puis \( x_{1}^{2} + x_{2}^{2} = 2 \)
+
+\item[b)]Trouver une relation indépendante de \( m \) entre\( x_{2} \) et \( x_{2} \)
+\item[c)]Utiliser cette relation pour trouver les racines doubles de \( (E) \), lorsqu’elles existent
+\end{enumerate}
+\section*{Exercice 3}
+\begin{enumerate}
+\item Résoudre dans \( \mathbb{R}^{2} \) par le pivot de Gauss le système \( \begin{cases} 27x + 9y + 3z = -18\\ -x + y -z = 2\\ x + y + z = -8 \end{cases}\)
+\end{enumerate}
+\section*{Exercice 4}
+\begin{enumerate}
+\item Soit le polynôme de degré 3 tel que \( P(0) = 8 \) ; \( P(1) = 0 \) ; \( P(3) = -10 \) et \( P(-1) = 10 \).
+\begin{enumerate}
+\item Montrer que \( P(x) = x^{3} - 3x^{2} - 6x + 8 \).
+\item Résoudre dans \( \mathbb{R} \) \( P(x) = 0 \).
+\item Résoudre dans \( \mathbb{R} \) \( P(x) = \sqrt{x+3}-x = 0\).
+\end{enumerate}
+\end{enumerate}
+\end{document}
