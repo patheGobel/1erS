@@ -1,0 +1,89 @@
+\documentclass{article}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{verbatim}
+
+\usepackage{color, soul}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\author{Destinés à la 1\textsuperscript{ère}S2\\Au Lycée de Dindéferlo}
+\title{\textbf{Barycentre}}
+\date{\today}
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+
+% Commande pour la couleur d'accentuation
+\newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\begin{document}
+\maketitle
+\newpage
+
+\section*{\underline{\textbf{\textcolor{red}{I.Barycentre de plusieurs points}}}}
+	La notion de barycentre de $2$ ou $3$ points pondérés, étudiée en Seconde, peut être étendue à $4$, $5$, $\ldots$, $n$ points. 
+	
+	Dans l'exposé qui suit, nous présentons les résultats avec $4$ points, mais ils restent valables avec un nombre quelconque de points.
+	
+	\subsection*{\underline{\textbf{\textcolor{red}{1) Théorème et définition}}}}
+	
+	Soient $\alpha$, $\beta$, $\gamma$ et $\delta$ des réels dont la somme n'est pas nulle (i.e. $\alpha+\beta+\gamma+\delta)\neq 0$ et $A$, $B$, $C$, $D$ des points du plan. 
+	
+	Il existe un point unique $G$ tel que :
+	
+	$$\alpha\overrightarrow{GA}+\beta\overrightarrow{GB}+\gamma\overrightarrow{GC}+\delta\overrightarrow{GD}=\overrightarrow{0}\quad(1)$$
+	
+	Le point $G$ défini par la relation $(1)$ est appelé barycentre du système de points pondérés ${(A\;,\ \alpha)\ ;\ (B\;,\ \beta)\ ;\ (C\;,\ \gamma)\ ;\ (D\;,\ \delta)}.$
+	
+	Démonstration :
+	
+	$\begin{array}{rcl} \alpha\overrightarrow{GA}+\beta\overrightarrow{GB}+\gamma\overrightarrow{GC}+\delta\overrightarrow{GD}=\vec{0} & \Leftrightarrow & \alpha\overrightarrow{GA}+\beta\left(\overrightarrow{GA}+\overrightarrow{AB}\right)+\gamma\left(\overrightarrow{GA}+\overrightarrow{AC}\right)+\delta\left(\overrightarrow{GA}+\overrightarrow{AD}\right)=\vec{0}\\\\ & \Leftrightarrow & (\alpha+\beta+\gamma+\delta)\overrightarrow{GA}+\beta\overrightarrow{AB}+\gamma\overrightarrow{AC}+\delta\overrightarrow{AD}=\overrightarrow{0}\\\\ & \Leftrightarrow & (\alpha+\beta+\gamma+\delta)\overrightarrow{AG}=\beta\overrightarrow{AB}+\gamma\overrightarrow{AC}+\delta\overrightarrow{AD}\\\\ & \Leftrightarrow & \overrightarrow{AG}=\dfrac{\beta}{\alpha+\beta+\gamma+\delta}\overrightarrow{AB}+\dfrac{\gamma}{\alpha+\beta+\gamma+\delta}\overrightarrow{AC}+\dfrac{\delta} {\alpha+\beta+\gamma+\delta}\overrightarrow{AD}\quad(2)\end{array}$
+	
+	Car, par hypothèse la somme $(\alpha+\beta+\gamma+\delta)$ n'est pas nulle.
+	
+	Soit $\overrightarrow{V}$ le vecteur au second membre de $(2).$
+	
+	$\overrightarrow{V}$ est un vecteur fixe puisque $A$, $B$, $C$, $D$ et $\alpha$, $\beta$, $\gamma$ et $\delta$ sont donnés.
+	
+	D'après l'Axiome d'EUCLIDE, cf. paragraphe 1, il existe un unique point $G$ tel que :
+	
+	$$\overrightarrow{AG}=\overrightarrow{V}$$
+	
+	N.B.
+
+	La relation $(2)$ de la démonstration précédente permet de construire vectoriellement le barycentre de plusieurs points.
+
+	On a aussi les relations analogues :
+	
+		$\overrightarrow{BG}=\dfrac{\alpha}{\alpha+\beta+\gamma+\delta}\overrightarrow{BA}+\dfrac{\gamma}{\alpha+\beta+\gamma+\delta}\overrightarrow{BC}+\dfrac{\delta}{\alpha+\beta+\gamma+\delta}\overrightarrow{BD}$
+		
+		$\overrightarrow{CG}=\dfrac{\alpha}{\alpha+\beta+\gamma+\delta}\overrightarrow{CA}+\dfrac{\beta}{\alpha+\beta+\gamma+\delta}\overrightarrow{CB}+\dfrac{\delta}{\alpha+\beta+\gamma+\delta}\overrightarrow{CD}$
+		
+		\subsection*{\underline{\textbf{\textcolor{red}{2) Homogénéité du barycentre}}}}
+		
+		Le barycentre de plusieurs points reste inchangé lorsqu'on multiplie tous les coefficients par un même nombre non nul.
+		
+		En effet soit $G$ le barycentre du système ${(A\;,\ \alpha)\ ;\ (B\;,\ \beta)\ ;\ (C\;,\ \gamma)\ ;\ (D\;,\ \delta)}$ et $k$ un réel non nul. 
+\begin{align*}
+\alpha\overrightarrow{GA}+\beta\overrightarrow{GB}+\gamma\overrightarrow{GC}+\delta\overrightarrow{GD}=\vec{0}& \Leftrightarrow \alpha\overrightarrow{GA}+\beta\left(\overrightarrow{GA}+\overrightarrow{AB}\right)+\gamma\left(\overrightarrow{GA}+\overrightarrow{AC}\right)+\delta\left(\overrightarrow{GA}+\overrightarrow{AD}\right)=\vec{0} \\
+&\Leftrightarrow (\alpha+\beta+\gamma+\delta)\overrightarrow{GA}+\beta\overrightarrow{AB}+\gamma\overrightarrow{AC}+\delta\overrightarrow{AD}=\overrightarrow{0} \\
+& \Leftrightarrow (\alpha+\beta+\gamma+\delta)\overrightarrow{AG}=\beta\overrightarrow{AB}+\gamma\overrightarrow{AC}+\delta\overrightarrow{AD} \\
+& \Leftrightarrow (\alpha+\beta+\gamma+\delta)\overrightarrow{AG}=\beta\overrightarrow{AB}+\gamma\overrightarrow{AC}+\delta\overrightarrow{AD} \\
+& \Leftrightarrow (\alpha+\beta+\gamma+\delta)\overrightarrow{AG}=\beta\overrightarrow{AB}+\gamma\overrightarrow{AC}+\delta\overrightarrow{AD} \\
+& \Leftrightarrow \overrightarrow{AG}=\dfrac{\beta}{\alpha+\beta+\gamma+\delta}\overrightarrow{AB}+\dfrac{\gamma}{\alpha+\beta+\gamma+\delta}\overrightarrow{AC}+\dfrac{\delta} {\alpha+\beta+\gamma+\delta}\overrightarrow{AD}
+\end{align*}
+			Et la somme $(k\alpha+k\beta+k\gamma+k\delta)=k(\alpha+\beta+\gamma+\delta)$ est non nulle par hypothèse. 		
+		Donc $G$ est aussi le barycentre du système ${(A\;,\ k\alpha)\ ;\ (B\;,\ k\beta)\ ;\ (C\;,\ k\gamma)\ ;\ (D\;,\ k\delta)}.$
+\end{document}
