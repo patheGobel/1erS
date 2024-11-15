@@ -36,22 +36,30 @@
 	La notion de barycentre de $2$ ou $3$ points pondérés, étudiée en Seconde, peut être étendue à $4$, $5$, $\ldots$, $n$ points. 
 	
 	Dans l'exposé qui suit, nous présentons les résultats avec $4$ points, mais ils restent valables avec un nombre quelconque de points.
+	\subsection*{\underline{\textbf{\textcolor{red}{1) Barycentre de 3 points }}}}
+	Soient $(A\;,\ \alpha)\ ;\ (B\;,\ \beta)\ et \ (C\;,\ \gamma).$ 3 points pondérés avec $\alpha$, $\beta$ et $\gamma$ des réels tels que $\alpha+\beta+\gamma\neq 0$. Le barycentre du système: $(A\;,\ \alpha)\ ;\ (B\;,\ \beta)\ et \ (C\;,\ \gamma).$ est l'unique point $G$ du plan tel que $$\alpha\overrightarrow{GA}+\beta\overrightarrow{GB}+\gamma\overrightarrow{GC}=\overrightarrow{0}\quad$$
+
+On note  $G=bar||||$
+
+\textbf{NB} Pour la contruction on utilise la relation $$\overrightarrow{AG}=\dfrac{\beta}{\alpha+\beta+\gamma}\overrightarrow{AB}+\dfrac{\gamma}{\alpha+\beta+\gamma}\overrightarrow{AC}$$
+
+\textbf{Exemple 1}
+
+Contruire $G=\{(A\;,\ 2)\ ;\ (B\;,\ -1)\ ;\ (C\;,\ 2) \}.$
+
+	\subsection*{\underline{\textbf{\textcolor{red}{2) Barycentre de 4 points }}}}
 	
-	\subsection*{\underline{\textbf{\textcolor{red}{1) Théorème et définition}}}}
+	Soient $\alpha$, $\beta$, $\gamma$ et $\delta$ des réels tel que $\alpha+\beta+\gamma+\delta\neq 0$ et $A$, $B$, $C$, $D$ des points du plan. 
 	
-	Soient $\alpha$, $\beta$, $\gamma$ et $\delta$ des réels dont la somme n'est pas nulle (i.e. $\alpha+\beta+\gamma+\delta)\neq 0$ et $A$, $B$, $C$, $D$ des points du plan. 
-	
-	Il existe un point unique $G$ tel que :
+	Il existe un unique point $G$ tel que :
 	
 	$$\alpha\overrightarrow{GA}+\beta\overrightarrow{GB}+\gamma\overrightarrow{GC}+\delta\overrightarrow{GD}=\overrightarrow{0}\quad(1)$$
+	$$\overrightarrow{AG}=\dfrac{\beta}{\alpha+\beta+\gamma+\delta}\overrightarrow{AB}+\dfrac{\gamma}{\alpha+\beta+\gamma+\delta}\overrightarrow{AC}+\dfrac{\delta} {\alpha+\beta+\gamma+\delta}\overrightarrow{AD}\quad(2)$$
+	Le point $G$ est appelé barycentre du système de points pondérés ${(A\;,\ \alpha)\ ;\ (B\;,\ \beta)\ ;\ (C\;,\ \gamma)\ ;\ (D\;,\ \delta)}.$
 	
-	Le point $G$ défini par la relation $(1)$ est appelé barycentre du système de points pondérés ${(A\;,\ \alpha)\ ;\ (B\;,\ \beta)\ ;\ (C\;,\ \gamma)\ ;\ (D\;,\ \delta)}.$
-	
-	Démonstration :
+	Démonstration du passage de (1) à (2):
 	
 	$\begin{array}{rcl} \alpha\overrightarrow{GA}+\beta\overrightarrow{GB}+\gamma\overrightarrow{GC}+\delta\overrightarrow{GD}=\vec{0} & \Leftrightarrow & \alpha\overrightarrow{GA}+\beta\left(\overrightarrow{GA}+\overrightarrow{AB}\right)+\gamma\left(\overrightarrow{GA}+\overrightarrow{AC}\right)+\delta\left(\overrightarrow{GA}+\overrightarrow{AD}\right)=\vec{0}\\\\ & \Leftrightarrow & (\alpha+\beta+\gamma+\delta)\overrightarrow{GA}+\beta\overrightarrow{AB}+\gamma\overrightarrow{AC}+\delta\overrightarrow{AD}=\overrightarrow{0}\\\\ & \Leftrightarrow & (\alpha+\beta+\gamma+\delta)\overrightarrow{AG}=\beta\overrightarrow{AB}+\gamma\overrightarrow{AC}+\delta\overrightarrow{AD}\\\\ & \Leftrightarrow & \overrightarrow{AG}=\dfrac{\beta}{\alpha+\beta+\gamma+\delta}\overrightarrow{AB}+\dfrac{\gamma}{\alpha+\beta+\gamma+\delta}\overrightarrow{AC}+\dfrac{\delta} {\alpha+\beta+\gamma+\delta}\overrightarrow{AD}\quad(2)\end{array}$
-	
-	Car, par hypothèse la somme $(\alpha+\beta+\gamma+\delta)$ n'est pas nulle.
 	
 	Soit $\overrightarrow{V}$ le vecteur au second membre de $(2).$
 	
@@ -61,7 +69,7 @@
 	
 	$$\overrightarrow{AG}=\overrightarrow{V}$$
 	
-	N.B.
+	\textbf{N.B}
 
 	La relation $(2)$ de la démonstration précédente permet de construire vectoriellement le barycentre de plusieurs points.
 
@@ -76,14 +84,174 @@
 		Le barycentre de plusieurs points reste inchangé lorsqu'on multiplie tous les coefficients par un même nombre non nul.
 		
 		En effet soit $G$ le barycentre du système ${(A\;,\ \alpha)\ ;\ (B\;,\ \beta)\ ;\ (C\;,\ \gamma)\ ;\ (D\;,\ \delta)}$ et $k$ un réel non nul. 
-\begin{align*}
-\alpha\overrightarrow{GA}+\beta\overrightarrow{GB}+\gamma\overrightarrow{GC}+\delta\overrightarrow{GD}=\vec{0}& \Leftrightarrow \alpha\overrightarrow{GA}+\beta\left(\overrightarrow{GA}+\overrightarrow{AB}\right)+\gamma\left(\overrightarrow{GA}+\overrightarrow{AC}\right)+\delta\left(\overrightarrow{GA}+\overrightarrow{AD}\right)=\vec{0} \\
-&\Leftrightarrow (\alpha+\beta+\gamma+\delta)\overrightarrow{GA}+\beta\overrightarrow{AB}+\gamma\overrightarrow{AC}+\delta\overrightarrow{AD}=\overrightarrow{0} \\
-& \Leftrightarrow (\alpha+\beta+\gamma+\delta)\overrightarrow{AG}=\beta\overrightarrow{AB}+\gamma\overrightarrow{AC}+\delta\overrightarrow{AD} \\
-& \Leftrightarrow (\alpha+\beta+\gamma+\delta)\overrightarrow{AG}=\beta\overrightarrow{AB}+\gamma\overrightarrow{AC}+\delta\overrightarrow{AD} \\
-& \Leftrightarrow (\alpha+\beta+\gamma+\delta)\overrightarrow{AG}=\beta\overrightarrow{AB}+\gamma\overrightarrow{AC}+\delta\overrightarrow{AD} \\
-& \Leftrightarrow \overrightarrow{AG}=\dfrac{\beta}{\alpha+\beta+\gamma+\delta}\overrightarrow{AB}+\dfrac{\gamma}{\alpha+\beta+\gamma+\delta}\overrightarrow{AC}+\dfrac{\delta} {\alpha+\beta+\gamma+\delta}\overrightarrow{AD}
-\end{align*}
-			Et la somme $(k\alpha+k\beta+k\gamma+k\delta)=k(\alpha+\beta+\gamma+\delta)$ est non nulle par hypothèse. 		
-		Donc $G$ est aussi le barycentre du système ${(A\;,\ k\alpha)\ ;\ (B\;,\ k\beta)\ ;\ (C\;,\ k\gamma)\ ;\ (D\;,\ k\delta)}.$
+
+On a :
+
+$\begin{array}{rcl} \alpha\overrightarrow{GA}+\beta\overrightarrow{GB}+\gamma\overrightarrow{GC}+\delta\overrightarrow{GD}=\vec{0}&\Rightarrow & k\left(\alpha\overrightarrow{GA}+\beta\overrightarrow{GB}+\gamma\overrightarrow{GC}\delta\overrightarrow{GD}\right)=\vec{0}\\\\&\Rightarrow & (k\alpha)\overrightarrow{GA}+(k\beta)\overrightarrow{GB}+(k\gamma)\overrightarrow{GC}+(k\delta)\overrightarrow{GD}=\vec{0}\end{array}$
+
+Et la somme $(k\alpha+k\beta+k\gamma+k\delta)=k(\alpha+\beta+\gamma+\delta)$ est non nulle par hypothèse.
+
+Donc $G$ est aussi le barycentre du système ${(A\;,\ k\alpha)\ ;\ (B\;,\ k\beta)\ ;\ (C\;,\ k\gamma)\ ;\ (D\;,\ k\delta)}.$
+
+Cas particulier :
+
+Si tous les coefficients sont égaux et non nuls (i.e. $\alpha=\beta=\gamma=\delta$ et $\alpha\neq 0)$, le barycentre du système ${(A\;,\ \alpha)\ ;\ (B\;,\ \alpha)\ ;\ (C\;,\ \alpha)\ ;\ (D\;,\ \alpha)}$ est aussi celui de ${(A\;,\ 1)\ ;\ (B\;,\ 1)\ ;\ (C\;,\ 1)\ ;\ (D\;,\ 1)}.$
+
+\textbf{N.B.} : Selon la configuration des points du système, le barycentre se situe :
+\begin{itemize}
+    \item au milieu du segment \([AB]\), dans le cas d'un système de deux points distincts ;
+    \item au centre de gravité du triangle \(\triangle ABC\), dans le cas d'un système de trois points non alignés ;
+    \item au point de concours des diagonales, dans le cas d'un système de quatre points formant un parallélogramme.
+\end{itemize}
+\subsection*{\underline{\textbf{\textcolor{red}{3) Réduction du vecteur}}}}
+$\overrightarrow{V_{M}}=\alpha\overrightarrow{MA}+\beta\overrightarrow{MB}+\gamma\overrightarrow{MC}+\delta\overrightarrow{MD}$, $M$ point quelconque du plan
+
+\textbf{$1^{er}$ cas :} Si $(\alpha+\beta+\gamma+\delta)\neq 0$ :
+
+Alors $G$ le barycentre du système ${(A\;,\ \alpha)\ ;\ (B\;,\ \beta)\ ;\ (C\;,\ \gamma)\ ;\ (D\;,\ \delta)}.$
+
+$G$ existe d'après le théorème du 1)
+
+On peut écrire d'après la relation de CHASLES :
+
+$\begin{array}{rcl}\overrightarrow{V_{M}}&=&\alpha\left(\overrightarrow{MG}+\overrightarrow{GA}\right)+\beta\left(\overrightarrow{MG}+\overrightarrow{GB}\right)+\gamma\left(\overrightarrow{MG}+\overrightarrow{GC}\right)+\delta\left(\overrightarrow{MG}+\overrightarrow{GD}\right)\\ \\&=&(\alpha+\beta+\gamma+\delta)\overrightarrow{MG}+\underbrace{\alpha\overrightarrow{GA}+\beta\overrightarrow{GB}+\gamma\overrightarrow{GC}+\delta\overrightarrow{GD}}_{=\overrightarrow{0}\text{ par définition de }G}\end{array}$
+
+Ainsi, dans ce cas, le vecteur $\overrightarrow{V_{M}}$ se réduit à :
+
+$$\overrightarrow{V_{M}}=(\alpha+\beta+\gamma+\delta)\overrightarrow{MG}.$$
+
+On retiendra que : si le système ${(A\;,\ \alpha)\ ;\ (B\;,\ \beta)\ ;\ (C\;,\ \gamma)\ ;\ (D\;,\ \delta)}$ a un barycentre, alors pour tout point $M$ du plan, on a :
+
+$$\alpha\overrightarrow{MA}+\beta\overrightarrow{MB}+\gamma\overrightarrow{MC}+\delta\overrightarrow{MD}=(\alpha+\beta+\gamma+\delta)\overrightarrow{MG}$$
+
+\textbf{$2^{er}$ cas :} Si $(\alpha+\beta+\gamma+\delta)=0$ :
+
+Soit $N$ un autre point du plan.
+
+On peut écrire :
+
+$\begin{array}{rcl}\overrightarrow{V_{M}}&=&\alpha\left(\overrightarrow{MN}+\overrightarrow{NA}\right)+\beta\left(\overrightarrow{MN}+\overrightarrow{NB}\right)+\gamma\left(\overrightarrow{MN}+\overrightarrow{NC}\right)+\delta\left(\overrightarrow{MN}+\overrightarrow{ND}\right)\\ \\&=&\underbrace{(\alpha+\beta+\gamma+\delta)\overrightarrow{MN}}_{=\overrightarrow{0}\text{ car par hypothèse }(\alpha+\beta+\gamma+\delta)=0}+\underbrace{\alpha\overrightarrow{NA}+\beta\overrightarrow{NB}+\gamma\overrightarrow{NC}+\delta\overrightarrow{ND}}_{=\overrightarrow{V_{N}}}\end{array}$
+
+Ainsi, dans ce cas, si $M$ et $N$ sont deux points quelconques du plan, on a : $\overrightarrow{V_{M}}=\overrightarrow{V_{N}}.$
+
+Donc $\overrightarrow{V_{M}}$ est un vecteur constant.
+
+Il est égal, par exemple, à $\beta\overrightarrow{AB}+\gamma\overrightarrow{AC}+\delta\overrightarrow{AD}$ ($M$ remplacé par $A).$
+
+\subsection*{\underline{\textbf{\textcolor{red}{4) Associativité du barycentre}}}}
+Exemple :
+
+		Soient $A$, $B$, $C$, $D$ quatre points du plan et $G$ le barycentre du système
+
+		$$G=\{(A\;,\ -1)\ ;\ (B\;,\ 2)\ ;\ (C\;,\ -1)\ ;\ (D\;,\ 3)\}.$$
+		
+		$G$ existe car : $-1+2+(-1)+3=3\neq 0.$
+		
+		Les systèmes de $2$ points pondérés $G_{1}={(A\;,\ -1)\ ;\ (B\;,\ 2)}$ et $G_{2}={(C\;,\ -1)\ ;\ (D\;,\ 3)}$ ont aussi des barycentres que nous désignerons respectivement par $I$ et $J.$
+
+		D'après le paragraphe précédent 3), on a pour tout point $M$ du plan :
+		
+		$-\overrightarrow{MA}+2\overrightarrow{MB}=\overrightarrow{MI}\quad(1)\text{ et }-\overrightarrow{MC}+3\overrightarrow{MD}=2\overrightarrow{MJ}\quad(2).$
+		
+		Remplaçons $M$ par $G$ dans ces deux relations et faisons la somme membre à membre. 
+		
+		On obtient ainsi : 
+		
+		$\underbrace{-\overrightarrow{GA}+2\overrightarrow{GB}-\overrightarrow{GC}+3\overrightarrow{GD}}_{=\vec{0}\text{ par défition de }G}=\overrightarrow{GI}+2\overrightarrow{GJ}.$
+		
+		On en déduit que : 
+		
+		$\overrightarrow{GI}+2\overrightarrow{GJ}=\vec{0}$ et par conséquent $G$ est le barycentre du système $S'={(I\;,\ 1)\ ;\ (J\;,\ 2)}.$
+		
+		On notera que les coefficients $1$ et $2$ sont respectivement la somme des coefficients des systèmes $G_{1}$ et $G_{2}.$
+		
+		D'autre part, soit $K$ le barycentre du système $G_{3}={(B\;,\ 2)\ ;\ (C\;,\ -1)\ ;\ (D\;,\ 3)}.$
+		
+		Pour tout point $M$ du plan, on a, toujours d'après le paragraphe 3), $2\overrightarrow{MB}-\overrightarrow{MC}+3\overrightarrow{MD}=4\overrightarrow{MK}.$
+		
+		Remplaçant $M$ par $G$, on obtient : $2\overrightarrow{GB}-\overrightarrow{GC}+3\overrightarrow{GD}=\overrightarrow{GK}$ et si on ajoute le vecteur $-\overrightarrow{GA}$ aux deux membres de cette dernière égalité, on a :
+		
+		$\underbrace{-\overrightarrow{GA}+2\overrightarrow{GB}-\overrightarrow{GC}+2\overrightarrow{GD}}_{=\overrightarrow{0}\text{ par définition de }G}=-\overrightarrow{GA}+4\overrightarrow{GK}.$
+		
+		On en déduit que $G$ est aussi le barycentre du système $G''={(A\;,\ -1)\ ;\ (K\;,\ 4)}.$
+		
+		En généralisant ces calculs, on retiendra que dans la recherche du barycentre de plusieurs points, on peut regrouper certains d'entre eux et les remplacer par leur barycentre partiel affecté de la somme de leurs coefficients (pourvu que celle(ci ne soit pas nulle).
+		
+
+\subsection*{\underline{\textbf{\textcolor{red}{II. Géométrie analytique (droites et repères)}}}}
+		Une base du plan est un couple $(\vec{u}\;,\ \vec{v})$ de vecteurs non colinéaires.
+		
+		Le triplet $(O\;,\ \vec{u}\;,\ \vec{v})$ où $O$ est un point du plan et $(\vec{u}\;,\ \vec{v})$ une base est un repère cartésien du plan.
+		
+		Soit $(\vec{i}\;,\ \vec{j})$ une base du plan.
+		
+		Soit $\vec{u}$ un vecteur quelconque.
+		
+		Il existe un couple unique $(x\;,\ y)$ de réels tels que :
+		
+		$\vec{u}=x\vec{i}+y\vec{j}.$
+		
+		Ces réels $x$ et $y$ sont appelés coordonnées de $\vec{u}$ dans la base $(\vec{i}\;,\ \vec{j}).$
+		
+		Soit $(O\;,\ \vec{i}\;,\ \vec{j})$ un repère du plan.
+		
+		Soit $M$ un point quelconque.
+		
+		Il existe un couple unique $(x\;,\ y)$ de réels tels que :
+		
+		$\overrightarrow{OM}=x\vec{i}+y\vec{j}.$
+		
+		Ces réels $x$ et $y$ sont appelés coordonnées de $M$ dans le repère $(O\;,\ \vec{i}\;,\ \vec{j}).$
+		
+		
+		Condition de colinéarité :
+		
+		Soit $\vec{u}(x\;,\ y)$ et $\vec{v}(x'\;,\ y')$ dans une base $(\vec{i}\;,\ \vec{j}).$
+		
+		Alors $\vec{u}$ et $\vec{v}$ sont colinéaires si et seulement si $xy'-yx'=0$ $\ (\Leftrightarrow$ dét$(\vec{u}\;,\ \vec{v})=0).$
+		
+		Soit dans le plan $\mathcal{P}$ muni du repère $(O\;,\ \vec{i}\;,\ \vec{j})$ les points $A\left(x_{A}\;,\ y_{A}\right)$ et $B\left(x_{B}\;,\ y_{B}\right).$
+		
+		Alors $\overrightarrow{AB}$ a pour coordonnées $\overrightarrow{AB}\left(x_{B}-x_{A}\;,\ y_{B}-y_{A}\right)$ et le milieu $I$ du segment $[AB]$ a pour coordonnées $I\left(\dfrac{x_{A}+x_{B}}{2}\;;\ \dfrac{y_{A}+y_{B}}{2}\right).$
+		
+		Représentations analytique d'une droite
+		
+		Soit $(O\;,\ \vec{i}\;,\ \vec{j})$ un repère du plan.
+		
+		Soit $\mathcal{D}$ la droite passant par $A(x_{0}\;;\ y_{0})$ et de vecteur directeur $\overrightarrow{u}(\alpha\;,\ \beta).$
+		
+		Un point $M(x\;,\ y)$ appartient à $\mathcal{D}$ si et seulement si $\overrightarrow{AM}$ et $\overrightarrow{u}$ sont colinéaires , c'est-à-dire s'il existe un réel $t$ tel que : 
+		
+		$\overrightarrow{AM}=t\overrightarrow{AB}$, ce qui se traduit par le système suivant :
+		
+		$$\left\lbrace\begin{array}{lcl} x& =& x_{A}+t\alpha\\ \\ y& =& y_{A}+t\beta \end{array}\right.$$
+		
+		appelé système d'équations paramétriques de la droite $\mathcal{D}.$
+		
+		Soit $\mathcal{D}$ la droite passant par deux points $A$ et $B.$ 
+		
+		Un point $M(x\;,\ y)$ appartient à $\mathcal{D}$ si et seulement si $\overrightarrow{AM}$ et $\overrightarrow{AB}$ sont colinéaires, ce qui équivaut à dét $ \left(\overrightarrow{AM}\;,\ \overrightarrow{AB}\right)=0$ et se traduit par une relation de la forme : 
+		
+		$ax+by+c=0$ appelé équation cartésienne de la droite $\mathcal{D}.$
+		
+		Si $b\neq 0$, cette équation peut se mettre sous la forme $y=mx+p$ et s'appelle alors équation réduite de la droite $\mathcal{D}$ : 
+		
+		$m$ s'appelle le coefficient directeur de $\mathcal{D}$ (si le repère $(O\;,\ \vec{i}\;,\ \vec{j})$ est orthogonal, $m$ est aussi appelé pente de la droite $\mathcal{D}).$ 
+		
+		$p$ est l'ordonnée à l'origine.
+		
+		Coordonnées d'un vecteur directeur de $\mathcal{D}$ :
+		
+		$\bullet\ $ équation cartésienne $ax+by+c=0$ : $\overrightarrow{u}(-b\;;\ a).$
+		
+		$\bullet\ $ système d'équations paramétriques $$\left\lbrace\begin{array}{lcl} x& = & x_{A}+t\alpha\\ \\ y& =& y_{A}+t\beta \end{array}\qquad \vec{u}(\alpha\;,\ \beta)\right.$$
+		
+		$\bullet\ $ équation réduite $y=mx+p$ : $\ \vec{u}(1\;,\ m).$
+		
+		Conditions de parallélisme
+		
+		$\left.\begin{array}{lcl} \mathcal{D}\ :\ ax+by+c& = &0\\ \mathcal{D'}\ :\ a'x+b'y+c'& = &0 \end{array}\right\rbrace\qquad\mathcal{D}-\mathcal{D'}\Leftrightarrow ab'-ba'=0$
+		
+		$\left.\begin{array}{lcl} \mathcal{D}\ :\ y& =& mx+p\\ \mathcal{D'}\ :\ y& =& m'x+p' \end{array}\right\rbrace\qquad\mathcal{D}\times\mathcal{D'}\Leftrightarrow m=m'$
+		
 \end{document}
