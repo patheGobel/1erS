@@ -144,48 +144,202 @@ Ainsi, dans ce cas, si $M$ et $N$ sont deux points quelconques du plan, on a : $
 Donc $\overrightarrow{V_{M}}$ est un vecteur constant.
 
 Il est égal, par exemple, à $\beta\overrightarrow{AB}+\gamma\overrightarrow{AC}+\delta\overrightarrow{AD}$ ($M$ remplacé par $A).$
-
 \subsection*{\underline{\textbf{\textcolor{red}{4) Associativité du barycentre}}}}
-Exemple :
 
-		Soient $A$, $B$, $C$, $D$ quatre points du plan et $G$ le barycentre du système
+Soient \( A \), \( B \), \( C \), \( D \) quatre points du plan, et \( G \) le barycentre du système :  
+\[
+G = \{(A, -1), (B, 2), (C, -1), (D, 3)\}.
+\]
 
-		$$G=\{(A\;,\ -1)\ ;\ (B\;,\ 2)\ ;\ (C\;,\ -1)\ ;\ (D\;,\ 3)\}.$$
-		
-		$G$ existe car : $-1+2+(-1)+3=3\neq 0.$
-		
-		Les systèmes de $2$ points pondérés $G_{1}={(A\;,\ -1)\ ;\ (B\;,\ 2)}$ et $G_{2}={(C\;,\ -1)\ ;\ (D\;,\ 3)}$ ont aussi des barycentres que nous désignerons respectivement par $I$ et $J.$
+\paragraph{Existence de \( G \) :}  
+Le barycentre \( G \) existe car la somme des coefficients est non nulle :  
+\[
+-1 + 2 - 1 + 3 = 3 \neq 0.
+\]
 
-		D'après le paragraphe précédent 3), on a pour tout point $M$ du plan :
-		
-		$-\overrightarrow{MA}+2\overrightarrow{MB}=\overrightarrow{MI}\quad(1)\text{ et }-\overrightarrow{MC}+3\overrightarrow{MD}=2\overrightarrow{MJ}\quad(2).$
-		
-		Remplaçons $M$ par $G$ dans ces deux relations et faisons la somme membre à membre. 
-		
-		On obtient ainsi : 
-		
-		$\underbrace{-\overrightarrow{GA}+2\overrightarrow{GB}-\overrightarrow{GC}+3\overrightarrow{GD}}_{=\vec{0}\text{ par défition de }G}=\overrightarrow{GI}+2\overrightarrow{GJ}.$
-		
-		On en déduit que : 
-		
-		$\overrightarrow{GI}+2\overrightarrow{GJ}=\vec{0}$ et par conséquent $G$ est le barycentre du système $S'={(I\;,\ 1)\ ;\ (J\;,\ 2)}.$
-		
-		On notera que les coefficients $1$ et $2$ sont respectivement la somme des coefficients des systèmes $G_{1}$ et $G_{2}.$
-		
-		D'autre part, soit $K$ le barycentre du système $G_{3}={(B\;,\ 2)\ ;\ (C\;,\ -1)\ ;\ (D\;,\ 3)}.$
-		
-		Pour tout point $M$ du plan, on a, toujours d'après le paragraphe 3), $2\overrightarrow{MB}-\overrightarrow{MC}+3\overrightarrow{MD}=4\overrightarrow{MK}.$
-		
-		Remplaçant $M$ par $G$, on obtient : $2\overrightarrow{GB}-\overrightarrow{GC}+3\overrightarrow{GD}=\overrightarrow{GK}$ et si on ajoute le vecteur $-\overrightarrow{GA}$ aux deux membres de cette dernière égalité, on a :
-		
-		$\underbrace{-\overrightarrow{GA}+2\overrightarrow{GB}-\overrightarrow{GC}+2\overrightarrow{GD}}_{=\overrightarrow{0}\text{ par définition de }G}=-\overrightarrow{GA}+4\overrightarrow{GK}.$
-		
-		On en déduit que $G$ est aussi le barycentre du système $G''={(A\;,\ -1)\ ;\ (K\;,\ 4)}.$
-		
-		En généralisant ces calculs, on retiendra que dans la recherche du barycentre de plusieurs points, on peut regrouper certains d'entre eux et les remplacer par leur barycentre partiel affecté de la somme de leurs coefficients (pourvu que celle(ci ne soit pas nulle).
-		
+Nous considérons deux sous-systèmes pondérés :  
+- \( G_1 = \{(A, -1), (B, 2)\} \), de barycentre \( I \).  
+- \( G_2 = \{(C, -1), (D, 3)\} \), de barycentre \( J \).
 
-\subsection*{\underline{\textbf{\textcolor{red}{II. Géométrie analytique (droites et repères)}}}}
+D’après la propriété 3) (vue précédemment), pour tout point \( M \) du plan, on a :  
+\[
+-\overrightarrow{MA} + 2\overrightarrow{MB} = \overrightarrow{MI} \quad (1),
+\]
+\[
+-\overrightarrow{MC} + 3\overrightarrow{MD} = 2\overrightarrow{MJ} \quad (2).
+\]
+
+En remplaçant \( M \) par \( G \) dans les relations (1) et (2), et en additionnant les deux équations, on obtient :  
+\[
+-\overrightarrow{GA} + 2\overrightarrow{GB} - \overrightarrow{GC} + 3\overrightarrow{GD} = \overrightarrow{GI} + 2\overrightarrow{GJ}.
+\]
+
+Par définition de \( G \), le vecteur de gauche est nul :  
+\[
+\overrightarrow{GI} + 2\overrightarrow{GJ} = \vec{0}.
+\]
+
+Cela montre que \( G \) est le barycentre du système \( S' = \{(I, 1), (J, 2)\} \).  
+On observe que les coefficients \( 1 \) et \( 2 \) correspondent respectivement aux sommes des coefficients des systèmes \( G_1 \) et \( G_2 \).
+
+\paragraph{Cas du barycentre \( K \) d’un sous-système étendu :}  
+Considérons le système \( G_3 = \{(B, 2), (C, -1), (D, 3)\} \), dont le barycentre est \( K \).  
+Pour tout point \( M \) du plan, la propriété 3) donne :  
+\[
+2\overrightarrow{MB} - \overrightarrow{MC} + 3\overrightarrow{MD} = 4\overrightarrow{MK}.
+\]
+
+En remplaçant \( M \) par \( G \), on obtient :  
+\[
+2\overrightarrow{GB} - \overrightarrow{GC} + 3\overrightarrow{GD} = 4\overrightarrow{GK}.
+\]
+
+Ajoutons \( -\overrightarrow{GA} \) à chaque membre :  
+\[
+-\overrightarrow{GA} + 2\overrightarrow{GB} - \overrightarrow{GC} + 3\overrightarrow{GD} = -\overrightarrow{GA} + 4\overrightarrow{GK}.
+\]
+
+Par définition de \( G \), le vecteur de gauche est nul, donc :  
+\[
+-\overrightarrow{GA} + 4\overrightarrow{GK} = \vec{0}.
+\]
+
+Ainsi, \( G \) est aussi le barycentre du système \( G'' = \{(A, -1), (K, 4)\} \).
+
+\paragraph{Conclusion :}  
+Ces calculs montrent que, dans la recherche du barycentre de plusieurs points, on peut regrouper certains points en sous-systèmes, remplacer ces sous-systèmes par leurs barycentres partiels, et affecter à ces barycentres la somme des coefficients des points regroupés (à condition que cette somme soit non nulle).
+
+		
+\subsection*{\underline{\textbf{\textcolor{red}{5) Contruction du barycentre de 4 points}}}}
+
+Soient \( A \), \( B \), \( C \), \( D \) quatre points du plan et \( G \) le barycentre du système :  
+\[
+G = \{(A, m_A), (B, m_B), (C, m_C), (D, m_D)\},
+\]
+où \( m_A, m_B, m_C, m_D \) sont des coefficients réels tels que leur somme est non nulle :  
+\[
+m_A + m_B + m_C + m_D \neq 0.
+\]
+
+**Procédé utilisant l’associativité :**
+
+1. **Étape 1 : Construction de barycentres partiels**
+  
+   - Regroupez les points \( A \) et \( B \) pour former un sous-système \( G_1 = \{(A, m_A), (B, m_B)\} \), dont le barycentre est noté \( I \).  
+     Par définition, on a :  
+     \[
+     \overrightarrow{OI} = \frac{m_A \overrightarrow{OA} + m_B \overrightarrow{OB}}{m_A + m_B}.
+     \]
+   - Regroupez ensuite \( C \) et \( D \) pour former un autre sous-système \( G_2 = \{(C, m_C), (D, m_D)\} \), dont le barycentre est noté \( J \).  
+     De même, on a :  
+     \[
+     \overrightarrow{OJ} = \frac{m_C \overrightarrow{OC} + m_D \overrightarrow{OD}}{m_C + m_D}.
+     \]
+
+2. **Étape 2 : Barycentre global des barycentres partiels**  
+
+   Le barycentre \( G \) du système initial s’obtient comme barycentre des deux points pondérés \( I \) et \( J \) :  
+   \[
+   G = \{(I, m_A + m_B), (J, m_C + m_D)\}.
+   \]
+   Ainsi :  
+   \[
+   \overrightarrow{OG} = \frac{(m_A + m_B) \overrightarrow{OI} + (m_C + m_D) \overrightarrow{OJ}}{m_A + m_B + m_C + m_D}.
+   \]
+
+**Résumé du procédé :**  
+
+1. Calculez les barycentres partiels \( I \) et \( J \) des sous-systèmes \( G_1 \) et \( G_2 \). 
+ 
+2. Utilisez ces barycentres partiels pour déterminer \( G \) comme barycentre du système réduit \(\{(I, m_A + m_B), (J, m_C + m_D)\}\).
+
+**Remarque :**  
+
+Ce procédé permet de simplifier les calculs en regroupant progressivement les points tout en respectant la propriété d’associativité du barycentre.
+
+Exemple 2
+
+G bar (A,2),(B,1),(C,-3),(D,1)
+
+I bar (A,2),(B,1)
+
+J bar (C,-3),(D,1).
+
+donc G bar (I,3),(J,-2)
+
+\subsection*{\underline{\textbf{\textcolor{red}{6) Décomposer un vecteur de l’espace}}}}
+
+Soit \( \vec{v} \) un vecteur de l’espace défini par deux points \( A(x_A, y_A, z_A) \) et \( B(x_B, y_B, z_B) \).  
+La décomposition de \( \vec{v} = \overrightarrow{AB} \) dans une base orthonormée \((\vec{i}, \vec{j}, \vec{k})\) est donnée par :  
+\[
+\overrightarrow{AB} = (x_B - x_A) \vec{i} + (y_B - y_A) \vec{j} + (z_B - z_A) \vec{k}.
+\]
+
+**Exemple** :  
+Si \( A(1, 2, 3) \) et \( B(4, 6, 5) \), alors :  
+\[
+\overrightarrow{AB} = (4-1)\vec{i} + (6-2)\vec{j} + (5-3)\vec{k} = 3\vec{i} + 4\vec{j} + 2\vec{k}.
+\]
+
+\textbf{Décomposition en projection sur des plans :}  
+La projection de \( \overrightarrow{AB} \) sur les plans de l’espace peut être exprimée comme suit :
+- Projection sur le plan \( Oxy \) : \( \vec{v}_{xy} = (x_B - x_A)\vec{i} + (y_B - y_A)\vec{j} \).
+- Projection sur le plan \( Oxz \) : \( \vec{v}_{xz} = (x_B - x_A)\vec{i} + (z_B - z_A)\vec{k} \).
+- Projection sur le plan \( Oyz \) : \( \vec{v}_{yz} = (y_B - y_A)\vec{j} + (z_B - z_A)\vec{k} \).
+
+---
+
+\subsection*{\underline{\textbf{\textcolor{red}{7) Propriété : Trois points et leur barycentre sont coplanaires}}}}
+
+Soient \( A, B, C \) trois points non alignés de l’espace et \( G \) leur barycentre avec les coefficients \( m_A, m_B, m_C \).  
+La propriété stipule que \( A, B, C \) et \( G \) sont toujours coplanaires.
+
+\paragraph{Démonstration :}  
+1. Le barycentre \( G \) est défini par :  
+   \[
+   \overrightarrow{OG} = \frac{m_A\overrightarrow{OA} + m_B\overrightarrow{OB} + m_C\overrightarrow{OC}}{m_A + m_B + m_C}.
+   \]
+
+2. Les vecteurs \( \overrightarrow{AB} \) et \( \overrightarrow{AC} \) définissent le plan contenant \( A, B, \) et \( C \).  
+   Puisque \( \overrightarrow{OG} \) est une combinaison linéaire de \( \overrightarrow{OA}, \overrightarrow{OB}, \) et \( \overrightarrow{OC} \), \( \overrightarrow{OG} \) appartient au plan de base \( (A, B, C) \).
+
+3. Par conséquent, \( G \) appartient au même plan que \( A, B, \) et \( C \).  
+
+Ainsi, les points \( A, B, C \) et \( G \) sont coplanaires.
+
+---
+
+\subsection*{\underline{\textbf{\textcolor{red}{8) Centre d’inertie d’une plaque homogène}}}}
+
+\paragraph{Cas 1 : Plaque rectangulaire}  
+Pour une plaque homogène rectangulaire de dimensions \( a \times b \), le centre d’inertie se situe au centre géométrique, soit :  
+\[
+(x_G, y_G) = \left(\frac{a}{2}, \frac{b}{2}\right).
+\]
+
+\paragraph{Cas 2 : Disque évidé d’un autre disque}  
+Considérons un disque de rayon \( R \), homogène, évidé d’un disque concentrique de rayon \( r \).  
+1. La densité surfacique est uniforme.  
+2. Le centre d’inertie reste au centre géométrique des disques, soit \( (x_G, y_G) = (0, 0) \), car la répartition de masse est symétrique.
+
+\paragraph{Cas 3 : Disque évidé d’une figure simple (excentrée)}  
+Supposons un disque \( D \) de rayon \( R \) évidé d’un disque \( D' \) de rayon \( r \), avec les centres des deux disques situés respectivement en \( O \) et \( O' \).  
+1. On calcule les masses des deux parties :  
+   \[
+   m_D = \rho \pi R^2, \quad m_{D'} = \rho \pi r^2.
+   \]
+2. Le barycentre du système se calcule comme :  
+   \[
+   \overrightarrow{OG} = \frac{m_D \overrightarrow{O} - m_{D'} \overrightarrow{O'}}{m_D - m_{D'}}.
+   \]
+   La contribution de \( D' \) est soustraite, car la masse est enlevée.
+
+\paragraph{Résumé :}  
+- Le centre d’inertie d’une plaque homogène simple est son centre géométrique.  
+- Pour des figures évidées, le centre d’inertie dépend de la position et de la masse relative des parties évidées.
+
+\subsection*{\underline{\textbf{\textcolor{red}{Transformation d'écriture}}}}
+\section*{\underline{\textbf{\textcolor{red}{II. Géométrie analytique (droites et repères)}}}}
 		Une base du plan est un couple $(\vec{u}\;,\ \vec{v})$ de vecteurs non colinéaires.
 		
 		Le triplet $(O\;,\ \vec{u}\;,\ \vec{v})$ où $O$ est un point du plan et $(\vec{u}\;,\ \vec{v})$ une base est un repère cartésien du plan.
