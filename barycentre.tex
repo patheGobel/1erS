@@ -225,69 +225,116 @@ m_A + m_B + m_C + m_D \neq 0.
 
 1. **Étape 1 : Construction de barycentres partiels**
   
-   - Regroupez les points \( A \) et \( B \) pour former un sous-système \( G_1 = \{(A, m_A), (B, m_B)\} \), dont le barycentre est noté \( I \).  
-     Par définition, on a :  
+   - Regroupez les points \( A \) et \( B \) pour former un sous-système \( G_1 = \{(A, m_A), (B, m_B)\} \).  
      \[
-     \overrightarrow{OI} = \frac{m_A \overrightarrow{OA} + m_B \overrightarrow{OB}}{m_A + m_B}.
+     \overrightarrow{AG_{1}} = \frac{m_A}{{m_A + m_B}} \overrightarrow{AB}.
      \]
-   - Regroupez ensuite \( C \) et \( D \) pour former un autre sous-système \( G_2 = \{(C, m_C), (D, m_D)\} \), dont le barycentre est noté \( J \).  
-     De même, on a :  
+   - Regroupez ensuite \( C \) et \( D \) pour former un autre sous-système \( G_2 = \{(C, m_C), (D, m_D)\} \).  
      \[
-     \overrightarrow{OJ} = \frac{m_C \overrightarrow{OC} + m_D \overrightarrow{OD}}{m_C + m_D}.
+     \overrightarrow{CG_{2}} = \frac{m_A}{{m_A + m_B}} \overrightarrow{CD}.
      \]
 
 2. **Étape 2 : Barycentre global des barycentres partiels**  
 
    Le barycentre \( G \) du système initial s’obtient comme barycentre des deux points pondérés \( I \) et \( J \) :  
    \[
-   G = \{(I, m_A + m_B), (J, m_C + m_D)\}.
+   G = \{(G_{1}, m_A + m_B), (G_{2}, m_C + m_D)\}.
    \]
    Ainsi :  
    \[
-   \overrightarrow{OG} = \frac{(m_A + m_B) \overrightarrow{OI} + (m_C + m_D) \overrightarrow{OJ}}{m_A + m_B + m_C + m_D}.
+   \overrightarrow{G_{1}G} = \frac{(m_A + m_B) }{m_A + m_B+m_C + m_D}\overrightarrow{G_{1}G_{2}}
    \]
-
-**Résumé du procédé :**  
-
-1. Calculez les barycentres partiels \( I \) et \( J \) des sous-systèmes \( G_1 \) et \( G_2 \). 
- 
-2. Utilisez ces barycentres partiels pour déterminer \( G \) comme barycentre du système réduit \(\{(I, m_A + m_B), (J, m_C + m_D)\}\).
-
-**Remarque :**  
-
-Ce procédé permet de simplifier les calculs en regroupant progressivement les points tout en respectant la propriété d’associativité du barycentre.
 
 Exemple 2
 
 G bar (A,2),(B,1),(C,-3),(D,1)
 
-I bar (A,2),(B,1)
+$G_{1}$ bar (A,2),(B,1)
 
-J bar (C,-3),(D,1).
+$G_{2}$ bar (C,-3),(D,1).
 
-donc G bar (I,3),(J,-2)
+donc G bar ($G_{1}$,3),($G_{2}$,-2)
 
 \subsection*{\underline{\textbf{\textcolor{red}{6) Décomposer un vecteur de l’espace}}}}
 
+\paragraph{Décomposition dans une base orthonormée :}
+
 Soit \( \vec{v} \) un vecteur de l’espace défini par deux points \( A(x_A, y_A, z_A) \) et \( B(x_B, y_B, z_B) \).  
-La décomposition de \( \vec{v} = \overrightarrow{AB} \) dans une base orthonormée \((\vec{i}, \vec{j}, \vec{k})\) est donnée par :  
+Dans une base orthonormée \((\vec{i}, \vec{j}, \vec{k})\), la décomposition de \( \overrightarrow{AB} \) est donnée par :  
 \[
 \overrightarrow{AB} = (x_B - x_A) \vec{i} + (y_B - y_A) \vec{j} + (z_B - z_A) \vec{k}.
 \]
 
-**Exemple** :  
+**Exemple :**  
 Si \( A(1, 2, 3) \) et \( B(4, 6, 5) \), alors :  
 \[
-\overrightarrow{AB} = (4-1)\vec{i} + (6-2)\vec{j} + (5-3)\vec{k} = 3\vec{i} + 4\vec{j} + 2\vec{k}.
+\overrightarrow{AB} = (4 - 1)\vec{i} + (6 - 2)\vec{j} + (5 - 3)\vec{k} = 3\vec{i} + 4\vec{j} + 2\vec{k}.
 \]
 
-\textbf{Décomposition en projection sur des plans :}  
-La projection de \( \overrightarrow{AB} \) sur les plans de l’espace peut être exprimée comme suit :
-- Projection sur le plan \( Oxy \) : \( \vec{v}_{xy} = (x_B - x_A)\vec{i} + (y_B - y_A)\vec{j} \).
-- Projection sur le plan \( Oxz \) : \( \vec{v}_{xz} = (x_B - x_A)\vec{i} + (z_B - z_A)\vec{k} \).
-- Projection sur le plan \( Oyz \) : \( \vec{v}_{yz} = (y_B - y_A)\vec{j} + (z_B - z_A)\vec{k} \).
+\paragraph{Norme d’un vecteur dans l’espace :}
 
----
+La norme de \( \overrightarrow{AB} \) est donnée par :  
+\[
+\|\overrightarrow{AB}\| = \sqrt{(x_B - x_A)^2 + (y_B - y_A)^2 + (z_B - z_A)^2}.
+\]
+
+**Exemple :**  
+Avec les mêmes points \( A(1, 2, 3) \) et \( B(4, 6, 5) \), on obtient :  
+\[
+\|\overrightarrow{AB}\| = \sqrt{(4-1)^2 + (6-2)^2 + (5-3)^2} = \sqrt{9 + 16 + 4} = \sqrt{29}.
+\]
+
+\paragraph{Projection sur des axes :}
+
+Le vecteur \( \overrightarrow{AB} \) peut être projeté sur chacun des axes de l’espace :
+
+- Projection sur l’axe \( Ox \) : \( (x_B - x_A)\vec{i} \),
+
+- Projection sur l’axe \( Oy \) : \( (y_B - y_A)\vec{j} \),
+
+- Projection sur l’axe \( Oz \) : \( (z_B - z_A)\vec{k} \).
+
+Ainsi, la décomposition de \( \overrightarrow{AB} \) dans l’espace est la somme de ses projections sur \( Ox \), \( Oy \), et \( Oz \).
+
+\paragraph{Décomposition dans un plan de l’espace :}
+
+La projection de \( \overrightarrow{AB} \) sur un plan de l’espace se fait en annulant la composante perpendiculaire à ce plan :  
+- **Projection sur \( Oxy \) :**  
+  Annulez la composante selon \( z \) :  
+  \[
+  \overrightarrow{AB}_{xy} = (x_B - x_A)\vec{i} + (y_B - y_A)\vec{j}.
+  \]
+- **Projection sur \( Oxz \) :**  
+  Annulez la composante selon \( y \) :  
+  \[
+  \overrightarrow{AB}_{xz} = (x_B - x_A)\vec{i} + (z_B - z_A)\vec{k}.
+  \]
+- **Projection sur \( Oyz \) :**  
+  Annulez la composante selon \( x \) :  
+  \[
+  \overrightarrow{AB}_{yz} = (y_B - y_A)\vec{j} + (z_B - z_A)\vec{k}.
+  \]
+
+**Exemple :**  
+Avec \( A(1, 2, 3) \) et \( B(4, 6, 5) \) :  
+- \( \overrightarrow{AB}_{xy} = 3\vec{i} + 4\vec{j} \),  
+- \( \overrightarrow{AB}_{xz} = 3\vec{i} + 2\vec{k} \),  
+- \( \overrightarrow{AB}_{yz} = 4\vec{j} + 2\vec{k} \).
+
+\paragraph{Applications :}
+
+1. **Produit scalaire dans l’espace :**  
+   Le produit scalaire entre deux vecteurs \( \vec{u} = u_x\vec{i} + u_y\vec{j} + u_z\vec{k} \) et \( \vec{v} = v_x\vec{i} + v_y\vec{j} + v_z\vec{k} \) est :  
+   \[
+   \vec{u} \cdot \vec{v} = u_x v_x + u_y v_y + u_z v_z.
+   \]
+
+2. **Applications physiques :**  
+   La décomposition des vecteurs est essentielle pour résoudre des problèmes de mécanique, comme la détermination des forces agissant sur un point matériel ou la projection d’un champ vectoriel dans un référentiel donné.
+
+\paragraph{Conclusion :}  
+La décomposition d’un vecteur de l’espace permet de comprendre sa direction et sa norme, ainsi que ses projections sur les axes et les plans. Cela constitue une base fondamentale pour les calculs géométriques et physiques.
+
 
 \subsection*{\underline{\textbf{\textcolor{red}{7) Propriété : Trois points et leur barycentre sont coplanaires}}}}
 
@@ -295,19 +342,52 @@ Soient \( A, B, C \) trois points non alignés de l’espace et \( G \) leur bar
 La propriété stipule que \( A, B, C \) et \( G \) sont toujours coplanaires.
 
 \paragraph{Démonstration :}  
-1. Le barycentre \( G \) est défini par :  
+
+1. Par définition, le barycentre \( G \) est donné par :  
    \[
-   \overrightarrow{OG} = \frac{m_A\overrightarrow{OA} + m_B\overrightarrow{OB} + m_C\overrightarrow{OC}}{m_A + m_B + m_C}.
+   \overrightarrow{OG} = \frac{m_A\overrightarrow{OA} + m_B\overrightarrow{OB} + m_C\overrightarrow{OC}}{m_A + m_B + m_C},
+   \]
+   où \( m_A + m_B + m_C \neq 0 \).
+
+2. Le plan défini par \( A, B, C \) est déterminé par les vecteurs \( \overrightarrow{AB} \) et \( \overrightarrow{AC} \), c'est-à-dire que tout point \( P \) appartenant à ce plan peut être exprimé comme :  
+   \[
+   \overrightarrow{OP} = \overrightarrow{OA} + \lambda \overrightarrow{AB} + \mu \overrightarrow{AC}, \quad \lambda, \mu \in \mathbb{R}.
    \]
 
-2. Les vecteurs \( \overrightarrow{AB} \) et \( \overrightarrow{AC} \) définissent le plan contenant \( A, B, \) et \( C \).  
-   Puisque \( \overrightarrow{OG} \) est une combinaison linéaire de \( \overrightarrow{OA}, \overrightarrow{OB}, \) et \( \overrightarrow{OC} \), \( \overrightarrow{OG} \) appartient au plan de base \( (A, B, C) \).
+3. Puisque \( \overrightarrow{OG} \) est une combinaison linéaire des vecteurs \( \overrightarrow{OA}, \overrightarrow{OB}, \overrightarrow{OC} \), il peut s'écrire comme une combinaison des vecteurs \( \overrightarrow{OA}, \overrightarrow{AB}, \overrightarrow{AC} \), qui forment une base du plan \( (A, B, C) \).
 
-3. Par conséquent, \( G \) appartient au même plan que \( A, B, \) et \( C \).  
+4. Par conséquent, le vecteur \( \overrightarrow{OG} \) appartient au plan \( (A, B, C) \), ce qui montre que \( G \) est coplanaire avec \( A, B, C \).
 
-Ainsi, les points \( A, B, C \) et \( G \) sont coplanaires.
+\paragraph{Conséquence :}  
+Pour quatre points \( A, B, C, D \) dans l’espace, si \( G \) est le barycentre de \( (A, B, C) \), alors \( G \) et \( D \) seront coplanaires si et seulement si \( D \) appartient au plan \( (A, B, C) \).
 
----
+\paragraph{Applications :}  
+
+1. **Construction géométrique :**  
+   Si \( A, B, C \) sont donnés dans l’espace avec des coefficients \( m_A, m_B, m_C \), le barycentre \( G \) peut être construit comme suit :  
+   
+   - Trouver d’abord un point \( I \), barycentre de \( A \) et \( B \), tel que :  
+     \[
+     \overrightarrow{OI} = \frac{m_A \overrightarrow{OA} + m_B \overrightarrow{OB}}{m_A + m_B}.
+     \]
+   - Ensuite, calculer \( G \) comme barycentre de \( I \) et \( C \) :  
+     \[
+     \overrightarrow{OG} = \frac{(m_A + m_B)\overrightarrow{OI} + m_C \overrightarrow{OC}}{m_A + m_B + m_C}.
+     \]
+
+2. **Étude de coplanarité d’un point avec un plan donné :**  
+   Si \( D \) est un point extérieur, la condition de coplanarité de \( D \) avec \( A, B, C \) peut être vérifiée en calculant le volume mixte des vecteurs \( \overrightarrow{AB}, \overrightarrow{AC}, \overrightarrow{AD} \).  
+   Le point \( D \) est coplanaire avec \( A, B, C \) si :  
+   \[
+   \det(\overrightarrow{AB}, \overrightarrow{AC}, \overrightarrow{AD}) = 0.
+   \]
+
+3. **Problèmes en physique :**  
+   Cette propriété est souvent utilisée pour analyser les forces ou les centres de gravité dans des systèmes où des points massiques sont répartis dans un plan.
+
+\paragraph{Conclusion :}  
+La propriété de coplanarité du barycentre avec les points du système est une conséquence directe de sa définition comme combinaison linéaire des vecteurs position des points pondérés. Elle est un outil fondamental pour simplifier les problèmes géométriques et physiques dans l’espace.
+
 
 \subsection*{\underline{\textbf{\textcolor{red}{8) Centre d’inertie d’une plaque homogène}}}}
 
@@ -335,7 +415,8 @@ Supposons un disque \( D \) de rayon \( R \) évidé d’un disque \( D' \) de r
    La contribution de \( D' \) est soustraite, car la masse est enlevée.
 
 \paragraph{Résumé :}  
-- Le centre d’inertie d’une plaque homogène simple est son centre géométrique.  
+- Le centre d’inertie d’une plaque homogène simple est son centre géométrique. 
+ 
 - Pour des figures évidées, le centre d’inertie dépend de la position et de la masse relative des parties évidées.
 
 \subsection*{\underline{\textbf{\textcolor{red}{Transformation d'écriture}}}}
