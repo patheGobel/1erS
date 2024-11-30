@@ -236,7 +236,7 @@ m_A + m_B + m_C + m_D \neq 0.
 
 2. **Étape 2 : Barycentre global des barycentres partiels**  
 
-   Le barycentre \( G \) du système initial s’obtient comme barycentre des deux points pondérés \( I \) et \( J \) :  
+   Le barycentre \( G \) du système initial s’obtient comme barycentre des deux points pondérés \( G_1 \) et \( G_2 \) :  
    \[
    G = \{(G_{1}, m_A + m_B), (G_{2}, m_C + m_D)\}.
    \]
@@ -247,7 +247,11 @@ m_A + m_B + m_C + m_D \neq 0.
 
 Exemple 2
 
+Construis le point G
+
 G bar (A,2),(B,1),(C,-3),(D,1)
+
+Solution
 
 $G_{1}$ bar (A,2),(B,1)
 
@@ -317,24 +321,12 @@ La projection de \( \overrightarrow{AB} \) sur un plan de l’espace se fait en 
 
 **Exemple :**  
 Avec \( A(1, 2, 3) \) et \( B(4, 6, 5) \) :  
+
 - \( \overrightarrow{AB}_{xy} = 3\vec{i} + 4\vec{j} \),  
+
 - \( \overrightarrow{AB}_{xz} = 3\vec{i} + 2\vec{k} \),  
+
 - \( \overrightarrow{AB}_{yz} = 4\vec{j} + 2\vec{k} \).
-
-\paragraph{Applications :}
-
-1. **Produit scalaire dans l’espace :**  
-   Le produit scalaire entre deux vecteurs \( \vec{u} = u_x\vec{i} + u_y\vec{j} + u_z\vec{k} \) et \( \vec{v} = v_x\vec{i} + v_y\vec{j} + v_z\vec{k} \) est :  
-   \[
-   \vec{u} \cdot \vec{v} = u_x v_x + u_y v_y + u_z v_z.
-   \]
-
-2. **Applications physiques :**  
-   La décomposition des vecteurs est essentielle pour résoudre des problèmes de mécanique, comme la détermination des forces agissant sur un point matériel ou la projection d’un champ vectoriel dans un référentiel donné.
-
-\paragraph{Conclusion :}  
-La décomposition d’un vecteur de l’espace permet de comprendre sa direction et sa norme, ainsi que ses projections sur les axes et les plans. Cela constitue une base fondamentale pour les calculs géométriques et physiques.
-
 
 \subsection*{\underline{\textbf{\textcolor{red}{7) Propriété : Trois points et leur barycentre sont coplanaires}}}}
 
@@ -364,6 +356,7 @@ Pour quatre points \( A, B, C, D \) dans l’espace, si \( G \) est le barycentr
 \paragraph{Applications :}  
 
 1. **Construction géométrique :**  
+
    Si \( A, B, C \) sont donnés dans l’espace avec des coefficients \( m_A, m_B, m_C \), le barycentre \( G \) peut être construit comme suit :  
    
    - Trouver d’abord un point \( I \), barycentre de \( A \) et \( B \), tel que :  
@@ -375,125 +368,11 @@ Pour quatre points \( A, B, C, D \) dans l’espace, si \( G \) est le barycentr
      \overrightarrow{OG} = \frac{(m_A + m_B)\overrightarrow{OI} + m_C \overrightarrow{OC}}{m_A + m_B + m_C}.
      \]
 
-2. **Étude de coplanarité d’un point avec un plan donné :**  
-   Si \( D \) est un point extérieur, la condition de coplanarité de \( D \) avec \( A, B, C \) peut être vérifiée en calculant le volume mixte des vecteurs \( \overrightarrow{AB}, \overrightarrow{AC}, \overrightarrow{AD} \).  
-   Le point \( D \) est coplanaire avec \( A, B, C \) si :  
-   \[
-   \det(\overrightarrow{AB}, \overrightarrow{AC}, \overrightarrow{AD}) = 0.
-   \]
-
 3. **Problèmes en physique :**  
    Cette propriété est souvent utilisée pour analyser les forces ou les centres de gravité dans des systèmes où des points massiques sont répartis dans un plan.
-
-\paragraph{Conclusion :}  
-La propriété de coplanarité du barycentre avec les points du système est une conséquence directe de sa définition comme combinaison linéaire des vecteurs position des points pondérés. Elle est un outil fondamental pour simplifier les problèmes géométriques et physiques dans l’espace.
 
 
 \subsection*{\underline{\textbf{\textcolor{red}{8) Centre d’inertie d’une plaque homogène}}}}
 
-\paragraph{Cas 1 : Plaque rectangulaire}  
-Pour une plaque homogène rectangulaire de dimensions \( a \times b \), le centre d’inertie se situe au centre géométrique, soit :  
-\[
-(x_G, y_G) = \left(\frac{a}{2}, \frac{b}{2}\right).
-\]
-
-\paragraph{Cas 2 : Disque évidé d’un autre disque}  
-Considérons un disque de rayon \( R \), homogène, évidé d’un disque concentrique de rayon \( r \).  
-1. La densité surfacique est uniforme.  
-2. Le centre d’inertie reste au centre géométrique des disques, soit \( (x_G, y_G) = (0, 0) \), car la répartition de masse est symétrique.
-
-\paragraph{Cas 3 : Disque évidé d’une figure simple (excentrée)}  
-Supposons un disque \( D \) de rayon \( R \) évidé d’un disque \( D' \) de rayon \( r \), avec les centres des deux disques situés respectivement en \( O \) et \( O' \).  
-1. On calcule les masses des deux parties :  
-   \[
-   m_D = \rho \pi R^2, \quad m_{D'} = \rho \pi r^2.
-   \]
-2. Le barycentre du système se calcule comme :  
-   \[
-   \overrightarrow{OG} = \frac{m_D \overrightarrow{O} - m_{D'} \overrightarrow{O'}}{m_D - m_{D'}}.
-   \]
-   La contribution de \( D' \) est soustraite, car la masse est enlevée.
-
-\paragraph{Résumé :}  
-- Le centre d’inertie d’une plaque homogène simple est son centre géométrique. 
- 
-- Pour des figures évidées, le centre d’inertie dépend de la position et de la masse relative des parties évidées.
-
-\subsection*{\underline{\textbf{\textcolor{red}{Transformation d'écriture}}}}
-\section*{\underline{\textbf{\textcolor{red}{II. Géométrie analytique (droites et repères)}}}}
-		Une base du plan est un couple $(\vec{u}\;,\ \vec{v})$ de vecteurs non colinéaires.
-		
-		Le triplet $(O\;,\ \vec{u}\;,\ \vec{v})$ où $O$ est un point du plan et $(\vec{u}\;,\ \vec{v})$ une base est un repère cartésien du plan.
-		
-		Soit $(\vec{i}\;,\ \vec{j})$ une base du plan.
-		
-		Soit $\vec{u}$ un vecteur quelconque.
-		
-		Il existe un couple unique $(x\;,\ y)$ de réels tels que :
-		
-		$\vec{u}=x\vec{i}+y\vec{j}.$
-		
-		Ces réels $x$ et $y$ sont appelés coordonnées de $\vec{u}$ dans la base $(\vec{i}\;,\ \vec{j}).$
-		
-		Soit $(O\;,\ \vec{i}\;,\ \vec{j})$ un repère du plan.
-		
-		Soit $M$ un point quelconque.
-		
-		Il existe un couple unique $(x\;,\ y)$ de réels tels que :
-		
-		$\overrightarrow{OM}=x\vec{i}+y\vec{j}.$
-		
-		Ces réels $x$ et $y$ sont appelés coordonnées de $M$ dans le repère $(O\;,\ \vec{i}\;,\ \vec{j}).$
-		
-		
-		Condition de colinéarité :
-		
-		Soit $\vec{u}(x\;,\ y)$ et $\vec{v}(x'\;,\ y')$ dans une base $(\vec{i}\;,\ \vec{j}).$
-		
-		Alors $\vec{u}$ et $\vec{v}$ sont colinéaires si et seulement si $xy'-yx'=0$ $\ (\Leftrightarrow$ dét$(\vec{u}\;,\ \vec{v})=0).$
-		
-		Soit dans le plan $\mathcal{P}$ muni du repère $(O\;,\ \vec{i}\;,\ \vec{j})$ les points $A\left(x_{A}\;,\ y_{A}\right)$ et $B\left(x_{B}\;,\ y_{B}\right).$
-		
-		Alors $\overrightarrow{AB}$ a pour coordonnées $\overrightarrow{AB}\left(x_{B}-x_{A}\;,\ y_{B}-y_{A}\right)$ et le milieu $I$ du segment $[AB]$ a pour coordonnées $I\left(\dfrac{x_{A}+x_{B}}{2}\;;\ \dfrac{y_{A}+y_{B}}{2}\right).$
-		
-		Représentations analytique d'une droite
-		
-		Soit $(O\;,\ \vec{i}\;,\ \vec{j})$ un repère du plan.
-		
-		Soit $\mathcal{D}$ la droite passant par $A(x_{0}\;;\ y_{0})$ et de vecteur directeur $\overrightarrow{u}(\alpha\;,\ \beta).$
-		
-		Un point $M(x\;,\ y)$ appartient à $\mathcal{D}$ si et seulement si $\overrightarrow{AM}$ et $\overrightarrow{u}$ sont colinéaires , c'est-à-dire s'il existe un réel $t$ tel que : 
-		
-		$\overrightarrow{AM}=t\overrightarrow{AB}$, ce qui se traduit par le système suivant :
-		
-		$$\left\lbrace\begin{array}{lcl} x& =& x_{A}+t\alpha\\ \\ y& =& y_{A}+t\beta \end{array}\right.$$
-		
-		appelé système d'équations paramétriques de la droite $\mathcal{D}.$
-		
-		Soit $\mathcal{D}$ la droite passant par deux points $A$ et $B.$ 
-		
-		Un point $M(x\;,\ y)$ appartient à $\mathcal{D}$ si et seulement si $\overrightarrow{AM}$ et $\overrightarrow{AB}$ sont colinéaires, ce qui équivaut à dét $ \left(\overrightarrow{AM}\;,\ \overrightarrow{AB}\right)=0$ et se traduit par une relation de la forme : 
-		
-		$ax+by+c=0$ appelé équation cartésienne de la droite $\mathcal{D}.$
-		
-		Si $b\neq 0$, cette équation peut se mettre sous la forme $y=mx+p$ et s'appelle alors équation réduite de la droite $\mathcal{D}$ : 
-		
-		$m$ s'appelle le coefficient directeur de $\mathcal{D}$ (si le repère $(O\;,\ \vec{i}\;,\ \vec{j})$ est orthogonal, $m$ est aussi appelé pente de la droite $\mathcal{D}).$ 
-		
-		$p$ est l'ordonnée à l'origine.
-		
-		Coordonnées d'un vecteur directeur de $\mathcal{D}$ :
-		
-		$\bullet\ $ équation cartésienne $ax+by+c=0$ : $\overrightarrow{u}(-b\;;\ a).$
-		
-		$\bullet\ $ système d'équations paramétriques $$\left\lbrace\begin{array}{lcl} x& = & x_{A}+t\alpha\\ \\ y& =& y_{A}+t\beta \end{array}\qquad \vec{u}(\alpha\;,\ \beta)\right.$$
-		
-		$\bullet\ $ équation réduite $y=mx+p$ : $\ \vec{u}(1\;,\ m).$
-		
-		Conditions de parallélisme
-		
-		$\left.\begin{array}{lcl} \mathcal{D}\ :\ ax+by+c& = &0\\ \mathcal{D'}\ :\ a'x+b'y+c'& = &0 \end{array}\right\rbrace\qquad\mathcal{D}-\mathcal{D'}\Leftrightarrow ab'-ba'=0$
-		
-		$\left.\begin{array}{lcl} \mathcal{D}\ :\ y& =& mx+p\\ \mathcal{D'}\ :\ y& =& m'x+p' \end{array}\right\rbrace\qquad\mathcal{D}\times\mathcal{D'}\Leftrightarrow m=m'$
 		
 \end{document}
