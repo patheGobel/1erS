@@ -1,0 +1,396 @@
+\documentclass[12pt]{article}
+\usepackage{lmodern} % Pour une police plus nette
+\usepackage{stmaryrd}
+\usepackage{graphicx} % Pour l'insertion d'images
+\usepackage{float}    % Pour contrôler précisément le placement
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{verbatim}
+\usepackage{color, soul}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18} % Version plus récente de pgfplots
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+%\author{Destiné aux élèves de Terminale S\\Lycée de Dindéfelo\\Présenté par M. BA}
+%\title{\textbf{Rappels et compléments sur les fonctions numériques}}
+%\date{\today}
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+% Commande pour la couleur d'accentuation
+\newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\usepackage[margin=2.5cm]{geometry} % Ajustement des marges
+\usepackage{eso-pic} % Pour ajouter des éléments en arrière-plan
+
+% Commande pour ajouter du texte en arrière-plan, centré au milieu de chaque page
+\AddToShipoutPicture{
+    \AtPageCenter{%
+        \makebox(0,0)[c]{\rotatebox{60}{\textcolor[gray]{0.6}{\fontsize{2cm}{2cm}\selectfont PGB}}}
+    }
+}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+\raggedright
+\textbf{Ministère de l'Éducation Nationale}\\
+Inspection Académique de Kédougou\\
+Lycée Dindéfelo\\
+Cellule de Mathématiques
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\raggedleft
+\textbf{Année scolaire 2024-2025}\\
+Date : 07/01/2025\\
+Classe : Terminale S2\\
+Professeur : M. BA
+\end{minipage}
+\vspace{1cm}
+\begin{center}
+\textbf{\textcolor{red}{Produit Scalaire}}
+\end{center}
+\vspace{1cm}
+\section*{Exercice 1}
+
+$ABC$ est un triangle isocèle de sommet principal $A$ et de base $[BC]$ de $2\ \text{cm}$. $I$ est le milieu de $[BC]$. Tracer une figure et calculer en utilisant les projections orthogonales :
+\[
+\text{a) } \overrightarrow{BI} \cdot \overrightarrow{BC}; \quad
+\text{b) } \overrightarrow{AI} \cdot \overrightarrow{IC}; \quad
+\text{c) } \overrightarrow{BA} \cdot \overrightarrow{BI}; \quad
+\text{d) } \overrightarrow{AC} \cdot \overrightarrow{CI}; 
+\]
+\[
+\text{e) } \overrightarrow{AI} \cdot \overrightarrow{BC}; \quad
+\text{f) } \overrightarrow{IB} \cdot \overrightarrow{IC}; \quad
+\text{g) } \overrightarrow{BC} \cdot \overrightarrow{CI}.
+\]
+
+\section*{Exercice 2}
+
+Soit un carré $ABCD$ de centre $O$ et de côté $a$. Calculer en fonction de $a$, les produits scalaires suivants :
+\[
+\text{a) } \overrightarrow{AB} \cdot \overrightarrow{AC}; \quad
+\text{b) } \overrightarrow{BC} \cdot \overrightarrow{BA}; \quad
+\text{c) } \overrightarrow{OC} \cdot \overrightarrow{OB}; 
+\]
+\[
+\text{d) } \overrightarrow{AC} \cdot \overrightarrow{AO}; \quad
+\text{e) } \overrightarrow{OB} \cdot \overrightarrow{OD}; \quad
+\text{f) } \overrightarrow{AD} \cdot \overrightarrow{OB}.
+\]
+
+\section*{Exercice 3}
+
+$ABCD$ est un parallélogramme tel que $AB = 4\ \text{cm}$ ; $AD = 3\ \text{cm}$ et $\overrightarrow{AB} \cdot \overrightarrow{AD} = 6$.
+\begin{enumerate}
+    \item Déterminer une mesure en degré de l’angle géométrique $\widehat{BAD}$.
+    \item Construire le parallélogramme $ABCD$ et déterminer les produits scalaires $\overrightarrow{AB} \cdot \overrightarrow{AC}$ et $\overrightarrow{AB} \cdot \overrightarrow{BC}$.
+\end{enumerate}
+\section*{Exercice 4}
+
+\begin{enumerate}
+    \item Montrer qu’un triangle $ABC$ est isocèle de sommet principal $A$ si et seulement si
+    \[
+    \overrightarrow{BA} \cdot \overrightarrow{BC} = \overrightarrow{CA} \cdot \overrightarrow{CB}.
+    \]
+
+    \item Quelle est la nature d’un triangle $ABC$ qui vérifie
+    \[
+    \overrightarrow{BA} \cdot \overrightarrow{BC} = \overrightarrow{CA} \cdot \overrightarrow{CB} = \overrightarrow{AC} \cdot \overrightarrow{AB}?
+    \]
+\end{enumerate}
+
+\section*{Exercice 5}
+
+$ABC$ est un triangle. $A'$, $B'$ et $C'$ sont les pieds des hauteurs issues respectivement de $A$, $B$ et $C$. Le point $H$ est l’orthocentre du triangle $ABC$.
+
+\begin{enumerate}
+    \item Justifier que 
+    \[
+    \overrightarrow{HA} \cdot \overrightarrow{HA'} = \overrightarrow{HA} \cdot \overrightarrow{HB} = \overrightarrow{HA} \cdot \overrightarrow{HC}.
+    \]
+
+    \item Déduire que 
+    \[
+    \overrightarrow{HA} \cdot \overrightarrow{HA'} = \overrightarrow{HB} \cdot \overrightarrow{HB'} = \overrightarrow{HC} \cdot \overrightarrow{HC'}.
+    \]
+\end{enumerate}
+
+\section*{Exercice 6}
+
+Soit $ABCD$ un parallélogramme.
+
+\begin{enumerate}
+    \item Exprimer $\overrightarrow{AC}$ en fonction de $\overrightarrow{AB}$ et $\overrightarrow{AD}$.
+
+    \item Exprimer $\overrightarrow{DB}$ en fonction de $\overrightarrow{AB}$ et $\overrightarrow{AD}$.
+
+    \item Utiliser les expressions précédentes pour montrer que 
+    \[
+    AC^2 + BD^2 = 2(AB^2 + AD^2).
+    \]
+
+    \item Peut-on construire un parallélogramme $ABCD$ tel que $AB = 3\ \text{cm}$, $AD = 4\ \text{cm}$ et $AC = 1\ \text{cm}$ ?
+\end{enumerate}
+\section*{Exercice 7}
+
+Soit un rectangle $ABCD$. On considère :
+\begin{itemize}
+    \item Sur la demi-droite $[AD)$, le point $B'$ tel que $AB' = AB$.
+    \item Sur la demi-droite opposée à $[AB)$, le point $D'$ tel que $AD' = AD$.
+\end{itemize}
+\begin{enumerate}
+    \item Démontrer que $(BD) \perp (B'D')$.
+    \item Que représente $D$ pour le triangle $BB'D'$ ?
+    \item En déduire que $(DD') \perp (BB')$.
+\end{enumerate}
+\section*{Exercice 8}
+
+Déterminer l’équation du cercle $(C)$ de centre $O(a; b)$ et de rayon $R$.
+\begin{enumerate}
+    \item $a = -3$ ; $b = 2$ et $R = \sqrt{2}$.
+    \item $a = \frac{1}{2}$ ; $b = -\frac{1}{3}$ et $R = \frac{3}{2}$.
+\end{enumerate}
+
+\section*{Exercice 9}
+
+Déterminer l’équation du cercle $C$ de diamètre $[AB]$.
+\begin{enumerate}
+    \item $A(1; 1)$ et $B(5; 3)$.
+    \item $A\left(\frac{1}{2}; \frac{1}{2}\right)$ et $B\left(\frac{3}{2}; -\frac{1}{2}\right)$.
+\end{enumerate}
+
+\section*{Exercice 10}
+
+Déterminer l’ensemble des points $M$ dont les coordonnées vérifient les équations suivantes :
+\begin{enumerate}
+    \item $x^2 + y^2 - 6x + 2y + 5 = 0$.
+    \item $x^2 + y^2 - x + 2y + 2 = 0$.
+    \item $5x^2 + 5y^2 + 15x - 5y + 10 = 0$.
+\end{enumerate}
+\section*{Exercice 11}
+
+Soit $(O; \vec{i}, \vec{j})$ un repère orthonormé et $(\Delta)$ la droite d’équation $ax + by + c = 0$ de vecteur normal $\vec{n}\left(\begin{array}{c}a \\ b\end{array}\right)$.  
+$M$ est le point de coordonnées $(\alpha; \beta)$ et $H$ est le projeté orthogonal de $M$ sur $(\Delta)$.
+
+\begin{enumerate}
+    \item Vérifier que pour tout point $P$ de $(\Delta)$, on a $\vec{n} \cdot \overrightarrow{OP} = -c$.
+
+    \item Calculer $\vec{n} \cdot \overrightarrow{OM}$ en fonction de $a$, $b$, $\alpha$ et $\beta$.
+
+    \item Déduire des questions 1. et 2. que $\vec{n} \cdot \overrightarrow{HM} = a\alpha + b\beta + c$.
+
+    \item Justifier l’égalité $\|\vec{n} \cdot \overrightarrow{HM}\| = \|\vec{n}\| \times HM$.
+
+    \item Conclure que 
+    \[
+    HM = \frac{|a\alpha + b\beta + c|}{\sqrt{a^2 + b^2}}
+    \]
+    où $HM$ est la distance du point $M$ à la droite $(\Delta)$ et est notée $d((\Delta), M)$.
+
+    \item \textbf{Application} : Soit $(\Delta) : x - 2y + 2 = 0$.
+    \begin{enumerate}
+        \item Déterminer la distance de $M(1; 4)$ à $(\Delta)$.
+        \item Soit $N(0; 1)$. Déterminer $d((\Delta), N)$ et conclure.
+    \end{enumerate}
+\end{enumerate}
+\section*{Exercice 12}
+
+\begin{enumerate}
+    \item \textbf{Les théorèmes de la médiane} : $MAB$ étant un triangle ; $I$ milieu de $[AB]$, montrer que :
+    \begin{enumerate}
+        \item $MA^2 + MB^2 = 2IM^2 + \frac{AB^2}{2}$.
+        \item $MA^2 - MB^2 = 2\overrightarrow{IM} \cdot \overrightarrow{AB}$.
+        \item $\overrightarrow{MA} \cdot \overrightarrow{MB} = IM^2 - \frac{AB^2}{4}$.
+    \end{enumerate}
+
+    \item \textbf{Le théorème d’Alkashi} : Si $ABC$ est un triangle tel que $AB = c$ ; $AC = b$ et $BC = a$. Montrer que :
+    \[
+    a^2 = b^2 + c^2 - 2bc\cos\widehat{A}.
+    \]
+
+    \item \textbf{Le théorème des sinus} : Si $ABC$ est un triangle, établir les relations :
+    \[
+    \frac{a}{\sin\widehat{A}} = \frac{b}{\sin\widehat{B}} = \frac{c}{\sin\widehat{C}} = \frac{abc}{2S},
+    \]
+    où $S$ est l’aire du triangle.
+\end{enumerate}
+\section*{Exercice 13}
+
+Soit $A$ et $B$ deux points du plan tels que $AB = 4$.
+
+\begin{enumerate}
+    \item Déterminer l’ensemble des points $M$ du plan vérifiant :
+    \begin{enumerate}
+        \item $\overrightarrow{MA} \cdot \overrightarrow{MB} = 0$.
+        \item $\overrightarrow{MA} \cdot \overrightarrow{MB} = -9$.
+        \item $\overrightarrow{MA} \cdot \overrightarrow{MB} = -30$.
+        \item $\overrightarrow{MA} \cdot \overrightarrow{MB} = 5$.
+    \end{enumerate}
+
+    \item Déterminer l’ensemble des points $M$ du plan vérifiant :
+    \begin{enumerate}
+        \item $MA^2 - MB^2 = 0$.
+        \item $MA^2 - MB^2 = 10$.
+        \item $MA^2 - MB^2 = -30$.
+    \end{enumerate}
+
+    \item Déterminer l’ensemble des points $M$ du plan vérifiant :
+    \begin{enumerate}
+        \item $MA^2 + MB^2 = 0$.
+        \item $MA^2 + MB^2 = 22,5$.
+        \item $MA^2 + MB^2 = 7$.
+    \end{enumerate}
+\end{enumerate}
+\begin{enumerate}
+    \setcounter{enumi}{3}
+    \item Déterminer l’ensemble des points $M$ du plan vérifiant :
+    \begin{enumerate}
+        \item $\overrightarrow{AB} \cdot \overrightarrow{AM} = 0$.
+        \item $\overrightarrow{AB} \cdot \overrightarrow{AM} = 5$.
+        \item $\overrightarrow{AB} \cdot \overrightarrow{AM} = -2$.
+    \end{enumerate}
+
+    \item Déterminer l’ensemble des points $M$ du plan vérifiant :
+    \begin{enumerate}
+        \item $\frac{MA}{MB} = 2$.
+        \item $\frac{MA}{MB} = 5$.
+    \end{enumerate}
+\end{enumerate}
+\section*{Exercice 14}
+
+Soit $ABC$ un triangle isocèle tel que $AB = AC = 5$ et $BC = 6$.
+
+\begin{enumerate}
+    \item Montrer que $\overrightarrow{AC} \cdot \overrightarrow{AB} = 7$.
+
+    \item Soit $G = \text{bar}\{(A, 2); (B, 3); (C, 3)\}$. Construire $G$ et montrer que $AG = 3$.
+
+    \item Soit $f$ l’application qui à tout point $M$ du plan, associe :
+    \[
+    f(M) = 2\overrightarrow{MB} \cdot \overrightarrow{MC} + \overrightarrow{MC} \cdot \overrightarrow{MA} + \overrightarrow{MA} \cdot \overrightarrow{MB}.
+    \]
+    \begin{enumerate}
+        \item Calculer $f(A)$ et $f(G)$.
+        \item Déterminer l’ensemble des points $M$ tels que $f(M) = f(A)$ et représenter cet ensemble.
+    \end{enumerate}
+\end{enumerate}
+\section*{Exercice 15}
+
+Soit $ABC$ un triangle tel que $AB = 6$, $AC = 8$ et $\widehat{CAB} = \frac{\pi}{3}$.
+
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Calculer $\overrightarrow{AC} \cdot \overrightarrow{AB}$.
+        \item En déduire $BC = 2\sqrt{13}$.
+    \end{enumerate}
+
+    \item Soit $H$ le projeté orthogonal de $B$ sur $(AC)$.
+    \begin{enumerate}
+        \item Montrer que $AH = 3$ et vérifier que $H$ est le barycentre des points $A$ et $C$ affectés des coefficients que l’on déterminera.
+        \item Montrer que pour tout point $M$ du plan :
+        \[
+        5MA^2 + 3MC^2 = 8MH^2 + 120.
+        \]
+    \end{enumerate}
+
+    \item 
+    \begin{enumerate}
+        \item Déterminer l’ensemble $(C)$ des points $M$ du plan vérifiant $5MA^2 + 3MC^2 = 336$.
+        \item Vérifier que $B \in (C)$ et construire $(C)$.
+    \end{enumerate}
+\end{enumerate}
+\section*{Exercice 16}
+
+On considère le triangle $ABC$ tel que $AB = a$, $AC = 3a$ (où $a$ est un réel strictement positif) et $\widehat{BAC} = \frac{2\pi}{3}$.  
+Soient $H$ le projeté orthogonal de $C$ sur $(AB)$ et le point $O$ milieu de $[BC]$.
+
+\begin{enumerate}
+    \item Faire une figure.
+
+    \item 
+    \begin{enumerate}
+        \item Calculer $\overrightarrow{AB} \cdot \overrightarrow{AC}$.
+        \item En déduire $AH$, $CB$ et $CH$ en fonction de $a$.
+    \end{enumerate}
+
+    \item 
+    \begin{enumerate}
+        \item Calculer $\overrightarrow{BA} \cdot \overrightarrow{BC}$.
+        \item En déduire $AO$ en fonction de $a$.
+    \end{enumerate}
+
+    \item 
+    \begin{enumerate}
+        \item Soit $I$ milieu de $[AO]$ ; montrer que pour tout point $M$ du plan, on a 
+        \[
+        \overrightarrow{MA} \cdot (\overrightarrow{MB} + \overrightarrow{MC}) = 2(MI^2 + IA^2).
+        \]
+
+        \item Déterminer l’ensemble des points $M$ du plan tels que 
+        \[
+        \overrightarrow{MA} \cdot (\overrightarrow{MB} + \overrightarrow{MC}) = \frac{a^2}{4}.
+        \]
+    \end{enumerate}
+\end{enumerate}
+\section*{Exercice 17}
+
+Soit $ABC$ un triangle tel que $AB = 4$, $AC = 6$ et $BC = 8$. On désigne par $I$ le milieu de $[AB]$ et $J$ le milieu de $[AC]$.
+
+\begin{enumerate}
+    \item Montrer que 
+    \[
+    \overrightarrow{AB} \cdot \overrightarrow{AC} = \frac{1}{2}(AB^2 + AC^2 - BC^2).
+    \]
+
+    \item Calculer $\overrightarrow{AB} \cdot \overrightarrow{AC}$, puis déduire $\cos\widehat{BAC}$.
+
+    \item Soit $H$ le projeté orthogonal de $B$ sur $(AC)$, calculer $AH$.
+
+    \item Calculer $\overrightarrow{BA} \cdot \overrightarrow{BC}$, en déduire $BJ$.
+
+    \item 
+    \begin{enumerate}
+        \item Montrer que pour tout point $M$, on a :
+        \[
+        MA^2 + MB^2 = 2MI^2 + 8.
+        \]
+
+        \item Calculer $CI$.
+
+        \item Déterminer l’ensemble 
+        \[
+        E = \{M \in P : MA^2 + MB^2 = 100\}.
+        \]
+    \end{enumerate}
+
+    \item Montrer que pour tout point $M$ du plan, on a :
+    \[
+    \overrightarrow{MA} \cdot \overrightarrow{MC} = MJ^2 - 9.
+    \]
+
+    \item Calculer $\overrightarrow{IA} \cdot \overrightarrow{IC}$. En déduire l’ensemble 
+    \[
+    E' = \{M \in P : \overrightarrow{MA} \cdot \overrightarrow{MC} = 7\}.
+    \]
+
+    \item Soit $O$ le milieu de $[IJ]$.
+    \begin{enumerate}
+        \item Montrer que $MI^2 - MJ^2 = 2\overrightarrow{IJ} \cdot \overrightarrow{OM}$.
+        \item Déterminer l’ensemble $E''$ des points $M$ du plan tels que 
+        \[
+        MA^2 + MB^2 - 2\overrightarrow{MA} \cdot \overrightarrow{MC} = -6.
+        \]
+    \end{enumerate}
+\end{enumerate}
+
+
+\end{document}
