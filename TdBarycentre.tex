@@ -1,0 +1,309 @@
+\documentclass[12pt]{article}
+\usepackage{lmodern} % Pour une police plus nette
+\usepackage{stmaryrd}
+\usepackage{graphicx} % Pour l'insertion d'images
+\usepackage{float}    % Pour contrôler précisément le placement
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{verbatim}
+\usepackage{color, soul}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18} % Version plus récente de pgfplots
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+%\author{Destiné aux élèves de Terminale S\\Lycée de Dindéfelo\\Présenté par M. BA}
+%\title{\textbf{Rappels et compléments sur les fonctions numériques}}
+%\date{\today}
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+% Commande pour la couleur d'accentuation
+\newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\usepackage[margin=2.5cm]{geometry} % Ajustement des marges
+\usepackage{eso-pic} % Pour ajouter des éléments en arrière-plan
+
+% Commande pour ajouter du texte en arrière-plan, centré au milieu de chaque page
+\AddToShipoutPicture{
+    \AtPageCenter{%
+        \makebox(0,0)[c]{\rotatebox{60}{\textcolor[gray]{0.6}{\fontsize{2cm}{2cm}\selectfont PGB}}}
+    }
+}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+\raggedright
+\textbf{Ministère de l'Éducation Nationale}\\
+Inspection Académique de Kédougou\\
+Lycée Dindéfelo\\
+Cellule de Mathématiques
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\raggedleft
+\textbf{Année scolaire 2024-2025}\\
+Date : 15/01/2025\\
+Classe : 1er S2\\
+Professeur : M. BA
+\end{minipage}
+\vspace{1cm}
+\begin{center}
+\textbf{\textcolor{red}{Barycentre-Vecteur}}
+\end{center}
+\vspace{1cm}
+
+\section*{\underline{Exercice 1}}
+
+Soient \( A \), \( B \), \( C \) points du plan \( \mathcal{P} \).
+
+\begin{enumerate}
+    \item[1°)] Déterminer l'ensemble des points \( M \) de \( \mathcal{P} \) tels que :
+    \[
+    \| 3 \overrightarrow{MA} - \overrightarrow{MB} - \overrightarrow{MC} \| = \| - \overrightarrow{MA} + 3 \overrightarrow{MB} - \overrightarrow{MC} \|.
+    \]
+    
+    \item[2°)] Existe-t-il un point \( M \) de \( \mathcal{P} \) tel que :
+    \[
+    \| 3 \overrightarrow{MA} - \overrightarrow{MB} - \overrightarrow{MC} \| = \| - \overrightarrow{MA} + 3 \overrightarrow{MB} - \overrightarrow{MC} \| = \| - \overrightarrow{MA} - \overrightarrow{MB} + 3 \overrightarrow{MC} \| ?
+    \]
+
+    \item[3°)] Déterminer l'ensemble des points \( M \) de \( \mathcal{P} \) tels que :
+    \[
+    \| \overrightarrow{MA} + \overrightarrow{MB} + \overrightarrow{MC} \| =  \| 2\overrightarrow{MA} - \overrightarrow{MB} - \overrightarrow{MC} \|.
+    \]
+\end{enumerate}
+
+\section*{\underline{Exercice 2}}
+
+Étant donné un triangle \( ABC \), soient les points \( M \) et \( N \) définis par :
+\[
+\overrightarrow{AM} = \frac{1}{2} \overrightarrow{AB} - \overrightarrow{AC} \quad \text{et} \quad \overrightarrow{AN} = -\overrightarrow{AB} + \frac{1}{2} \overrightarrow{AC}.
+\]
+
+\begin{enumerate}
+    \item[1°)] Montrer que \( (MN) \) est parallèle à \( (BC) \).
+    \item[2°)] Donner les coordonnées de \( M \) et \( N \) dans les repères \( (A, \overrightarrow{AB}, \overrightarrow{AC}) \) puis \( (B, \overrightarrow{BA}, \overrightarrow{BC}) \).
+    \item[3°)] On définit maintenant les points \( M \) et \( N \) par :
+    \[
+    \overrightarrow{AM} = \frac{1}{2} \overrightarrow{AB} + (1 - k) \overrightarrow{AC} \quad \text{et} \quad \overrightarrow{AN} = (1 - k) \overrightarrow{AB} + \frac{1}{2} \overrightarrow{AC}, \quad (k \in \mathbb{R}).
+    \]
+    \begin{enumerate}
+        \item[a)] Exprimer \( \overrightarrow{MN} \) en fonction de \( \overrightarrow{BC} \).
+        \item[b)] Déterminer \( k \) pour que \( BCMN \) soit un parallélogramme.
+    \end{enumerate}
+\end{enumerate}
+
+\section*{\underline{Exercice 3}}
+
+On considère \( A \), \( B \), \( C \) trois points distincts du plan, \( a \), \( b \) et \( c \) trois réels non nuls. 
+
+On donne \( \overrightarrow{AI} = -2 \overrightarrow{AB} \) et \( \overrightarrow{BJ} = 3 \overrightarrow{BC} \).
+
+\begin{enumerate}
+    \item[1°)] Déterminer \( a \) et \( b \) tels que 
+    \[
+    I = \text{bar}\left\lbrace  \left( A, a \right), \left( B, b \right) \right\rbrace  \quad \text{et} \quad J = \text{bar}\left\lbrace  \left( B, b \right), \left( C, c \right) \right\rbrace .
+    \]
+    
+    \item[2°)] Montrer que \( I = \text{bar}\left\lbrace \left( A, 18 \right), \left( B, -12 \right) \right\rbrace \) 
+    
+    \item[3°)] Déterminer et construire l'ensemble des points \( M \) du plan tels que :
+    \begin{enumerate}
+        \item[a)] \( \| 3 \overrightarrow{MA} - 2 \overrightarrow{MB} \| = \| - 2 \overrightarrow{MB} + 3 \overrightarrow{MC} \| \).
+        \item[b)] \( \| 18 \overrightarrow{MA} - 12 \overrightarrow{MB} \| = \| \overrightarrow{MA} -  \overrightarrow{MB} \| \).
+    \end{enumerate}
+\end{enumerate}
+
+\section*{\underline{Exercice 4}}
+
+Soit \( ABC \) un triangle tel que \( AB = 4 \, \text{cm} \) et \( BC = 5 \, \text{cm} \). 
+
+On donne \( I = \text{bar} \left\lbrace  (A, 3), (B, -2) \right\rbrace  \) et \( J = \text{bar} \left\lbrace  (B, -2), (C, 3) \right\rbrace  \).
+
+Soit \( G \) le point défini par \( \overrightarrow{3GA} - \overrightarrow{2GB} + \overrightarrow{3GC} = \overrightarrow{O} \).
+
+\begin{enumerate}
+    \item[1)] Montrer que \( G = \text{bar} \left( (I, 1),(C, 3) \right) \).
+    
+    \item[2)] Déterminer et construire l'ensemble des points \( G \) du plan tels que :
+    \begin{enumerate}
+        \item[a)] \( \| 3 \overrightarrow{MA} - 2 \overrightarrow{MB} + 3 \overrightarrow{MC} \| = AB \)
+        \item[b)] \( 18 \overrightarrow{MA} - 12 \overrightarrow{MB} = \| \overrightarrow{MA} - \overrightarrow{MB} \| \)
+        \item[c)] \( \| 3 \overrightarrow{MA} - 2 \overrightarrow{MB} \| = \| -2\overrightarrow{MB} +3 \overrightarrow{MC} \| \)
+    \end{enumerate}
+\end{enumerate}
+
+\section*{\underline{Exercice 5}}
+
+\( ABCD \) est un rectangle.
+
+On donne \( G = \text{bar} \left\lbrace (A, 1), (B, 1), (C, 1), (D, 1) \right\rbrace  \).
+
+\begin{enumerate}
+    \item[1)] Justifier l'existence de \( G \).
+    
+    \item[2)] Montrer que \( A \), \( G \), \( C \) sont alignés.
+    
+    \item[3)] Soit \( I \) le milieu de \( [AB] \), et \( J \) celui de \( IC \). 
+    
+    Montrer que \( G \), \( J \), \( D \) sont alignés.
+    
+    \item[4)] Déterminer et construire l'ensemble des points \( M \) du plan tels que :
+    \begin{enumerate}
+        \item[a)] \( \| \overrightarrow{MA} + \overrightarrow{MB} + 2\overrightarrow{MC} + \overrightarrow{MD} \| = AB \)
+        \item[b)] \( \| \overrightarrow{MA} + \overrightarrow{MB} + 2\overrightarrow{MC} + \overrightarrow{MD} \| = \| \overrightarrow{AB} \| \)
+        \item[c)] \( \overrightarrow{MA} + \overrightarrow{MB} + 2\overrightarrow{MC} + \overrightarrow{MD}  \) soit colinéaire à \( \overrightarrow{AB} \)
+    \end{enumerate}
+\end{enumerate}
+
+\section*{\underline{Exercice 6}}
+
+1. \( ABCD \) est un carré de centre \( O \). Faire une figure avec \( AB = 4 \, \text{cm} \).
+
+2. Soit le système des points pondérés suivants : \( \{(A, 2), (B, 3), (C, 1), (D, -1)\} \)
+\begin{enumerate}
+    \item[a)] Justifier qu'il existe un point \( G \) barycentre de ce système.
+    \item[b)] En déduire une relation vectorielle caractérisant le barycentre \( G \).
+\end{enumerate}
+
+3. 
+\begin{enumerate}
+    \item[a)] Placer les points \( H \) et \( K \) tels que :
+    \[
+    \overrightarrow{AH} = \frac{1}{3} \overrightarrow{AC} \quad \text{et} \quad \overrightarrow{BK} = - \frac{1}{2} \overrightarrow{BD}.
+    \]
+    \item[b)] Écrire le point \( H \) comme barycentre de \( A \) et \( C \), puis \( K \) comme barycentre de \( B \) et \( D \).
+    \item[c)] Montrer que les points \( G \), \( H \) et \( K \) sont alignés.
+    \item[e)] Construire \( G \).
+\end{enumerate}
+
+4. Déterminer puis construire l'ensemble \( (\Sigma) \) des points \( M \) tels que :
+\[
+\| 2 \overrightarrow{MA} + 3 \overrightarrow{MB} + \overrightarrow{MC} - \overrightarrow{MD} \| = \frac{5}{2} \overrightarrow{AC}.
+\]
+
+5. Déterminer puis construire l'ensemble \( (\mathcal{T}) \) des points \( M \) tels que :
+\[
+\| 2 \overrightarrow{MA} + 3 \overrightarrow{MB} + \overrightarrow{MC} \| = 6 \| 2 \overrightarrow{MA} - \overrightarrow{MD} \|.
+\]
+
+\section*{\underline{Exercice 7}}
+
+Soit \( ABC \) un triangle isocèle en \( A \) tels que \( AB = AC = 3 \, \text{cm} \) et \( BC = 5 \, \text{cm} \).
+
+\begin{enumerate}
+    \item[1)] Construire le point \( G \) barycentre du système \( \{ (A, 5); (C, -2) \} \).
+    
+    \item[2)] Soit \( F \) le point défini par \( 5 \overrightarrow{FA} - 2 \overrightarrow{BF} = 2 \overrightarrow{FC} \).
+    \begin{enumerate}
+        \item[a)] Montrer que \( F \) est le barycentre des points \( G \) et \( B \) affectés des coefficients à déterminer.
+        \item[b)] Construire le point \( F \).
+    \end{enumerate}
+    
+    \item[3)] 
+    \begin{enumerate}
+        \item[a)] Déterminer puis construire l’ensemble \( (C) \) des points \( M \) du plan vérifiant :
+        \[
+        \| 5 \overrightarrow{MA} - 2 \overrightarrow{MC} \| = 6.
+        \]
+        \item[b)] Vérifier que \( A \) est un point de cet ensemble \( (C) \).
+        \item[c)] Montrer que \( (AF) \) est parallèle à \( (BC) \).
+    \end{enumerate}
+
+    \item[4)] Montrer que \( (AF) \) est parallèle à \( (BC) \).
+    
+    \item[5)] Soit \( I \) le barycentre des points pondérés \( (B, 2) \) et \( (C, 3) \). Justifier que le quadrilatère \( AFIC \) est un parallélogramme.
+
+    \item[6)] On note \( K \) son centre
+    \begin{enumerate}
+        \item[a)] Montrer que \( \overrightarrow{CK} = \frac{1}{2} \overrightarrow{CA} + \frac{1}{5} \overrightarrow{CB} \).
+        \item[b)] En déduire que \( K \) est le barycentre des points \( A \), \( B \) et \( C \) affectés des coefficients que l’on déterminera.
+    \end{enumerate}
+\end{enumerate}
+
+\section*{\underline{Exercice 8}}
+Soit \( ABCD \) un parallélogramme tel que \( AB = 7 \, \text{cm} \), \( AD = 5 \, \text{cm} \) et \( \angle BAD = 50^\circ \).
+
+\begin{enumerate}
+    \item Construire les points :
+    \begin{enumerate}
+        \item[a)] \( I \) barycentre de \( (A, 4); (B, 5); (C, -2) \) et \( (D, -1) \).
+        \item[b)] \( J \) barycentre de \( (A, 6); (B, -5); (C, 2) \) et \( (D, 1) \).
+    \end{enumerate}
+    
+    \item Démontrer que les points \( A \), \( I \) et \( J \) sont alignés.
+    
+    \item Déterminer et construire :
+    \begin{enumerate}
+        \item[a)] L'ensemble \( C_1 \) des points \( M \) du plan vérifiant :
+        \[
+        \frac{2}{3} \| 4 \overrightarrow{MA} + 5 \overrightarrow{MB} - 2 \overrightarrow{MC} - \overrightarrow{MD} \| = \| 6 \overrightarrow{MA} - 5 \overrightarrow{MB} + 2 \overrightarrow{MC} + \overrightarrow{MD} \|.
+        \]
+        
+        \item[b)] L'ensemble \( C_2 \) des points \( M \) du plan tel que :
+        \[
+        4 \overrightarrow{M A} + 5 \overrightarrow{M B} - 2 \overrightarrow{M C} - \overrightarrow{M D} \text{ soit colinéaire à } \overrightarrow{A B} + \overrightarrow{A C}.
+        \]
+    \end{enumerate}
+\end{enumerate}
+
+\section*{\underline{Exercice 9}}
+
+Soit \( ABCD \) un carré de côté 4 cm.
+
+\begin{enumerate}
+    \item[1)] Montrer que \( \overrightarrow{AB} - \overrightarrow{AC} + \overrightarrow{AD} = 0 \) puis en écrire \( A \) comme barycentre des points \( B \), \( C \) et \( D \) affectés des coefficients à déterminer. 
+    
+    \item[2)] Construire les points \( H \) et \( K \) définis par :
+    \[
+    H = \text{bar}\left\lbrace (A, -1); (B, 2) \right\rbrace , \quad K = \text{bar}\left\lbrace (C, 1); (D, -3) \right\rbrace .
+    \] 
+    
+    \item[3)] Soit \( G \) le barycentre du système \( \{ (A, -\sqrt{3}); (B, 2\sqrt{3}); (C, \sqrt{3}); (D, -3\sqrt{3}) \} \).
+    \begin{enumerate}
+        \item[a)] Montrer que les points \( G \), \( H \) et \( K \) sont alignés. 
+        \item[b)] Construire le point \( G \) sur la même figure.
+    \end{enumerate}
+    
+    \item[4)] Déterminer l’ensemble des points \( M \) du plan tels que :
+    \begin{enumerate}
+        \item[a)] \( 2 \| \overrightarrow{MA} + 2 \overrightarrow{MB} \| = \| \overrightarrow{MC} - 3 \overrightarrow{MD} \| \)
+        \item[b)] \( \| \overrightarrow{MA} + 2 \overrightarrow{MB} + \overrightarrow{MC} - 3 \overrightarrow{MD} \| = AB \)
+    \end{enumerate}
+\end{enumerate}
+
+\section*{\underline{Exercice 10}}
+
+Soit \( A \), \( B \), \( C \) et \( D \) quatre points distincts du plan. 
+ 
+On donne \( E \) barycentre de \( (A, -1); (B, 2) \) et \( (C, -3) \). 
+ 
+\( F \) est le milieu du segment \( [ED] \);  
+
+\( G \) est le barycentre de \( (A, 1); (D, 2) \);  
+
+\( H \) est le barycentre de \( (B, 2); (C, -3) \).
+
+\begin{enumerate}
+    \item[1)] Faire une figure.
+    \item[2)] Montrer que \( F \) est le barycentre de \( (A, -1); (B, 2) \); \( (C, -3) \) et \( (D, -2) \).
+    \item[3)] Prouver que les points \( G \), \( F \) et \( H \) sont alignés.
+    \item[4)] Déterminer et construire l'ensemble \( \mathcal{F} \) des points \( M \) du plan tels que :
+    \[
+    \| - \overrightarrow{MA} + 2 \overrightarrow{MB} - 3 \overrightarrow{MC} - 2 \overrightarrow{MD} \| = \| - 2 \overrightarrow{MA} + 4 \overrightarrow{MB} - 6 \overrightarrow{MC} \|
+    \]
+    \item[b)] Exprimer le vecteur \( \overrightarrow{MA} + 2 \overrightarrow{MB} - 3 \overrightarrow{MC} \) en fonction de \( \overrightarrow{AH} \).
+    \item[c)] Déterminer et construire l'ensemble \( \mathcal{G} \) des points \( M \) du plan tel que :
+    \[
+    \| -\overrightarrow{MA} + 2 \overrightarrow{MB} - 3 \overrightarrow{MC} - 2 \overrightarrow{MD} \| = \| \overrightarrow{MA} + 2 \overrightarrow{MB} - 3 \overrightarrow{MC} \|
+    \]
+\end{enumerate}
+
+\section*{\underline{Exercice 10}}
+\end{document}
