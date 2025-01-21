@@ -9,6 +9,7 @@
 \usepackage{verbatim}
 
 \usepackage{color, soul}
+\usepackage{xcolor} % Ajout pour les couleurs
 
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.15}
@@ -28,9 +29,194 @@
 \newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
 \newcommand\tab[1][1cm]{\hspace*{#1}}
 
+% Redéfinition des sous-sections avec une couleur
+\makeatletter
+\renewcommand{\@seccntformat}[1]{\color{blue}\csname the#1\endcsname\quad}
+\renewcommand\subsection{\@startsection{subsection}{2}{0mm}%
+    {-\baselineskip}{0.5\baselineskip}{\normalfont\bfseries\color{red}}}
+% Redéfinition des sections avec une couleur
+\renewcommand\section{\@startsection{section}{1}{0mm}%
+    {-\baselineskip}{0.5\baselineskip}{\normalfont\LARGE\bfseries\color{blue}}}
+
+\makeatother
+
 \begin{document}
 \maketitle
 \newpage
 
-\section*{\underline{\textbf{\textcolor{red}{I.Barycentre de plusieurs points}}}}
+\section*{I. Produit scalaire de deux vecteurs}
+\subsection*{1. Définition}
+
+Soient $\vec{u}$ et $\vec{v}$ deux vecteurs non nuls, on appelle \textbf{produit scalaire} du vecteur $\vec{u}$ par le vecteur $\vec{v}$ le réel noté $\vec{u} \cdot \vec{v}$ défini par :
+\[
+\vec{u} \cdot \vec{v} = \|\vec{u}\| \times \|\vec{v}\| \times \cos(\widehat{\vec{u}, \vec{v}})
+\]
+
+Si $\vec{u} = \vec{0}$ ou $\vec{v} = \vec{0}$, alors :
+\(
+\vec{u} \cdot \vec{v} = 0
+\)
+
+\textbf{Attention} : Le produit scalaire de deux vecteurs n'est \textbf{pas un vecteur} mais un \textbf{nombre réel}.
+\section*{Remarque}
+
+Si $A$, $B$, $C$ sont trois points du plan, en posant $\vec{u} = \overrightarrow{AB}$ et $\vec{v} = \overrightarrow{AC}$, on a :
+\[
+\overrightarrow{AB} \cdot \overrightarrow{AC} = \|\overrightarrow{AB}\| \times \|\overrightarrow{AC}\| \times \cos(\widehat{BAC})
+\]
+
+\subsection*{Cas particulier de deux vecteurs colinéaires $\vec{u}$ et $\vec{v}$ non nuls}
+
+\begin{itemize}
+    \item Si $\vec{u}$ et $\vec{v}$ sont colinéaires et de même sens, alors :
+    \[
+    \vec{u} \cdot \vec{v} = \|\vec{u}\| \times \|\vec{v}\| \quad \text{car} \quad \cos(\widehat{\vec{u}, \vec{v}}) = 1
+    \]
+    \item Si $\vec{u}$ et $\vec{v}$ sont colinéaires et de sens contraires, alors :
+    \[
+    \vec{u} \cdot \vec{v} = -\|\vec{u}\| \times \|\vec{v}\| \quad \text{car} \quad \cos(\widehat{\vec{u}, \vec{v}}) = -1
+    \]
+\end{itemize}
+dans un repère orthonormé, alors :
+\[
+\vec{u} \cdot \vec{v} = xx' + yy'
+\]
+
+\textbf{Remarque} : Ce résultat est indépendant du repère choisi.
+\subsection*{2) Propriété}
+
+\begin{itemize}
+    \item \textbf{P1 :} 
+    Deux vecteurs $\vec{u}$ et $\vec{v}$ sont orthogonaux si l'un d'eux est nul ou si leurs directions sont orthogonales.
+    
+    \item \textbf{P2 :} 
+    Le produit scalaire $\vec{u} \cdot \vec{v}$ est nul si et seulement si $\vec{u}$ et $\vec{v}$ sont orthogonaux.
+    
+    \item \textbf{P3 :} 
+    Si $\vec{u}$ a pour composant $\vec{u}(x, y)$ et $\vec{v}(x', y')$, alors :
+    \[
+    \vec{u} \cdot \vec{v} = x \cdot x' + y \cdot y'.
+    \]
+
+\textbf{Remarque} : Ce résultat est indépendant du repère choisi.
+
+    \item \textbf{P4 :} 
+    Soient $\vec{u}$, $\vec{v}$, $\vec{w}$ trois vecteurs du plan et $k$ un réel :
+\begin{itemize}
+    \item \(
+    \vec{u} \cdot \vec{v} = \vec{v} \cdot \vec{u} \quad \text{(symétrie ou commutativité)}
+    \)
+    \item \(
+    \vec{u} \cdot (k \vec{v}) = k (\vec{u} \cdot \vec{v}) \quad \text{et} \quad \vec{u} \cdot (\vec{v} + \vec{w}) = \vec{u} \cdot \vec{v} + \vec{u} \cdot \vec{w}.
+    \)
+    On dit que le produit scalaire est linéaire.
+\end{itemize}
+    
+    \item \textbf{P5 :} 
+    $\vec{u} \cdot \vec{u} = \|\vec{u}\|^2$. Ce nombre est appelé le carré scalaire de $\vec{u}$ et est noté $\vec{u}^2$.
+
+    \item \textbf{P6 :} 
+    Si $\vec{u}(x_C, y_C)$ et $\vec{v}(x_B, y_B)$ dans un repère orthonormé, alors :
+    \[
+    \vec{u} \cdot \vec{v} = x_C \cdot x_B + y_C \cdot y_B, \quad AB = \sqrt{(x_B - x_A)^2 + (y_B - y_A)^2}.
+    \]
+\end{itemize}
+\subsection*{Exerice d'application}
+
+Soient $A(-2, -3)$, $B(1, 1)$, $C(-3, -1)$, $D(4, 2)$, $E(-4, -3)$ et $E(2, -1)$ dans un repère orthonormé.
+
+En utilisant deux méthodes différentes (une méthode par triangle), montrer que le triangle $ABC$ est un triangle rectangle en $C$, mais que $FDE$ ne l'est pas en $E$.
+\subsection*{Correction}
+\textbf{Calculons $AB$, $AC$ et $BC$ :}
+
+\[
+AB = \sqrt{(1 + 2)^2 + (1 + 3)^2}
+\]
+\[
+AB = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = 5
+\]
+
+\[
+AC = \sqrt{(-3 + 2)^2 + (-1 + 3)^2}
+\]
+\[
+AC = \sqrt{(-1)^2 + 2^2} = \sqrt{1 + 4} = \sqrt{5}
+\]
+
+\[
+BC = \sqrt{(-3 - 1)^2 + (-1 - 1)^2}
+\]
+\[
+BC = \sqrt{16 + 4} = \sqrt{20}
+\]
+\[
+BC = 2\sqrt{5}
+\]
+
+\textbf{Calculons} $AB^2$ :
+\[
+AB^2 = 5^2 = 25
+\]
+
+\textbf{Calculons} $AC^2 + BC^2$ :
+\[
+AC^2 + BC^2 = (\sqrt{5})^2 + (2\sqrt{5})^2
+\]
+\[
+AC^2 + BC^2 = 5 + 20 = 25
+\]
+
+Ainsi, on a :
+\[
+AB^2 = AC^2 + BC^2
+\]
+
+Comme $AB^2 = AC^2 + BC^2$, d'après la réciproque du théorème de Pythagore, le triangle $ABC$ est rectangle en $C$.
+
+Le triangle $EDF$ n'est pas rectangle en $E$ si et seulement si :
+\[
+\widehat{FED} \neq 90^\circ
+\]
+C'est-à-dire que :
+\[
+\vec{EF} \cdot \vec{ED} \neq 0
+\]
+
+\textbf{les coordonnées des vecteurs $\vec{EF}$ et $\vec{ED}$ :}
+
+\[
+\vec{EF}(3, 2) \quad \text{et} \quad \vec{ED}(-3, 5)
+\]
+
+\[
+\vec{EF} \cdot \vec{ED} = (3 \times -3) + (2 \times 5)
+\]
+\[
+\vec{EF} \cdot \vec{ED} = 1 = 36 \neq 0
+\]
+
+Donc, $EDF$ n'est pas rectangle en $E$.
+
+\subsubsection*{3) Identités remarquables :}
+
+Soient $\vec{u}$ et $\vec{v}$ deux vecteurs du plan.
+
+\[
+I_1 : (\vec{u} + \vec{v})^2 = \|\vec{u}\|^2 + \|\vec{v}\|^2 + 2(\vec{u} \cdot \vec{v})
+\]
+\[
+\iff \|\vec{u} + \vec{v}\|^2 = \|\vec{u}\|^2 + \|\vec{v}\|^2 + 2\|\vec{u}\|\|\vec{v}\| \cos(\theta)
+\]
+
+\[
+I_2 : (\vec{u} - \vec{v})^2 = \|\vec{u}\|^2 + \|\vec{v}\|^2 - 2(\vec{u} \cdot \vec{v})
+\]
+\[
+\iff \|\vec{u} - \vec{v}\|^2 = \|\vec{u}\|^2 + \|\vec{v}\|^2 - 2\|\vec{u}\|\|\vec{v}\| \cos(\theta)
+\]
+
+\[
+I_3 : (\vec{u} + \vec{v})(\vec{u} - \vec{v}) = \|\vec{u}\|^2 - \|\vec{v}\|^2
+\]
+
 \end{document}
