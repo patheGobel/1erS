@@ -666,7 +666,47 @@ Dans ce système, la dernière équation contient seulement \( z \), ce qui perm
 
 \subsubsection*{\underline{\textbf{\textcolor{red}{b. Méthode du pivot de Gauss }}}}
 
-\subsection*{\underline{\textbf{\textcolor{red}{2. Systèmes d’inéquations linéaires }}}}
-\subsubsection*{\underline{\textbf{\textcolor{red}{a. Inéquations linéaires à deux inconnues}}}}
-\subsubsection*{\underline{\textbf{\textcolor{red}{b. Système de deux inéquations linéaires à deux inconnues }}}}
+a. Exemple 1
+
+	Résolvons le système suivant en utilisant la méthode du pivot de Gauss
+
+	$\left\lbrace\begin{array}{lcl}x+10y-3z& =&5\\2x-y+2z& = 2\\-x+y+z& =& -3\end{array}\right.$
+
+	Pour résoudre un tel système, on commence par désigner les $3$ équations respectivement par $L_{1}$ ; $L_{2}$ et $L_{3}$
+
+	$\left\lbrace\begin{array}{lcl}x+10y-3z& =& 5\qquad\left(L_{1}\right)\\2x-y+2z& =& 2\qquad\left(L_{2}\right)\\-x+y+z& =& -3\qquad\left(L_{3}\right)\end{array}\right.$
+
+	$1^{er}$ étape : 
+
+
+	On fixe l'équation $\left(L_{1}\right)$ puis on élimine l'inconnue $x$ dans $\left(L_{2}\right)$ en considérant le sous-système $-2\left\lbrace\begin{array}{lcl}x+10y-3z& =& 5\qquad\left(L_{1}\right)\\2x-y+2z& =& 2\qquad\left(L_{2}\right)\end{array}\right.$
+
+
+	$$\text{d'où }\left\lbrace\begin{array}{lcl}-2x-20y+6z& =& -10\\2x-y+2z& =& 2\end{array}\right.$$
+	
+	ainsi on a : $-21y+8z=-8\quad\left(L'_{2}\right)$
+
+$2^{ième}$ étape :
+
+	On fixe l'équation $\left(L_{1}\right)$ puis on élimine l'inconnue $x$ dans $\left(L_{3}\right)$ en considérant le sous-système $\left\lbrace\begin{array}{lcl}x+10y-3z&=&5\qquad\left(L_{1}\right)\\-x+y+z&=&-3\qquad\left(L_{3}\right)\end{array}\right.$
+
+	d'où ainsi on a : $11y-2z=2\quad\left(L'_{3}\right)$
+
+	Ainsi, on obtient le système équivalent suivant : $\left\lbrace\begin{array}{lcl}x+10y-3z& =& 5\qquad\left(L_{1}\right)\\-21y+8z& =& -8\qquad\left(L'_{2}\right)\\11y-2z& =& -3\qquad\left(L'_{3}\right)\end{array}\right.$
+
+$3^{ième}$ étape :
+
+	On fixe $\left(L'_{2}\right)$ puis on élimine $y$ dans $\left(L'_{3}\right)$ en considérant le sous-système $\left\lbrace\begin{array}{lcl}-21y+8z& =& -8\qquad\left(L'_{2}\right)\\11y-2z& =& 2\qquad\left(L'_{3}\right)\end{array}\right.$
+
+	Ainsi on a $46z=-46\left(L"_{3}\right)$
+
+	On obtient le système équivalent suivant dit système triangulaire
+
+	$\left\lbrace\begin{array}{lcl}x+10y-3z =& 5\qquad\left(L_{1}\right)\\-21y+8z& =& -8\qquad\left(L'_{2}\right)\\46z& =& -46\qquad\left(L"_{3}\right)\end{array}\right.$
+	
+$4^{ième}$ étape :
+
+	Pour terminer la résolution, on détermine $z$ dans $\left(L"_{3}\right)$, puis on remplace $z$ par cette valeur dans $\left(L'_{2}\right)$, on obtient la valeur de $y$ puis on obtient celle de $x$, en substituant à $y$ et $z$ par leurs valeurs respectives dans $\left(L'_{1}\right).$
+
+	Ainsi on a : $S=\left\lbrace(2\ ;\ 0\ ;\ -1)\right\rbrace$
 \end{document}
