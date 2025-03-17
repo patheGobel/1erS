@@ -1,0 +1,378 @@
+\documentclass{article}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{ulem} % Pour le soulignement double
+\usepackage{xcolor}
+\usepackage{tikz}
+\begin{document}
+
+\begin{center}
+    \textcolor{red}{\textbf{L’outil métrique trigonométrie}}
+\end{center}
+
+\textcolor{red}{\textbf{A) Angles orientés}}  
+
+\section*{\textcolor{red}{\textbf{\uline{I- Cercle trigonométrique, radian}}}}  
+
+\vspace{0.5cm}
+
+\textcolor{red}{\textbf{1) Cercle trigonométrique}}  
+
+\vspace{0.3cm}
+
+\textcolor{red}{\textbf{\underline{a) Définition}}}  
+
+Dans un repère orthonormé $(O, \vec{i}, \vec{j})$, on appelle \textbf{cercle trigonométrique} le cercle \textbf{orienté} $\mathcal{C}(O,1)$, de centre $O$ et de rayon $1$. 
+
+Sur ce cercle, on définit une origine $I$ et deux sens :
+
+\begin{itemize}
+    \item \textbf{Le sens direct ou sens positif, ou sens trigonométrique} : c'est le sens inverse des aiguilles d'une montre.
+    \item \textbf{Le sens indirect ou sens négatif, ou sens antitrigonométrique ou sens rétrograde} : c'est le sens de déplacement des aiguilles d'une montre.
+\end{itemize}
+
+\textcolor{red}{\textbf{\underline{a) Remarque :}}} Puisque le rayon d’un cercle trigonométrique est $1$, son périmètre est $P = 2\pi $
+et l’aire de son disque est $A = r^{2}\pi.$
+
+\begin{center}
+    \begin{tikzpicture}
+        % Cercle trigonométrique
+        \draw[thick] (0,0) circle(2);
+        
+        % Axes
+        \draw[->] (-2.5,0) -- (2.5,0) node[right] {axe des abscisses};
+        \draw[->] (0,-2.5) -- (0,2.5) node[above] {axe des ordonnées};
+        
+        % Points et labels
+        \draw[fill] (0,0) circle(0.05) node[below left] {$O$};
+        \draw[fill] (2,0) circle(0.05) node[below] {$I$};
+        \draw[fill] (0,2) circle(0.05) node[left] {$J$};
+        \draw[fill] ({2*cos(60)},{2*sin(60)}) circle(0.05) node[right] {$M$};
+        
+        % Rayon et angle
+        \draw[thick, red] (0,0) -- ({2*cos(60)},{2*sin(60)});
+        \node at (0.4,0.3) {$\alpha$};
+        % Arc de cercle IM en bleu
+        \draw[thick, blue] (2,0) arc (0:60:2);
+        % Indication du rayon
+        \draw[dashed] (0,0) -- (2,0);
+    \end{tikzpicture}
+\end{center}
+
+$OI = 1 = OJ = R$
+
+La longueur d’un arc est donnée par :  $L_{\widehat{IM}} = | \alpha |$.
+
+\textcolor{red}{\textbf{2) Radian}}  
+
+\textcolor{red}{\textbf{ Définition}} 
+
+La mesure d'un angle $\widehat{IOM}$ est de \textbf{1 radian} lorsque la mesure de l'arc du cercle trigonométrique qu'il intercepte est égale à 1 rayon.
+
+Il existe une correspondance entre une mesure d'angle $a$ en degrés et $b$ en radians, donnée par :  
+\[
+b = \frac{a \pi}{180} \quad \text{ou} \quad a = \frac{180b}{\pi}
+\]
+
+\subsection*{\textcolor{red}{\textbf{II. Angle orienté d’un couple de vecteurs}}}
+
+\subsection*{\textcolor{red}{\textbf{1) Angles géométriques : Angles ouverts}}}
+
+\textcolor{red}{\textbf{ Définition 1}}
+
+Dans un repère $(O, I, J)$, on considère 2 vecteurs $\overrightarrow{u}$ et $\overrightarrow{v}$ non-nuls.  
+Soient $A$ et $B$ deux points du plan tels que $\overrightarrow{u} = \overrightarrow{OA}$ et $\overrightarrow{v} = \overrightarrow{OB}$.  
+
+Les deux angles $\widehat{AOB}$ et $\widehat{BOA}$ sont des angles géométriques de même mesure, toujours positifs : $\text{mes} \widehat{AOB} = \text{mes} \widehat{BOA}$
+
+L’angle $(\overrightarrow{u}, \overrightarrow{v})$ formé par les deux vecteurs $\overrightarrow{OA}$ et $\overrightarrow{OB}$ est un angle orienté (on tourne de $\overrightarrow{OA}$ vers $\overrightarrow{OB}$).  
+
+Alors que l’angle $(\overrightarrow{v}, \overrightarrow{u})$ est un angle orienté mais de sens contraire.  
+
+Donc : $(\overrightarrow{v}, \overrightarrow{u}) = -(\overrightarrow{u}, \overrightarrow{v})$
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+    % Points
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (4,0);
+    \coordinate (B) at (2,3);
+
+    % Vecteurs
+    \draw[->, thick] (O) -- (A) node[below] {$A$};
+    \draw[->, thick] (O) -- (B) node[left] {$B$};
+
+    % Étiquettes des vecteurs
+    \node[below] at (2,-0.2) {$\overrightarrow{u}$};
+    \node[left] at (1,1.5) {$\overrightarrow{v}$};
+
+    % Nom des points
+    \node[below left] at (O) {$O$};
+
+    % Angle
+    \draw [thick] (1,0) arc[start angle=0, end angle=56.31, radius=1cm];
+    \node at (1.2,0.5) {$\widehat{AOB}$};
+\end{tikzpicture}
+\end{center}
+
+\underline{\textbf{\textcolor{red}{(Définition 2 :) Théorème :}}}
+
+\vspace{0.5cm}
+
+Soit $M$ un point quelconque du cercle trigonométrique 
+
+tel que $(\overrightarrow{OI}, \overrightarrow{OM}) = \alpha $rad . 
+
+On peut lui associer une famille de nombres réels de la forme :
+
+$\alpha + 2k\pi, \quad k \in \mathbb{Z}$ qui correspondent au même point $M$ du cercle trigonométrique.
+
+\vspace{0.5cm}
+
+\underline{\textbf{\textcolor{red}{Définition :}}}
+
+Dans le plan muni de \textbf{RON} $(O, I, J)$, on considère les vecteurs $\overrightarrow{u}$ et $\overrightarrow{v}$ non-nuls tels que la mesure de l'angle $(\overrightarrow{u}, \overrightarrow{v}) = \alpha$ rad.  
+Alors chacun des nombres associés à $\alpha$ de la forme : $\alpha + 2k\pi, \quad k \in \mathbb{Z}$ est appelé une mesure de l'angle orienté de vecteurs $(\overrightarrow{u}, \overrightarrow{v})$.
+
+\vspace{0.5cm}
+
+\underline{\textbf{\textcolor{red}{2) Nombre principal d'un angle orienté}}}
+
+\vspace{0.5cm}
+
+\underline{\textbf{\textcolor{red}{Définition :}}}
+
+Dans un repère orthonormé $(O, I, J)$, on considère deux vecteurs $\overrightarrow{u}$ et $\overrightarrow{v}$ non-nuls tels que $(\overrightarrow{u}, \overrightarrow{v}) = \alpha \text{ rad}$.  
+Parmi toutes les mesures d'angles associées à $\alpha$ de la forme : $\alpha + 2k\pi, \quad k \in \mathbb{Z}$
+
+il existe une et une seule mesure qui appartient à l'intervalle $]-\pi, \pi]$.  
+
+Cette mesure \uline{principale} s'appelle la \textbf{mesure principale} de l'angle $(\overrightarrow{u}, \overrightarrow{v})$.
+
+\vspace{0.5cm}
+
+\underline{\textbf{\textcolor{red}{Exemple :}}}  
+Dans chacun des cas suivants, détermine la mesure principale de l'angle $(\overrightarrow{u}, \overrightarrow{v})$ : $\alpha = \frac{89\pi}{7}, \quad \beta = \frac{223\pi}{12}$
+
+\underline{\textbf{\textcolor{red}{Résolution :}}}
+
+\textbf{1) Méthode algébrique}
+
+$\alpha = \frac{89\pi}{7}$, la mesure principale de $\alpha$ est de la forme $\alpha + 2k\pi$,
+
+$k \in \mathbb{Z}$ et $-\pi < \alpha + 2k\pi \leq \pi$
+
+\[
+-\pi < \frac{89\pi}{7} + 2k\pi \leq \pi
+\]
+
+On divise par $\pi$ :
+
+\[
+-1 < \frac{89}{7} + 2k \leq 1
+\]
+
+\[
+-1 - \frac{89}{7} \leq 2k \leq 1 - \frac{89}{7}
+\]
+
+\[
+-\frac{96}{7} \leq 2k \leq -\frac{82}{7}
+\]
+
+On divise par 2 :
+
+\[
+-\frac{48}{7} \leq k \leq -\frac{41}{7}
+\]
+
+En valeurs décimales :
+
+\[
+-6.10 < k \leq -5.86
+\]
+
+D'où :
+
+\[
+k = -6
+\]
+
+\textbf{2) Méthode pratique (facile, ingénieuse et pratique)}
+
+On effectue la division euclidienne de 89 par 7 :
+
+\[
+89 \div 7 = 12 \text{ quotient}, \quad \text{reste } 5
+\]
+
+\[
+\frac{89\pi}{7} = 12\pi +\frac{5\pi}{7}
+\]
+
+Comme $12\pi$ est un multiple de $2\pi$, il ne change pas la mesure principale. Donc :
+
+\[
+\frac{5\pi}{7} \text{ est la mesure principale de } \frac{89\pi}{7}
+\]
+
+\section*{\textcolor{red}{\textbf{\uline{III - Propriétés des angles orientés :}}}}
+
+\underline{\textbf{\textcolor{red}{2)Angle orienté de deux vecteurs colinéaires}}}
+
+\textcolor{red}{\textbf{\underline{Théorème}}}
+
+Soient $\vec{u}$ et $\vec{v}$ deux vecteurs non-nuls du plan dans un repère orthonormé direct (O, I, J) :
+
+\begin{itemize}
+    \item \textbf{P1 :} L'angle $(\vec{u}, \vec{u}) = 0^\circ$ et $(\vec{u}, -\vec{u}) = 180^\circ$
+    \item \textbf{P2 :} Les vecteurs $\vec{u}$ et $\vec{v}$ sont deux vecteurs colinéaires et de même sens si $(\vec{u}, \vec{v}) = 0^\circ$
+    \item \textbf{P3 :} Les vecteurs $\vec{u}$ et $\vec{v}$ sont colinéaires et de sens contraire si $(\vec{u}, \vec{v}) = 180^\circ$
+\end{itemize}
+
+Ces propriétés permettent de démontrer le parallélisme de deux droites, l'alignement de trois points ou la colinéarité de deux vecteurs.
+
+\underline{\textbf{\textcolor{red}{2)Relation du Chasles}}}
+
+Soient $\vec{u}$, $\vec{v}$ et $\vec{w}$ trois vecteurs non-nuls du plan dans un repère orthonormé (RON).
+
+\underline{\textbf{\textcolor{red}{3) Angles orientés et vecteurs opposés}}}
+
+Soient $\vec{u}$ et $\vec{v}$ deux vecteurs non-nuls du plan dans un repère orthonormé $(O, \vec{i}, \vec{j})$ :
+
+\begin{align*}
+    P_5 & : (\vec{v}, \vec{u}) = - (\vec{u}, \vec{v}) \\
+    P_6 & : (\vec{u}, -\vec{v}) = (\vec{u}, \vec{v}) + \pi \\
+    P_7 & : (-\vec{u}, \vec{v}) = \pi + (\vec{u}, \vec{v}) \\
+    P_8 & : (-\vec{u}, -\vec{v}) = (\vec{v}, \vec{u})
+\end{align*}
+\underline{\textbf{\textcolor{red}{Application}}}
+
+Soit $ABC$ un triangle, montrer que la somme des mesures 
+
+angulaires de ses trois angles est égale à $\pi$.
+
+\begin{center}
+    \begin{tikzpicture}
+        % Dessin du triangle
+        \coordinate (A) at (3,4);
+        \coordinate (B) at (0,0);
+        \coordinate (C) at (6,0);
+        
+        % Tracer les côtés du triangle
+        \draw [thick] (A) -- (B) -- (C) -- cycle;
+
+        % Nommer les sommets
+        \node[above] at (A) {$A$};
+        \node[left] at (B) {$B$};
+        \node[right] at (C) {$C$};
+
+        % Dessin des arcs pour représenter les angles
+        \draw [thick] (B) ++(0.3,0) arc[start angle=0, end angle=40, radius=0.3];
+        \draw [thick] (C) ++(-0.3,0) arc[start angle=180, end angle=140, radius=0.3];
+        \draw [thick] (A) ++(-0.2,-0.1) arc[start angle=240, end angle=300, radius=0.4];
+
+    \end{tikzpicture}
+\end{center}
+
+\(
+\widehat{A} = (\overrightarrow{AB}, \overrightarrow{AC})
+\)
+\(
+\widehat{B} = (\overrightarrow{BC}, \overrightarrow{BA})
+\)
+\(
+\widehat{C} = (\overrightarrow{CA}, \overrightarrow{CB})
+\)
+
+\(
+\widehat{A} + \widehat{B} + \widehat{C} =
+(\overrightarrow{AB}, \overrightarrow{AC}) + (\overrightarrow{BC}, \overrightarrow{BA}) + (\overrightarrow{CA}, \overrightarrow{CB})
+\)
+
+\(
+= (\overrightarrow{AB}, \overrightarrow{AC}) + (\overrightarrow{BC}, -\overrightarrow{BC}) + (\overrightarrow{CA}, -\overrightarrow{BC})
+\)
+
+\(
+= (\overrightarrow{AB}, \overrightarrow{AC}) + \pi + (\overrightarrow{BC}, \overrightarrow{AB}) + (\overrightarrow{AC}, \overrightarrow{BC})
+\)
+
+\(
+= (\overrightarrow{AB}, \overrightarrow{AC}) + (\overrightarrow{AC}, \overrightarrow{BC}) + (\overrightarrow{BC}, \overrightarrow{AB}) + \pi
+\)
+
+\(
+= (\overrightarrow{AB}, \overrightarrow{AB}) + \pi
+\)
+
+\(
+\widehat{A} + \widehat{B} + \widehat{C} = \pi
+\)
+
+\underline{\textbf{\textcolor{red}{4) Généralisation}}}
+
+Soient $\vec{u}$ et $\vec{v}$ deux (espère ort) vecteurs non-nuls du plan dans un R.O.N $(O,\vec{i},\vec{j})$ direct. Soient $k$ et $k'$ deux réels non-nuls.
+
+\begin{itemize}
+    \item[a)] si $k$ et $k'$ de même signe, alors :
+    \[ (k \vec{u}, k'\vec{v}) = (\vec{u}, \vec{v}) \]
+    \item[b)] Si $k$ et $k'$ sont de signes contraires, alors :
+    \[ (k \vec{u},k'\vec{v}) = \pi + \left( \vec{u}, \vec{v} \right) \]
+\end{itemize}
+
+\subsection*{Application}
+
+\begin{center}
+    \begin{tikzpicture}
+        % Points
+        \coordinate (A) at (-3,0);
+        \coordinate (B) at (-1,0);
+        \coordinate (C) at (0,-2);
+        \coordinate (D) at (1,1);
+        \coordinate (E) at (3,2);
+        
+        % Segments
+        \draw (A) -- (B);
+        \draw (B) -- (C);
+        \draw (C) -- (D);
+        \draw (D) -- (E);
+        
+        % Angles
+        \draw[thick] (B) ++(0.2,0) arc[start angle=0, end angle=-45, radius=0.2];
+        \draw[thick] (C) ++(0.2,0) arc[start angle=0, end angle=45, radius=0.2];
+        
+        % Labels
+        \node[left] at (A) {$A$};
+        \node[below] at (B) {$B$};
+        \node[below] at (C) {$C$};
+        \node[right] at (D) {$D$};
+        \node[right] at (E) {$E$};
+        
+        % Angle measures
+        \node[left] at (-1.5,-0.2) {$\frac{2\pi}{3}$};
+        \node[right] at (0.2,-1.5) {$\frac{\pi}{4}$};
+    \end{tikzpicture}
+\end{center}
+Déterminer \(\overrightarrow{DE}\) et \(\overrightarrow{DE}'\) sachant que \((AB) \parallel (DE)\) et \((AB, DE) = 0\), avec :
+\[
+(AB, DE) = \overrightarrow{AB} \cdot \overrightarrow{BC} + \overrightarrow{BC} \cdot \overrightarrow{CD} + \overrightarrow{CD} \cdot \overrightarrow{DE} = 0
+\]
+
+\subsection*{Solution}
+\begin{itemize}
+    \item[1)] \((-\overrightarrow{AB} \cdot \overrightarrow{BC}) + (\overrightarrow{BC} \cdot \overrightarrow{CD}) + (\overrightarrow{CD} \cdot \overrightarrow{DE}) = 0\)
+    
+    \item[2)] \(\frac{1}{n} (\overrightarrow{AB} \cdot \overrightarrow{BC}) + \frac{1}{n} (\overrightarrow{BC} \cdot \overrightarrow{CD}) + \frac{1}{n} (\overrightarrow{CD} \cdot \overrightarrow{DE}) = 0\)
+    
+    \item[3)] \(\frac{2}{3} \ln + \frac{2}{3} \left(\frac{1}{4}\right) + (\overrightarrow{CD} \cdot \overrightarrow{DE}) = 0\)
+    
+    \item[4)] \((\overrightarrow{CD} \cdot \overrightarrow{DE}) = -3 \ln - \frac{2}{3} \ln + \frac{1}{4}\)
+    
+    \item[5)] \((\overrightarrow{CD} \cdot \overrightarrow{DE}) = -\frac{4}{12} \ln\)
+    
+    \item[Principe :] \((\overrightarrow{CD} \cdot \overrightarrow{DE}) = \frac{-4}{12} \ln + \frac{1}{12} \ln - \frac{3}{12} \ln\)
+    
+    \item[6)] \((\overrightarrow{CD} \cdot \overrightarrow{DE}) = -\frac{7}{12} \ln \quad [\overrightarrow{DE} \, ?]\)
+\end{itemize}
+\end{document}
