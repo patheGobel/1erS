@@ -1,0 +1,164 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath, amssymb}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc} % pour pdflatex
+\usepackage[T1]{fontenc}    % améliore le rendu des accents
+\usepackage[french]{babel}
+\usepackage{tikz}
+\usepackage{yhmath}
+\usepackage{tcolorbox}
+\begin{document}
+
+\section*{\underline{\textbf{\textcolor{red}{L'outil métrique trigonométrique}}}}
+
+\subsection*{\textcolor{red}{A) Angles orientés}}
+
+\subsection*{\textcolor{red}{I. Cercle trigonométrique, radian}}
+
+\subsubsection*{\textcolor{red}{1) Cercle trigonométrique}}
+
+\underline{\textbf{\textcolor{red}{Définition 1}}}
+
+\textcolor{red}{Dans un repère orthonormé} \( (O, \vec{i}, \vec{j}) \) on appelle \textcolor{red}{cercle trigonométrique} le cercle orienté \( C(0,1) \), de centre \( O \) et de rayon 1. Sur ce cercle on définit une origine \( I \) et deux sens.
+
+
+    \begin{itemize}
+        \item[\textcolor{red}{-}] Le sens direct, ou sens trigonométrique (positif), est le sens contraire du déplacement des aiguilles d'une montre.
+        \item[\textcolor{red}{-}] Le sens indirect, ou sens antitrigonométrique (négatif), est le sens du déplacement des aiguilles d'une montre.
+    \end{itemize}
+
+\textcolor{red}{Remarque 1:} 
+
+Puisque le rayon d'un cercle trigonométrique est 1, son périmètre est donné par \( P = 2\pi \) et l'aire de son disque est \( A = \pi \).
+
+\begin{center}
+\begin{tikzpicture}[scale=3]
+    % Cercle
+    \draw[gray] (0,0) circle(1);
+
+    % Axes
+    \draw[->] (-1.2,0) -- (1.5,0) node[right]{axe des abscisses};
+    \draw[->] (0,-0.2) -- (0,1.5) node[above]{axe des ordonnées};
+
+    % Points I, J, O
+    \fill (1,0) circle(0.02) node[below right] {I};
+    \fill (0,1) circle(0.02) node[above left] {J};
+    \fill (0,0) circle(0.02) node[below left] {O};
+
+    % Rayon OM (pi/4)
+    \draw[thick] (0,0) -- ({cos(45)}, {sin(45)}) node[above right] {M};
+    \fill ({cos(45)}, {sin(45)}) circle(0.02);
+
+    % Angle alpha
+    \draw[red, thick] (0.3,0) arc (0:45:0.3);
+    \node at (0.35,0.13) {\textcolor{red}{$\alpha$}};
+
+    % Arc de cercle IM
+    \draw[red, thick] (1,0) arc (0:45:1);
+
+    % Marquage de l'angle π
+     \node at (1.2,0.5) {\textcolor{red}{$\wideparen{IM}$}};
+\end{tikzpicture}
+
+\vspace{0.3em}
+$OI = 1 = OJ = R$
+\end{center}
+\subsubsection*{\textcolor{red}{2) Le radian}}
+
+\underline{\textbf{\textcolor{red}{Définition 2}}}
+
+\vspace{1em}
+
+La mesure d’un angle \( \widehat{IOM} \) est de \textcolor{red}{1 radian} lorsque la mesure de l’arc du cercle trigonométrique qu’il intercepte est de \textcolor{red}{1 rayon}.
+
+\vspace{0.5em}
+
+Il existe une correspondance entre une mesure d’angle \( a \) \textcolor{red}{en degré} et \( b \) \textcolor{red}{en radian}, donnée par :
+\[
+\boxed{b = \dfrac{a\pi}{180}} \quad \text{ou encore} \quad \boxed{a = \dfrac{180b}{\pi}}
+\]
+
+\subsection*{\underline{\textcolor{red}{II. Angle orienté d’un couple de vecteurs}}}
+
+\subsubsection*{\underline{\textcolor{red}{1) Angle géométrique - Angles orientés}}}
+
+\textbf{\underline{\textcolor{red}{Définition 1 :}}}
+
+Dans un repère \( (O, I, J) \), on considère deux vecteurs \( \vec{u} \) et \( \vec{v} \) non nuls.\\
+Soient \( A \) et \( B \) deux points du plan tels que \( \vec{u} = \overrightarrow{OA} \) et \( \vec{v} = \overrightarrow{OB} \). Les deux angles \( \widehat{AOB} \) et \( \widehat{BOA} \) sont des angles géométriques de même mesure \textcolor{red}{toujours positive} : 
+\(\textcolor{red}{\text{mes } \widehat{AOB} = \text{mes } \widehat{BOA}}\)
+
+L’angle \( (\vec{u}, \vec{v}) \) formé par les deux vecteurs \( \overrightarrow{OA} \) et \( \overrightarrow{OB} \) est un angle orienté (on tourne de \( \vec{u} \) vers \( \vec{v} \)). Alors que l’angle \( (\vec{v}, \vec{u}) \) est un angle orienté mais de sens contraire. Donc : \( \textcolor{red}{ (\vec{v}, \vec{u}) = -(\vec{u}, \vec{v})}\)
+\begin{tcolorbox}[colback=red!5!white, colframe=red!75!black, title=Propriété 1]
+\( (\vec{v}, \vec{u}) = -(\vec{u}, \vec{v}) \)
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.5]
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (3,0);
+    \coordinate (B) at (1.5,1.5);
+
+    % Vecteurs
+    \draw[->, thick] (O) -- (A) node[below right] {A};
+    \draw[->, thick] (O) -- (B) node[above right] {B};
+
+    % Points
+    \fill (O) circle(0.03) node[below left] {O};
+
+    % Noms des vecteurs
+    \node at (1.5,-0.2) {\( \vec{u} \)};
+    \node at (0.6,1.2) {\( \vec{v} \)};
+
+    % Arc orienté de u vers v
+    \draw[red, ->, thick] (1.2,0) arc[start angle=0, end angle=45, radius=1.2];
+    \node[red] at (2,0.4) {\small sens de $\vec{u} \rightarrow \vec{v}$};
+
+\end{tikzpicture}
+\end{center}
+
+
+\vspace{1em}
+
+\noindent
+\textcolor{red}{\underline{Définition 2 :}} \
+
+\textcolor{red}{\underline{Théorème :}}
+
+\vspace{0.5em}
+
+Soit \( M \) un point quelconque du cercle trigonométrique tel que 
+\[
+(\overrightarrow{OI}, \overrightarrow{OM}) = \alpha \text{ rad}.
+\]
+On peut lui associer une famille de nombres réels de la forme 
+\[
+\alpha + 2k\pi, \quad k \in \mathbb{Z}
+\]
+qui correspondent au même point \( M \) du cercle trigonométrique.
+
+\vspace{1em}
+\noindent\textbf{\underline{\textcolor{red}{Définition 2:}}}
+ 
+Dans le plan muni de \( \mathcal{R}ON(O, \vec{i}, \vec{j}) \), on considère les vecteurs \( \vec{u} \) et \( \vec{v} \) non nuls tel que la mesure de l’angle \( (\vec{u}, \vec{v}) = \alpha \, \text{rad} \).\\
+Alors chacun des nombres associés à \( \alpha \) de la forme \( \alpha + 2k\pi \), \( k \in \mathbb{Z} \), est appelé une mesure de l’angle orienté de vecteurs \( (\vec{u}, \vec{v}) \).
+\subsection*{\underline{\textcolor{red}{2) Mesure principale d’un angle orienté}}}
+
+\textbf{\underline{\textcolor{red}{Définition 3:}}}
+
+Dans un repère orthonormé \( (O, \vec{i}, \vec{j}) \), on considère deux vecteurs \( \vec{u} \) et \( \vec{v} \) non nuls tel que \( (\vec{u}, \vec{v}) = \alpha \) rad.\\
+Parmi toutes les mesures d’angles associées à \( \alpha \), de la forme \( \alpha + 2k\pi \), \( k \in \mathbb{Z} \), il existe une et une seule mesure qui appartient à l’intervalle \( ]-\pi, \pi] \).\\
+Cette mesure particulière s’appelle la \textbf{mesure principale} de l’angle \( (\vec{u}, \vec{v}) \).
+
+\vspace{1em}
+
+\textcolor{red}{\textbf{Exemple :}} 
+
+Dans chacun des cas suivants, détermine la mesure \textbf{principale} de l’angle \( (\vec{u}, \vec{v}) \) :
+
+\[
+\alpha = \dfrac{89\pi}{7} \qquad \beta = \dfrac{229\pi}{12}
+\]
+
+\end{document}
