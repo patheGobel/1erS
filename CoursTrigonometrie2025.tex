@@ -160,5 +160,136 @@ Dans chacun des cas suivants, détermine la mesure \textbf{principale} de l’an
 \[
 \alpha = \dfrac{89\pi}{7} \qquad \beta = \dfrac{229\pi}{12}
 \]
+\subsubsection*{\underline{\textcolor{red}{Résolution :}}}
+
+\subsubsection*{\underline{\textcolor{red}{a) Méthode algébrique}}}
+
+\(
+\alpha = \dfrac{89\pi}{7}
+\), la mesure principale de \( \alpha \) est de la forme \( \alpha + 2k\pi \),
+
+\( k \in \mathbb{Z} \) et \( -\pi < \alpha + 2k\pi \leq \pi \)
+
+\( 
+\begin{aligned}
+-\pi < \dfrac{89\pi}{7} + 2k\pi &\implies \leq  -1 <  \dfrac{89}{7} + 2k \leq 1 \\
+        &\implies -1 - \dfrac{89}{7} < 2k \leq 1 - \dfrac{89}{7}\\
+        &\implies -\dfrac{96}{7} < 2k \leq \dfrac{-82}{7}\\
+        &\implies \dfrac{-48}{7} < 2k \leq \dfrac{-41}{7}\\
+        &\implies -6{,}10 < 2k \leq -5{,}86
+\end{aligned}
+\)
+
+donc $\boxed{k =-6}$
+
+\subsubsection*{\underline{\textcolor{red}{b) Méthode pratique (facile rigoureuse et pratique)}}}
+
+\[
+\begin{array}{c|c}
+89 & 7 \\
+\hline
+18 &  \\
+5 & 
+\end{array}
+\]
+
+\[
+\dfrac{89\pi}{7} = 12\pi + \dfrac{5\pi}{7}
+\]
+
+Comme \( 12\pi \) est le nombre pair de \( \pi \), donc \( \dfrac{5\pi}{7} \) est la mesure principale de \( \dfrac{89\pi}{7} \)
+
+\subsection*{\underline{\textcolor{red}{III. Propriétés des angles orientés}}}
+
+\subsubsection*{\textcolor{red}{1) Angle orienté de deux vecteurs colinéaires}}
+
+\underline{\textcolor{red}{Théorème}}
+
+Soient \( \vec{u} \) et \( \vec{v} \) deux vecteurs non nuls du plan dans un RON direct \( (O, I, J) \) :
+
+\begin{itemize}
+    \item[\( \mathbf{P_1} :\)] L’angle \( (\vec{u}, \vec{u}) = 0 \) et \( (\vec{u}, -\vec{u}) = 180 \)
+    \item[\( \mathbf{P_2} :\)] Les vecteurs \( \vec{u} \) et \( \vec{v} \) sont deux vecteurs colinéaires et de même sens ssi \( (\vec{u}, \vec{v}) = 0 \)
+    \item[\( \mathbf{P_3} :\)] Les vecteurs \( \vec{u} \) et \( \vec{v} \) sont colinéaires et de sens contraires ssi \( (\vec{u}, \vec{v}) = \pi \)
+\end{itemize}
+
+Ces propriétés permettent de démontrer le parallélisme de deux droites, l’alignement de 3 points ou la colinéarité de deux vecteurs.
+
+\subsubsection*{\underline{\textcolor{red}{2) Relation de Chasles}}}
+
+Soient \( \vec{u}, \vec{v} \) et \( \vec{w} \) trois vecteurs non nuls du plan dans un RON direct \( (O, I, J) \)
+
+\( \textbf{P}_4: \quad (\vec{u}, \vec{v}) + (\vec{v}, \vec{w}) = (\vec{u}, \vec{w}) \)
+
+\subsubsection*{\underline{\textcolor{red}{3) Angle orienté et vecteurs opposés}}}
+
+Soient \( \vec{u} \) et \( \vec{v} \) deux vecteurs non nuls du plan dans un repère orthonormé \( (O, I, J) \) :
+
+\(
+\begin{aligned}
+\textbf{P}_5: \quad & (\vec{v}, \vec{u}) = -(\vec{u}, \vec{v})\\ 
+\textbf{P}_6: \quad & (\vec{u}, -\vec{v}) = (\vec{u}, \vec{v}) + \pi \\
+\textbf{P}_7: \quad & (-\vec{u}, \vec{v}) = (\vec{u}, \vec{v}) + \pi \\
+\textbf{P}_8: \quad & (-\vec{u}, -\vec{v}) = (\vec{u}, \vec{v})
+\end{aligned}
+\)
+
+\subsection*{\underline{\textcolor{red}{Application}}}
+
+\textbf{Démo :} Soit \( ABC \) un triangle, montrer que la somme des mesures orientées de ses trois angles est égale à \( \pi \).
+
+\begin{center}
+\begin{tikzpicture}[scale=1.5]
+    % Coordonnées des sommets
+    \coordinate (A) at (0,2);
+    \coordinate (B) at (-1,0);
+    \coordinate (C) at (1,0);
+
+    % Triangle
+    \draw[thick] (A) -- (B) -- (C) -- cycle;
+
+    % Points nommés
+    \fill (A) circle(0.03) node[above] {A};
+    \fill (B) circle(0.03) node[below left] {B};
+    \fill (C) circle(0.03) node[below right] {C};
+
+    % Arcs orientés pour les angles
+    \draw[->] (A)++(-0.1,-0.3) arc[start angle=0,end angle=290,radius=0.2];
+    \draw[->] (B)++(0.1,0.1) arc[start angle=0,end angle=270,radius=0.3];
+    \draw[->] (C)++(-0.1,0.1) arc[start angle=60,end angle=-30,radius=0.3];
+\end{tikzpicture}
+\end{center}
+
+
+\[
+\widehat{A} = (\vec{AB}, \vec{AC}) \qquad
+\widehat{B} = (\vec{BC}, \vec{BA}) \qquad
+\widehat{C} = (\vec{CA}, \vec{CB})
+\]
+
+\[
+\widehat{A} + \widehat{B} + \widehat{C} 
+= (\vec{AB}, \vec{AC}) + (\vec{BC}, \vec{BA}) + (\vec{CA}, \vec{CB})
+\]
+
+\[
+= (\vec{AB}, \vec{AC}) + (\vec{BC}, -\vec{AB}) + (-\vec{CA}, \vec{CB})
+\]
+
+\[
+= (\vec{AB}, \vec{AC}) + \pi + (\vec{BC}, \vec{AB}) + (\vec{AC}, \vec{BC})
+\]
+
+\[
+= (\vec{AB}, \vec{AC}) + (\vec{AC}, \vec{BC}) + (\vec{BC}, \vec{AB}) + \pi
+\]
+
+\[
+= (\vec{AB}, \vec{AB}) + \pi = 0 + \pi = \pi
+\]
+
+\[
+\Rightarrow \widehat{A} + \widehat{B} + \widehat{C} = \pi
+\]
 
 \end{document}
