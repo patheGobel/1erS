@@ -5,17 +5,21 @@
 \usepackage[T1]{fontenc}    % améliore le rendu des accents
 \usepackage[french]{babel}
 \usepackage{tikz}
+\usetikzlibrary{calc}
 \usepackage{yhmath}
 \usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{graphicx} % pour inclure les images
+\usepackage{mathrsfs}
 \begin{document}
 
 \section*{\underline{\textbf{\textcolor{red}{L'outil métrique trigonométrique}}}}
 
-\subsection*{\textcolor{red}{A) Angles orientés}}
+\subsection*{\textcolor{red}{A. Angles orientés}}
 
 \subsection*{\textcolor{red}{I. Cercle trigonométrique, radian}}
 
-\subsubsection*{\textcolor{red}{1) Cercle trigonométrique}}
+\subsubsection*{\textcolor{red}{1. Cercle trigonométrique}}
 
 \underline{\textbf{\textcolor{red}{Définition 1}}}
 
@@ -239,9 +243,9 @@ Soient \( \vec{u} \) et \( \vec{v} \) deux vecteurs non nuls du plan dans un rep
 \textbf{Démo :} Soit \( ABC \) un triangle, montrer que la somme des mesures orientées de ses trois angles est égale à \( \pi \).
 
 \begin{center}
-\begin{tikzpicture}[scale=1.5]
+\begin{tikzpicture}[scale=3]
     % Coordonnées des sommets
-    \coordinate (A) at (0,2);
+    \coordinate (A) at (0,1.8);
     \coordinate (B) at (-1,0);
     \coordinate (C) at (1,0);
 
@@ -249,47 +253,528 @@ Soient \( \vec{u} \) et \( \vec{v} \) deux vecteurs non nuls du plan dans un rep
     \draw[thick] (A) -- (B) -- (C) -- cycle;
 
     % Points nommés
-    \fill (A) circle(0.03) node[above] {A};
-    \fill (B) circle(0.03) node[below left] {B};
-    \fill (C) circle(0.03) node[below right] {C};
+    \fill (A) circle(0.02) node[above] {A};
+    \fill (B) circle(0.02) node[below left] {B};
+    \fill (C) circle(0.02) node[below right] {C};
 
-    % Arcs orientés pour les angles
-    \draw[->] (A)++(-0.1,-0.3) arc[start angle=0,end angle=290,radius=0.2];
-    \draw[->] (B)++(0.1,0.1) arc[start angle=0,end angle=270,radius=0.3];
-    \draw[->] (C)++(-0.1,0.1) arc[start angle=60,end angle=-30,radius=0.3];
+    % Angle orienté en A (de AB vers AC)
+    %\node at (-0.2,1.5) {I};
+    %\node at (0.2,1.5) {J};
+    \draw[->, thick, red] (-0.2,1.5) arc[start angle=180, end angle=360, radius=0.17];
+
+    % Angle orienté en B (de BC vers BA → sens antihoraire donc 330 à 240)
+    \draw[->, red, thick] (B)++(0.3,0.01) arc[start angle=330,end angle=420,radius=0.25];
+
+    % Angle orienté en C (de CB vers CA → sens antihoraire donc 150 à 90)
+    %\node at (0.5,0.01) {K};
+    %\node at (0.,0.5) {L};
+    \draw[->, thick, red] (0.9,0.13) arc[start angle=0, end angle=270, radius=0.1];
+    %\draw[->, red, thick] (C)++(-0.3,0.01) arc[start angle=150,end angle=90,radius=0.25];
 \end{tikzpicture}
 \end{center}
 
+\[
+\widehat{A} = (\overrightarrow{AB}, \overrightarrow{AC}) \qquad
+\widehat{B} = (\overrightarrow{BC}, \overrightarrow{BA}) \qquad
+\widehat{C} = (\overrightarrow{CA}, \overrightarrow{CB})
+\]
+
+\(
+\begin{aligned}
+    \widehat{A} + \widehat{B} + \widehat{C} &= (\overrightarrow{AB}, \overrightarrow{AC}) + (\overrightarrow{BC}, \overrightarrow{BA}) + (\overrightarrow{CA}, \overrightarrow{CB})\\
+    &= (\overrightarrow{AB}, \overrightarrow{AC}) + (\overrightarrow{BC}, -\overrightarrow{AB}) + (-\overrightarrow{AC}, -\overrightarrow{BC})\\
+    &= (\overrightarrow{AB}, \overrightarrow{AC}) + \pi + (\overrightarrow{BC}, \overrightarrow{AB}) + (\overrightarrow{AC}, \overrightarrow{BC})\\
+    &= (\overrightarrow{AB}, \overrightarrow{AC}) + (\overrightarrow{AC}, \overrightarrow{BC}) + (\overrightarrow{BC}, \overrightarrow{AB}) + \pi\\
+    &= (\overrightarrow{AB}, \overrightarrow{AB}) + \pi \\
+    &= 0 + \pi \\
+    &= \pi
+\end{aligned}
+\)
+
+\( \widehat{A} + \widehat{B} + \widehat{C} = \pi \)
+
+\subsubsection*{\underline{\textcolor{red}{4) Généralisation}}}
+
+Soient \( \overrightarrow{u} \) et \( \overrightarrow{v} \) deux vecteurs non nuls du plan dans un R.O.N direct \( (O, \overrightarrow{i}, \overrightarrow{j}) \).\\
+Soient \( k \) et \( k' \) deux réels non nuls.
+
+\begin{itemize}
+    \item[\textcolor{red}{a)}] Si \( k \) et \( k' \) sont de même signe, alors :
+    \[
+    (k \overrightarrow{u}, k' \overrightarrow{v}) = (\overrightarrow{u}, \overrightarrow{v})
+    \]
+    
+    \item[\textcolor{red}{b)}] Si \( k \) et \( k' \) sont de signes contraires, alors :
+    \[
+    (k \overrightarrow{u}, k' \overrightarrow{v}) = \pi + (\overrightarrow{u}, \overrightarrow{v})
+    \]
+\end{itemize}
+
+\begin{tikzpicture}[scale=2, >=stealth]
+    % Coordonnées des points
+    \coordinate (A) at (-2,1);
+    \coordinate (B) at (0,0);
+    \coordinate (C) at (0,-1.5);
+    \coordinate (D) at (1,0.5);
+    \coordinate (E) at (2.5,0);
+
+    % Segments
+    \draw[thick] (A) -- (B) -- (C) -- (D) -- (E);
+
+    % Points
+    \fill (A) circle(0.02) node[above left] {A};
+    \fill (B) circle(0.02) node[above left] {B};
+    \fill (C) circle(0.02) node[below] {C};
+    \fill (D) circle(0.02) node[above right] {D};
+    \fill (E) circle(0.02) node[above right] {E};
+
+    % Arcs d'angles orientés
+    \draw[->, red, thick] (B)++(-0.2,0.1) arc[start angle=90, end angle=310, radius=0.25];
+    \node at ($(B)+(-0.6,-0.05)$) {\small $\dfrac{2\pi}{3}$};
+
+    \draw[->, red, thick] (C)++(0.3,0.6) arc[start angle=0, end angle=180, radius=0.15];
+    \node at ($(C)+(0.25,0.3)$) {\small $\dfrac{\pi}{4}$};
+
+    \draw[->, red, thick] (D)++(-0.1,-0.3) arc[start angle=-90, end angle=0, radius=0.25];
+    \node at ($(D)+(0.2,-0.2)$) {\small $?$};
+
+\end{tikzpicture}
+
+\subsection*{\underline{\textcolor{red}{Application}}}
+
+Déterminer \( (\overrightarrow{DC}, \overrightarrow{DE}) \) sachant que \( (AB) \parallel (DE) \)
+
+\(
+\begin{aligned}
+(\overrightarrow{AB}, \overrightarrow{DE}) = 0 &\Rightarrow (\overrightarrow{AB}, \overrightarrow{BC}) + (\overrightarrow{BC}, \overrightarrow{CD}) + (\overrightarrow{CD}, \overrightarrow{DE}) = 0\\
+&\Rightarrow (-\overrightarrow{BA}, \overrightarrow{BC}) + (-\overrightarrow{CB}, \overrightarrow{CD}) + (\overrightarrow{-DC}, \overrightarrow{DE}) = 0\\
+&\Rightarrow \pi + (\overrightarrow{BA}, \overrightarrow{BC}) + \pi + (\overrightarrow{CB}, \overrightarrow{CD}) + \pi + (\overrightarrow{DC}, \overrightarrow{DE}) = 0\\
+&\Rightarrow 3\pi + \dfrac{2\pi}{3} + \left( -\dfrac{\pi}{4} \right) + (\overrightarrow{DC}, \overrightarrow{DE}) = 0\\
+&\Rightarrow (\overrightarrow{DC}, \overrightarrow{DE}) = - 3\pi - \dfrac{2\pi}{3} + \dfrac{\pi}{4}\\
+&=-\dfrac{41\pi}{12}
+\end{aligned}
+\)
 
 \[
-\widehat{A} = (\vec{AB}, \vec{AC}) \qquad
-\widehat{B} = (\vec{BC}, \vec{BA}) \qquad
-\widehat{C} = (\vec{CA}, \vec{CB})
+\text{Mesure principale } (\overrightarrow{DC}, \overrightarrow{DE}) = -\dfrac{41\pi}{12} + 4\pi =   \dfrac{7\pi}{12}
 \]
 
 \[
-\widehat{A} + \widehat{B} + \widehat{C} 
-= (\vec{AB}, \vec{AC}) + (\vec{BC}, \vec{BA}) + (\vec{CA}, \vec{CB})
+\boxed{(\overrightarrow{DC}, \overrightarrow{DE}) = \dfrac{7\pi}{12}}
+\]
+
+\subsection*{\textcolor{red}{B. Trigonométrie}}
+
+\subsection*{\textcolor{red}{I. Cosinus, sinus et tangente d’un nombre réel}}
+
+\subsubsection*{\textcolor{red}{1.Définition et propriétés }}
+
+Le plan est muni d’un repère orthonormé direct \( (O, I, J) \), $\mathcal{(C)}$ et le cercle trigonométrique.
+
+L’unité de mesure des angles orientés est le radian.
+
+\begin{flushleft}
+\textit{(À considérer dans toute la suite de la leçon sauf mention contraire.)}
+\end{flushleft}
+
+\vspace{1em}
+\textcolor{red}{\underline{a) Définition}}
+
+\vspace{0.5em}
+
+\( x \) est un nombre réel et \( \alpha \) la mesure principale de l’angle orienté dont \( x \) est une mesure.
+
+\begin{itemize}[label=\textbullet]
+    \item On appelle \textbf{cosinus de \( x \)}, le nombre réel \( \cos \alpha \)
+    \item On appelle \textbf{sinus de \( x \)}, le nombre réel \( \sin \alpha \)
+    \item On appelle \textbf{tangente de \( x \)}, le nombre réel \( \tan \alpha \)
+\end{itemize}
+\begin{center}
+\begin{tikzpicture}[scale=3]
+    % Axes
+    \draw[->, thick] (-1.2,0) -- (1.5,0) node[right]{};
+    \draw[->, thick] (0,-1.2) -- (0,1.5) node[above]{};
+
+    % Cercle trigonométrique
+    \draw[red, thick] (0,0) circle(1);
+
+    % Angle alpha (magenta)
+    %\draw[magenta, thick, ->] (0,0) -- ({cos(30)}, {sin(30)});
+    \draw[magenta, thick] (-1.8,-1.5) -- (1.8,1.5); % prolongement droite MT'
+
+    % Points
+    \fill (0,0) circle(0.02) node[below left] {O};
+    \fill (1,0) circle(0.02) node[below right] {A};
+    \fill (0,1) circle(0.02) node[above left] {B};
+    \fill ({cos(39)},{sin(39)}) circle(0.02) node[above right] {M};
+    \fill ({cos(39)},0) circle(0.02) node[below] {H};
+    \fill (0,{sin(39)}) circle(0.02) node[left] {K};
+    \fill (1,{tan(39)}) circle(0.02) node[right] {T};
+    \fill (1.2,{1.3*tan(37.4)}) circle(0.02) node[above right] {$T'$};
+
+    % Droites perpendiculaires en bleu
+    \draw[blue, thick] (-1.5, 1) -- (1.5, 1);
+    \draw[blue, thick] (1, -1) -- (1, 1.5);
+
+    % Pointillés verts
+    \draw[green!70!black, dashed] ({cos(39)}, {sin(39)}) -- ({cos(39)}, 0);
+    \draw[green!70!black, dashed] ({cos(39)}, {sin(39)}) -- (0, {sin(39)});
+
+    % Angle alpha
+    \draw[magenta] (0.3,0) arc (0:35:0.3);
+    \node[magenta] at (0.35,0.07) {$\alpha$};
+
+    % Formules à droite
+    \node[right] at (1.8,1) {$\cos \alpha = \overline{OH}$};
+    \node[right] at (1.8,0.5) {$\sin \alpha = \overline{OK}$};
+    \node[right] at (1.8,0) {$\tan \alpha = \dfrac{\overline{OK}}{\overline{OH}} = \overline{AT}$};
+    \node[right] at (1.8,-0.5) {$\cot \alpha = \dfrac{\overline{OH}}{\overline{OK}} = \overline{BT'}$};
+    \node[right] at (1.8,-1) {$\sin^2\alpha + \cos^2\alpha = 1$};
+
+    % Annotation
+    \node at (0,-1.5) {\small \textit{Cercle trigonométrique : $OM = 1$}};
+
+\end{tikzpicture}
+\end{center}
+
+\subsubsection*{Condition d’existence de $\tan x$}
+
+$\tan x$ est un nombre réel \quad $\Longleftrightarrow \quad x \neq \dfrac{\pi}{2} + k\pi \quad \left[ k \in \mathbb{Z} \right]$
+
+\subsection*{\textcolor{red}{b) Propriétés}}
+
+\begin{itemize}
+    \item Pour tout nombre réel \( x \) et pour tout entier relatif \( k \),
+    \[
+    -1 \leq \sin x \leq 1, \quad \cos^2 x + \sin^2 x = 1, \quad -1 \leq \cos x \leq 1,
+    \]
+    \[
+    \cos(x + 2k\pi) = \cos x, \quad \sin(x + 2k\pi) = \sin x
+    \]
+
+    \item Pour tout nombre réel \( x \) qui n’annule pas \( \cos x \) et pour tout entier relatif \( k \),
+    \[
+    \tan x = \dfrac{\sin x}{\cos x}, \qquad \dfrac{1}{\cos^2 x} = 1 + \tan^2 x, \qquad \tan(x + k\pi) = \tan x
+    \]
+\end{itemize}
+
+\subsection*{\underline{\textcolor{red}{2) Cosinus, sinus et tangente d’angles orientés associés}}}
+
+\subsubsection*{\underline{\textcolor{red}{a) Propriétés}}}
+
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{Ctrigo.png} % modifie ce chemin
+\end{center}
+
+\subsection*{\textcolor{red}{b) Application}}
+
+Simplifier les expressions suivantes :
+
+\begin{enumerate}
+    \item 
+    \(
+    \sin(x + \pi) + \cos(x - \pi) - \sin(x - 2\pi) + \cos(x + 5\pi)
+    \)
+    
+    \item 
+    \(
+    \cos\left( \dfrac{\pi}{2} - x \right) - \sin\left( x + \dfrac{\pi}{2} \right) + \cos\left( \dfrac{7\pi}{2} - x \right) - \sin\left( x + \dfrac{5\pi}{2} \right)
+    \)
+\end{enumerate}
+
+\textbf{\textcolor{red}{Résolution :}}
+
+\[
+A = \sin(x + \pi) + \cos(x - \pi) - \sin(x - 2\pi) + \cos(x + 5\pi)
 \]
 
 \[
-= (\vec{AB}, \vec{AC}) + (\vec{BC}, -\vec{AB}) + (-\vec{CA}, \vec{CB})
+\begin{aligned}
+A &= -\sin x - \cos x - \sin x + \cos(x + \pi) \\
+  &= -\sin x - \cos x - \sin x - \cos x \\
+  &= -2\sin x -2\cos x
+\end{aligned}
+\]
+
+\medskip
+
+\[
+B = \cos\left(\frac{\pi}{2} - x\right) - \sin\left(x + \frac{\pi}{2}\right) + \cos\left(\frac{7\pi}{2} - x\right) - \sin\left(x + \frac{5\pi}{2}\right)
 \]
 
 \[
-= (\vec{AB}, \vec{AC}) + \pi + (\vec{BC}, \vec{AB}) + (\vec{AC}, \vec{BC})
+\begin{aligned}
+B &= \sin x - \cos x + \cos\left(4\pi - \left(\frac{\pi}{2} + x\right)\right) - \cos\left(x + \frac{\pi}{2}\right) \\
+  &= \sin x - \cos x + \cos\left(-\left(\frac{\pi}{2} + x\right)\right) - \cos\left(x + \frac{\pi}{2}\right) \\
+  &= \sin x - \cos x + \cos\left(\frac{\pi}{2} + x\right) - \cos\left(x + \frac{\pi}{2}\right) \\
+  &= \sin x - \cos x - \sin x - \cos x \\
+  &= -2\cos x
+\end{aligned}
+\]
+
+\subsection*{\textcolor{red}{II. Formules trigonométriques}}
+\subsubsection*{\textcolor{red}{1.Formule d’addition }}
+\subsubsection*{\textcolor{red}{a) Propriétés }}
+
+\noindent
+\textbf{Pour tous nombres réels $a$ et $b$ on a :}
+
+\vspace{1em}
+
+\begin{enumerate}
+    \item[\textcolor{red}{1)}] $\cos(a - b) = \cos a \cos b + \sin a \sin b$
+    \item[\textcolor{red}{2)}] $\cos(a + b) = \cos a \cos b - \sin a \sin b$
+    \item[\textcolor{red}{3)}] $\sin(a - b) = \sin a \cos b - \sin b \cos a$
+    \item[\textcolor{red}{4)}] $\sin(a + b) = \sin a \cos b + \sin b \cos a$
+    \item[\textcolor{red}{5)}] \textcolor{blue}{$\forall \, a,b \in \mathbb{R} \setminus \left\{\dfrac{\pi}{2} + k\pi\right\}, \, k \in \mathbb{Z}$} : 
+\(\tan(a + b) = \dfrac{\tan a + \tan b}{1 - \tan a \tan b}\)
+    \item[\textcolor{red}{6)}]
+$\tan(a - b) = \dfrac{\tan a - \tan b}{1 + \tan a \tan b}$
+\end{enumerate}
+\textbf{\underline{Preuve :}}
+
+\begin{center}
+\begin{tikzpicture}[scale=2.5]
+    % Cercle trigonométrique
+    \draw[thick] (0,0) circle(1);
+
+    % Flèche d'orientation (en dehors du cercle)
+    \draw[->, thick, red] (-1,1) arc[start angle=60, end angle=180, radius=0.3];
+    \node at (-1.2,0.7) {\small $+$};
+
+    % Axes
+    \draw[->] (-1.2,0) -- (1.2,0);
+    \draw[->] (0,-1.2) -- (0,1.2);
+
+    % Centre O
+    \fill (0,0) circle(0.02);
+    \node[below left] at (0,0) {O};
+
+    % Vecteurs
+    \draw[->, thick] (0,0) -- ({cos(60)}, {sin(60)}) node[above right] {$\vec{u}$};
+    \draw[->, thick] (0,0) -- ({cos(30)}, {sin(30)}) node[right] {$\vec{v}$};
+
+    % Arcs d'angle
+    \draw[->, thick] (0.3,0) arc(0:30:0.3); % b
+    \node at ({0.36*cos(15)}, {0.36*sin(15)}) {\small $b$};
+
+    \draw[->, thick] (0.6,0) arc(0:60:0.6); % a
+    \node at ({0.7*cos(45)}, {0.7*sin(45)}) {\small $a$};
+
+    % Point Q
+    \node[below right] at (1,0) {$Q(0,1)$};
+
+\end{tikzpicture}
+\end{center}
+On va calculer \( \vec{u} \cdot \vec{v} \) de deux manières différentes :
+
+\vspace{1em}
+\underline{\textbf{\textcolor{red}{- Trigonométrie}}} \\
+\[
+\vec{u} \cdot \vec{v} = \|\vec{u}\| \times \|\vec{v}\| \times \cos(\vec{u}, \vec{v}) \quad \text{or} \quad \|\vec{u}\| = \|\vec{v}\| = 1
+\]
+\[
+\Rightarrow \vec{u} \cdot \vec{v} = \cos(a - b) \quad \text{(1)}
+\]
+
+\vspace{1em}
+\underline{\textbf{\textcolor{red}{- Analytique}}} \\
+\[
+\vec{u} = (\cos a) .\vec{i} + (\sin a) .\vec{j} \textbf{ et } \vec{v} = (\cos b) .\vec{i} + (\sin b) .\vec{j}
+\]
+\[
+\vec{u} \cdot \vec{v} = \left[(\cos a) .\vec{i} + (\sin a) .\vec{j}\right] \times \left[\cos b) .\vec{i} + (\sin b) .\vec{j}\right]
+\]
+\[
+\vec{u} \cdot \vec{v} = \cos a \cos b + \sin b \sin a
+\]
+\[
+\vec{u} \cdot \vec{v} = \cos a \cos b + \sin a \sin b \quad \text{(2)}
+\]
+
+(1) et (2) donnent : \(\cos(a - b) = \cos a \cos b + \sin a \sin b\)
+
+\vspace{1em}
+2) \( \cos(a + b) = \cos[a - (-b)] \), d’après (1) on a :
+
+\(
+\begin{aligned}
+    \cos[a - (-b)] &= \cos a \cos(-b) + \sin a \sin(-b)\\
+    &= \cos a \cos b + \sin a (-\sin b)\\
+    &= \cos a \cos b + \sin a (-\sin b)\\
+    \cos(a + b) &= \cos a \cos b - \sin a \sin b
+\end{aligned}
+\)
+
+\vspace{1em}
+%\newline
+3)
+
+\(
+\begin{aligned}
+    \sin(a - b) &= \cos\left[ \dfrac{\pi}{2} - (a - b) \right]\\
+                &= \cos\left[ \left( \dfrac{\pi}{2} - a \right) + b \right]\\
+                &= \cos\left( \dfrac{\pi}{2} - a \right)\cos b - \sin\left( \dfrac{\pi}{2} - a \right)\sin b\\
+                &= \sin a \cos b - \cos a \sin b\\
+    \sin(a - b) &= \sin a \cos b - \cos a \sin b
+\end{aligned}
+\)
+
+\textbf{4) }
+
+\(
+\begin{aligned}
+    \sin(a + b) &= \sin[a - (-b)]\\
+                &= \sin a \cos (-b) - \sin (-b) \cos a\\
+                &= \sin a \cos b + \sin b \cos a\\
+\end{aligned}
+\)
+
+\vspace{1em}
+\textbf{5)} 
+
+\(
+\begin{aligned}
+    \tan(a + b) &= \dfrac{\sin(a + b)}{\cos(a + b)}\\
+    &= \dfrac{\sin a \cos b + \sin b \cos a}{\cos a \cos b - \sin a \sin b}\\
+    &= \dfrac{\dfrac{\sin a}{\cos a} + \dfrac{\sin b}{\cos b}}{1 - \dfrac{\sin a}{\cos a} \cdot \dfrac{\sin b}{\cos b}}\\
+    &= \dfrac{\tan a + \tan b}{1 - \tan a \tan b}
+\end{aligned}
+\)
+
+\vspace{1em}
+\textbf{6)} 
+
+\(
+\begin{aligned}
+    \tan(a - b) &= \tan[a + (-b)] \quad \text{d'après (5)}\\
+                &= \dfrac{\tan a + \tan(-b)}{1 - \tan a \tan(-b)}\\
+                &= \dfrac{\tan a - \tan b}{1 + \tan a \tan b}
+\end{aligned}
+\)
+
+\subsubsection*{\textcolor{red}{b) Application }}
+
+Donne la valeur exacte de \( \cos\left(\dfrac{\pi}{12}\right) \) et \( \sin\left(\dfrac{7\pi}{12}\right) \).
+
+\subsection*{\textcolor{red}{Résolution :}}
+
+\(
+\begin{aligned}
+\frac{\pi}{12} &= \frac{\pi}{3} - \frac{\pi}{4} \\
+\cos\left(\frac{\pi}{12}\right) &= \cos\left(\frac{\pi}{3} - \frac{\pi}{4}\right) \\
+&= \cos\left(\frac{\pi}{3}\right)\cos\left(\frac{\pi}{4}\right) + \sin\left(\frac{\pi}{3}\right)\sin\left(\frac{\pi}{4}\right) \\
+&= \frac{1}{2} \cdot \frac{\sqrt{2}}{2} + \frac{\sqrt{3}}{2} \cdot \frac{\sqrt{2}}{2} \\
+&= \frac{\sqrt{2}}{4} + \frac{\sqrt{6}}{4} \\
+&= \boxed{\frac{\sqrt{2} + \sqrt{6}}{4}}
+\end{aligned}
+\)
+
+\[
+\begin{aligned}
+\sin\left(\frac{7\pi}{12}\right) 
+&= \sin\left(\frac{\pi}{3} + \frac{\pi}{4} \right) \\
+&= \sin\left(\frac{\pi}{3}\right) \cos\left(\frac{\pi}{4}\right) + \sin\left(\frac{\pi}{4}\right) \cos\left(\frac{\pi}{3}\right) \\
+&= \frac{\sqrt{3}}{2} \cdot \frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2} \cdot \frac{1}{2} \\
+&= \frac{\sqrt{6}}{4} + \frac{\sqrt{2}}{4} \\
+&= \boxed{\frac{\sqrt{6} + \sqrt{2}}{4}}
+\end{aligned}
+\]
+
+\subsubsection*{\textcolor{red}{2.Formules de duplication }}
+\subsubsection*{\textcolor{red}{a. Propriétés }}
+
+\(
+\begin{aligned}
+&\textcolor{red}{\text{7)}}\cos(2a) = \cos^2 a - \sin^2 a = 2\cos^2 a - 1 = 1 - 2\sin^2 a \\
+&\textcolor{red}{\text{8)}} \sin(2a) = 2 \sin a \cos a \\
+&\textcolor{red}{\text{9)}}\cos^2 a = \frac{1 + \cos(2a)}{2} \\
+&\textcolor{red}{\text{10)}}\sin^2 a = \frac{1 - \cos(2a)}{2}
+\end{aligned}
+\)
+
+\vspace{0.5em}
+\textit{Cas particulier : en posant } \( x = 2a \Leftrightarrow a = \frac{x}{2} \)
+
+\[
+\begin{aligned}
+\cos x &= \cos^2\left(\frac{x}{2}\right) - \sin^2\left(\frac{x}{2}\right)
+= 2 \cos^2\left(\frac{x}{2}\right) - 1 = 1 - 2 \sin^2\left(\frac{x}{2}\right) \\
+\sin x &= 2 \sin\left(\frac{x}{2}\right) \cos\left(\frac{x}{2}\right) \\
+\cos^2\left(\frac{x}{2}\right) &= \frac{1 + \cos(x)}{2}, \qquad 
+\sin^2\left(\frac{x}{2}\right) = \frac{1 - \cos(x)}{2}
+\end{aligned}
+\]
+
+\section*{\underline{\textcolor{red}{Application}}}
+\noindent Calculer \( \left(\dfrac{\sqrt{6} + \sqrt{2}}{4}\right)^2 \) puis calculer \( \cos^2\left(\dfrac{\pi}{12}\right) \), enfin en déduire \( \cos\left(\dfrac{\pi}{12}\right) \).\\
+\section*{\underline{\textcolor{red}{Correction}}}
+
+\[
+\begin{aligned}
+\left(\frac{\sqrt{6} + \sqrt{2}}{4}\right)^2 &= \frac{6 + 2 + 2\sqrt{12}}{16} \\
+&= \frac{2 + \sqrt{3}}{4}
+\end{aligned}
+\]
+\vspace{1cm}
+\[
+\begin{aligned}
+\cos^2\left(\frac{\pi}{12}\right) 
+&= \frac{1 + \cos\left(2 \times \frac{\pi}{12}\right)}{2} \\
+&= \frac{1 + \cos\left(\frac{\pi}{6}\right)}{2} \\
+&= \frac{1 + \frac{\sqrt{3}}{2}}{2} \\
+&= \frac{2 + \sqrt{3}}{4}
+\end{aligned}
+\]
+\vspace{1cm}
+\[
+\cos^2\left(\frac{\pi}{12}\right)
+= \left( \frac{\sqrt{6} + \sqrt{2}}{4} \right)^2
+\Rightarrow \cos\left(\frac{\pi}{12}\right) = \frac{\sqrt{6} + \sqrt{2}}{4}
 \]
 
 \[
-= (\vec{AB}, \vec{AC}) + (\vec{AC}, \vec{BC}) + (\vec{BC}, \vec{AB}) + \pi
+\boxed{ \cos\left( \frac{\pi}{12} \right) = \frac{\sqrt{6} + \sqrt{2}}{4} }
 \]
 
-\[
-= (\vec{AB}, \vec{AB}) + \pi = 0 + \pi = \pi
-\]
+\section*{\textcolor{red}{\underline{3) Transformation d’un produit en une somme et d'une somme en produit}}}
 
+\(
+\begin{aligned}
+\text{1)}&\cos(a - b) = \cos a \cos b + \sin a \sin b \\
+\text{2)}&\cos(a + b) = \cos a \cos b - \sin a \sin b \\
+\text{(1)} + \text{(2)}&\Rightarrow \cos(a - b) + \cos(a + b) = 2\cos a \cos b \textcolor{red}{\iff } \cos a \cos b =\frac{1}{2}\left[\cos(a - b) + \cos(a + b)\right] \\
+\text{(1)} - \text{(2)}&\Rightarrow \cos(a - b) - \cos(a + b) = 2\sin a \sin b \textcolor{red}{\iff}\sin a \sin b=\frac{1}{2}\left[\cos(a - b) - \cos(a + b)\right] \\
+\text{3)}&\sin(a + b) = \sin a \cos b + \cos a \sin b \\
+\text{4)}&\sin(a - b) = \sin a \cos b - \cos a \sin b \\
+\text{(3)} + \text{(4)}&\Rightarrow \sin(a + b) + \sin(a - b) = 2\sin a \cos b \textcolor{red}{\iff}\sin a \cos b=\frac{1}{2}\left[\sin(a + b) + \sin(a - b)\right]
+\end{aligned}
+\)
+
+
+
+
+
+
+
+
+\medskip
+
+\noindent\textbf{\textcolor{red}{Posons}} 
 \[
-\Rightarrow \widehat{A} + \widehat{B} + \widehat{C} = \pi
+\left\{
+\begin{array}{l}
+p = a + b \\
+q = a - b
+\end{array}
+\right.
+\Rightarrow
+\left\{
+\begin{array}{l}
+a = \dfrac{p + q}{2} \\
+b = \dfrac{p - q}{2}
+\end{array}
+\right.
 \]
 
 \end{document}
