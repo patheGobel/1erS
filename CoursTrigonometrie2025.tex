@@ -1,6 +1,7 @@
 \documentclass[a4paper,12pt]{article}
-\usepackage{amsmath, amssymb}
+\usepackage{amsmath, amssymb, mathrsfs}
 \usepackage{xcolor}
+\usepackage{colortbl}
 \usepackage[utf8]{inputenc} % pour pdflatex
 \usepackage[T1]{fontenc}    % améliore le rendu des accents
 \usepackage[french]{babel}
@@ -10,7 +11,7 @@
 \usepackage{tcolorbox}
 \usepackage{enumitem}
 \usepackage{graphicx} % pour inclure les images
-\usepackage{mathrsfs}
+\usepackage{tkz-tab}
 \begin{document}
 
 \section*{\underline{\textbf{\textcolor{red}{L'outil métrique trigonométrique}}}}
@@ -996,15 +997,316 @@ x = \pi + \dfrac{\pi}{6}
 \end{cases}\\[1em]
 &\Rightarrow
 \begin{cases}
-x = \dfrac{11\pi}{6} + 2\pi \\
+x = \dfrac{11\pi}{6}\\[1em]
 x = \dfrac{7\pi}{6}
 \end{cases}
 \end{aligned}
 \]
 
 \[
-\boxed{S = \left\{ \dfrac{11\pi}{6} \right\}}
+\boxed{S = \left\{\dfrac{7\pi}{6}; \dfrac{11\pi}{6} \right\}}
 \]
 
+\subsubsection*{\underline{\textcolor{red}{3. Équation du type $\tan x = a$}}}
+
+\noindent
+L'équation $\tan x = a$ n'a de sens que si $x \neq \dfrac{\pi}{2} + k\pi$, $k \in \mathbb{Z}$.\\
+
+\noindent
+Dans ce cas, on trouve $\alpha \in \left]-\dfrac{\pi}{2}, \dfrac{\pi}{2}\right[$ vérifiant $a = \tan \alpha$ et dans ce cas on a :
+\[
+\tan x = \tan \alpha \Leftrightarrow
+\begin{cases}
+x = \alpha + k\pi \\
+x \neq \dfrac{\pi}{2} + k\pi
+\end{cases},\quad k \in \mathbb{Z}
+\]
+
+\noindent\textbf{Exemple :} Résoudre dans \( \mathbb{R} \) l'équation \( \tan(3x) = \dfrac{\sqrt{3}}{3} \)
+
+\[
+\tan 3x = \dfrac{\sqrt{3}}{3}
+\Rightarrow \tan 3x = \tan\left(\dfrac{\pi}{6}\right)
+\Rightarrow 
+\begin{cases}
+3x = \dfrac{\pi}{6} + k\pi \\
+3x \neq \dfrac{\pi}{2} + k\pi
+\end{cases},\quad k \in \mathbb{Z}
+\]
+
+\[
+\Rightarrow 
+\begin{cases}
+x = \dfrac{\pi}{18} + \dfrac{k\pi}{3} \\
+x \neq \dfrac{\pi}{6} + \dfrac{k\pi}{3}
+\end{cases},\quad k \in \mathbb{Z}
+\]
+
+\[
+\boxed{
+S_{\mathbb{R}} = \left\{ \dfrac{\pi}{18} + \dfrac{k\pi}{3} \;\middle|\; k \in \mathbb{Z} \right\} 
+\setminus 
+\left\{ \dfrac{\pi}{6} + \dfrac{k\pi}{3} \right\}
+}
+\]
+
+\subsection*{\underline{\textcolor{red}{4. Équations du type $a\cos x + b\sin x = c$}}}
+
+\noindent
+Pour résoudre une équation du type :
+\[
+a\cos x + b\sin x = c,
+\]
+on peut procéder comme suit :\\
+
+Poser \( R = \sqrt{a^2 + b^2} \) et l’équation devient
+\[
+\begin{aligned}
+    a\cos x + b\sin x = c &\implies r\left( \frac{a}{r}\cos x + \frac{b}{r}\sin x \right) = c\\
+    &\implies\frac{a}{r}\cos x + \frac{b}{r}\sin x = \frac{c}{r}
+\end{aligned}
+\]
+
+\noindent
+Ensuite, on applique la formule d’addition.
+
+\textbf{Exemple :} $ \cos x + \sqrt{3} \sin x = \sqrt{2} $
+
+\[
+R = \sqrt{1^2 + (\sqrt{3})^2} = 2
+\]
+
+\noindent
+L'équation devient :
+\[
+\frac{1}{2} \cos x + \frac{\sqrt{3}}{2} \sin x = \frac{\sqrt{2}}{2}
+\]
+
+\[
+\cos\left(\frac{\pi}{3}\right)\cos x + \sin\left(\frac{\pi}{3}\right)\sin x = \cos\left(\frac{\pi}{4}\right)
+\]
+
+\[
+\cos\left(x - \frac{\pi}{3} \right) = \cos\left( \frac{\pi}{4} \right)
+\Rightarrow
+\begin{cases}
+x - \frac{\pi}{3} = \frac{\pi}{4} + 2k\pi \quad (1)\\
+x - \frac{\pi}{3} = -\frac{\pi}{4} + 2k\pi \quad (2)
+\end{cases}
+\]
+
+\noindent
+Résolution :
+\[
+\text{(1)} \Rightarrow x = \frac{\pi}{4} + \frac{\pi}{3} + 2k\pi = \frac{7\pi}{12} + 2k\pi
+\]
+\[
+\text{(2)} \Rightarrow x = -\frac{\pi}{4} + \frac{\pi}{3} + 2k\pi = \frac{\pi}{12} + 2k\pi
+\]
+
+\[
+\boxed{S_\mathbb{R} = \left\{ \frac{\pi}{12} + 2k\pi \ ;\ \frac{7\pi}{12} + 2k\pi \right\},\quad k \in \mathbb{Z}}
+\]
+
+\subsection*{\underline{\textcolor{red}{II. Inéquations trigonométriques}}}
+
+\subsubsection*{\textcolor{red}{1. Inéquation du type $\, \cos x \,\ast\, a \quad \text{avec } \ast \in \{<, >, \leq, \geq\}$}}
+
+\noindent
+Pour résoudre une inéquation du type $\cos x \ast a$ (lorsque cela a un sens),\\
+on place $a$ sur l'axe des abscisses (axe des cosinus), puis\\
+on détermine sur le cercle trigonométrique les valeurs qui correspondent à $\cos x = a$.\\
+Enfin, on sélectionne sur le cercle trigonométrique les angles convenables.\\
+
+\noindent
+\textbf{Exemple :} Résoudre dans $\, ]-\pi ; \pi] \,$ : $\, \cos x \leq \dfrac{1}{2} \quad ; \quad \cos x > \dfrac{\sqrt{3}}{2}$
+
+\subsection*{\underline{\textcolor{red}{Résolution}}}
+
+\noindent
+$$\underline{\textbf{Pour } \cos x \leq \dfrac{1}{2}}$$
+$\text{posons } \cos x = \dfrac{1}{2} \Rightarrow x = \dfrac{\pi}{3} \quad \text{ou} \quad x = -\dfrac{\pi}{3} $\\
+
+\begin{center}
+\begin{tikzpicture}[scale=3]
+    % Cercle
+    \draw[gray, thick] (0,0) circle(1);
+    
+    % Axes
+    \draw[->, thick] (-1.2,0) -- (1.2,0);
+    \draw[->, thick] (0,-1.2) -- (0,1.2);
+
+    % Centre
+    \fill (0,0) circle(0.01) node[below left] {O};
+
+    % Points sur le cercle
+    \coordinate (A) at ({cos(60)}, {sin(60)});
+    \coordinate (B) at ({cos(-60)}, {sin(-60)});
+    \coordinate (H) at (1,0);
+    \coordinate (H1) at ({cos(60)},0);
+    \coordinate (H2) at ({cos(-60)},0);
+
+    % Traits
+    \draw[dashed] (A) -- (H1);
+    \draw[dashed] (B) -- (H2);
+    \draw[thick, red] (180:1) arc[start angle=180, end angle=60, radius=1];
+    \draw[thick, red] (-180:1) arc[start angle=-180, end angle=-60, radius=1];
+
+    % Vecteurs rayon
+    \draw[->] (0,0) -- (A);
+    \draw[->] (0,0) -- (B);
+
+    % Traits cos x = 1/2
+    \draw[thick] ({cos(60)}, -1.2) -- ({cos(60)}, 1.2);
+    \node at (0.6, 0.1) {$\frac{1}{2}$};
+
+    % Labels angles
+    \node at (-1.2,0.1) {\small $\pi$};
+    \node at (-1.2,-0.1) {\small $-\pi$};
+    \node at (A) [above right] {$\frac{\pi}{3}$};
+    \node at (B) [below right] {$-\frac{\pi}{3}$};
+
+\end{tikzpicture}
+\end{center}
+
+\noindent
+$$\boxed{S = \left]-\pi\;;\;-\dfrac{\pi}{3}\right] \cup \left[\dfrac{\pi}{3}\;;\;\pi\right]}$$
+
+\subsection*{\underline{\textcolor{red}{Autre méthode}}}
+
+\noindent
+Étudions le signe de \( \cos x - \dfrac{1}{2} \) dans \( \left]-\pi\;;\;\pi\right] \)
+
+\vspace{0.2cm}
+
+\noindent
+\(
+\cos x = \dfrac{1}{2} \Rightarrow x =  \dfrac{\pi}{3} \text{ ou } x = \left(-\dfrac{\pi}{3}\right)
+\)
+
+\vspace{0.3cm}
+
+\noindent
+\setlength{\extrarowheight}{2pt}
+\begin{center}
+\begin{tikzpicture}
+   \tkzTabInit{$x$ / 1 , $\cos x - \frac{1}{2}$ / 1}{$-\pi$, $\dfrac{-\pi}{3}$, $\dfrac{\pi}{3}$, $\pi$}
+   \tkzTabLine{, -, z,+, z,-, }
+\end{tikzpicture}
+\end{center}
+
+\vspace{0.3cm}
+
+\noindent
+\[
+\boxed{S = \left]-\pi\;;\;-\dfrac{\pi}{3}\right[ \cup \left]\dfrac{\pi}{3}\;;\;\pi\right]}
+\]
+
+$$\underline{\textbf{Pour }\cos x > \frac{\sqrt{3}}{2}}$$
+\[
+\text{Posons } \cos x = \frac{\sqrt{3}}{2} \Rightarrow x = \pm \frac{\pi}{6}
+\]
+
+\begin{center}
+\begin{tikzpicture}[scale=3]
+    % Cercle trigonométrique
+    \draw[thick] (0,0) circle(1);
+
+    % Axes
+    \draw[->] (-1.2,0) -- (1.2,0);
+    \draw[->] (0,-1.2) -- (0,1.2);
+
+    % Graduation angles
+    \draw[very thick, red] ({cos(30)}, {sin(30)}) arc[start angle=30, end angle=-30, radius=1];
+    
+    % Cos(x) = sqrt(3)/2 : projection sur l’axe horizontal
+    \draw[dashed] ({cos(30)}, {sin(30)}) -- ({cos(30)},0);
+    \draw[dashed] ({cos(-30)}, {sin(-30)}) -- ({cos(-30)},0);
+
+    % Angles
+    \node at (0.1,1.05) {\footnotesize $\dfrac{\pi}{2}$};
+    \node at (0.1,-1.05) {\footnotesize $-\dfrac{\pi}{2}$};
+    \node at (1.05,0.05) {\footnotesize $0$};
+    \node at (-1.05,0.05) {\footnotesize $\pi$};
+
+    % Angles limites
+    \draw[fill=black] ({cos(30)}, {sin(30)}) circle(0.01) node[above right] {\footnotesize $\dfrac{\pi}{6}$};
+    \draw[fill=black] ({cos(-30)}, {sin(-30)}) circle(0.01) node[below right] {\footnotesize $-\dfrac{\pi}{6}$};
+
+\end{tikzpicture}
+\end{center}
+
+\[
+S = \left]-\dfrac{\pi}{6} \,;\, \dfrac{\pi}{6}\right[
+\]
+
+\subsection*{\textcolor{red}{2. Inéquations du type $\sin x \ast a$, avec $\ast \in \{<,\ >,\ \leq,\ \geq\}$}}
+
+Pour résoudre une inéquation du type $\sin x \ast a$, lorsque cela a un sens, on place $a$ sur l'axe des \underline{ordonnées} (axe des \textbf{sines}), puis on détermine sur le cercle \textbf{trigonométrique} les valeurs qui correspondent à $\sin x = a$.\\
+
+Enfin, on sélectionne sur le cercle trigonométrique les angles convenables.
+
+\noindent\textbf{Exemple :} Résoudre dans \( ]-\pi, \pi] \) l'équation \( \sin x \leq \frac{1}{2} \)
+
+\[
+\text{posons } \sin x = \frac{1}{2} \Rightarrow 
+\begin{cases}
+x = \frac{\pi}{6} \\
+x = \frac{5\pi}{6}
+\end{cases}
+\]
+
+\begin{center}
+\begin{tikzpicture}[scale=3]
+    % Cercle trigonométrique
+    \draw[thick] (0,0) circle(1);
+
+    % Axes
+    \draw[->] (-1.2,0) -- (1.2,0); % Axe des abscisses
+    \draw[->] (0,-1.2) -- (0,1.2); % Axe des ordonnées
+
+    % Graduations
+    \foreach \angle/\label in {30,150,210,330}
+        \draw ({cos(\angle)}, {sin(\angle)}) node[font=\scriptsize] {};
+
+    % Points d'intersection
+    \fill ({cos(30)}, {sin(30)}) circle(0.01) node[right] {\scriptsize $\frac{\pi}{6}$};
+    \fill ({cos(150)}, {sin(150)}) circle(0.01) node[left] {\scriptsize $\frac{5\pi}{6}$};
+
+    % Marquages de -pi à pi
+    \node[left] at (-1.1,0.1) {\scriptsize $-\pi$};
+    \node[right] at (1.05,0.1) {\scriptsize $\pi$};
+    \node[above] at (0.05,0.5) {\scriptsize $\frac{1}{2}$};
+    \node[above] at (0,1.05) {\scriptsize $\frac{\pi}{2}$};
+    \node[below] at (0,-1.05) {\scriptsize $-\frac{\pi}{2}$};
+
+    % Arc rouge pour sin(x) <= 1/2
+    \draw[red, thick, domain=210:330] plot ({cos(\x)}, {sin(\x)});
+    \draw[red, thick, domain=-210:30] plot ({cos(\x)}, {sin(\x)});
+
+    % Trait horizontal pointillé entre pi/6 et 5pi/6
+    \draw[dashed] ({cos(30)}, {sin(30)}) -- ({cos(150)}, {sin(150)});
+
+    % Trait bleu de 1/2 à -pi/2
+    \draw[blue, thick] (0,0.5) -- ({cos(-90)}, {sin(-90)});
+
+\end{tikzpicture}
+\end{center}
+
+\[
+\boxed{S = \left]-\pi,\frac{\pi}{6}\right] \cup \left[\frac{5\pi}{6},\pi\right]}
+\]
+
+\subsubsection*{\underline{\textcolor{red}{Applications :}} Résoudre dans $I$ les éléments suivants}
+
+\begin{enumerate}
+    \item $2\sin^2 x - 9\sin x - 5 = 0 \qquad I = \mathbb{R}$
+    
+    \item $2\cos 2x + 4\cos x - 1 = 0 \qquad I = [0 ; 2\pi[$
+    
+    \item $\dfrac{1 - 2\cos x}{2\sin x - \sqrt{3}} \geq 0 \qquad I = ]-\pi ; \pi]$
+    
+    \item $2\cos^2 x + \sqrt{3}\cos x \geq 0 \qquad I = [0 ; 2\pi[$
+\end{enumerate}
 
 \end{document}
