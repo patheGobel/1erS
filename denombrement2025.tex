@@ -1,0 +1,70 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath, amssymb, mathrsfs}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{yhmath}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{tkz-tab}
+\usepackage[top=1.8cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+\begin{document}
+\small
+
+% En-tête personnalisée
+\begin{center}
+    \Large\textbf{\underline{Dénombrement}}\\[-0.1cm]
+    \normalsize\textbf{Prof : M. BA} \hfill \textbf{Classe : Première S2}\\[-0.1cm]
+    \textbf{Année scolaire : 2024 -- 2025}
+\end{center}
+
+% Titre rouge
+\section*{\underline{\textcolor{red}{I. Rappel sur la théorie des ensembles}}}
+
+\subsubsection*{\underline{\textcolor{red}{1. Définition et vocabulaire}}}
+
+Un ensemble est un regroupement d’objet défini par une caractéristique commune ou par une énumération complète.\\
+Chaque objet de l’ensemble est appelé un \textcolor{red}{\underline{élément}}.\\
+Un ensemble est dit \textcolor{red}{\underline{fini}} s’il est constitué d’un nombre fini d’éléments et ce nombre est appelé le \textcolor{red}{\underline{cardinal}} de l’ensemble.\\
+Il existe un ensemble qui ne contient aucun élément, il est appelé \textcolor{red}{\underline{l’ensemble vide}} noté \textcolor{red}{\( \varnothing \)}.
+
+\textbf{\underline{\textcolor{red}{Exemples :}}}\\
+$E = \{ a, b, c, d, e \}$ \quad ; \quad $J = \{ x \in \mathbb{R} \mid x \geq 2 \}$\\
+$K = \{ 1, 2, 3, 4, 5, 6 \}$ \quad ; \quad $P = \{ n \in \mathbb{N} \mid 10 \leq n \leq 100 \}$
+
+\textbf{\underline{\textcolor{red}{Solution :}}}\\
+\textbf{$E$, $K$ et $P$ sont des ensembles finis.}\\
+$\text{card}(E) = 5$ \quad ; \quad $\text{card}(P) = \textcolor{red}{91}$ \quad ; \quad $\text{card}(K) = 6$ \quad ; \quad $\text{card}(\varnothing) = 0$
+
+\subsubsection*{\underline{\textcolor{red}{2. Partie d’un ensemble :}}}
+
+Soit $E$ un ensemble fini de cardinal $n$.\\
+$A$ est dit un sous-ensemble ou une partie de $E$ ssi $x \in A \Rightarrow x \in E$ $\Leftrightarrow$ \textcolor{red}{\underline{$A \subset E$}} \quad (\textcolor{red}{\small $A$ inclue dans $E$})\\
+On écrit que $A \in \mathcal{P}(E)$ où $\mathcal{P}(E)$ est l’ensemble des sous-ensembles de $E$ et 
+\[
+\textcolor{red}{\underline{\text{card} \; \mathcal{P}(E) = 2^{\text{card}(E)}} \quad \Rightarrow \quad \text{card} \; \mathcal{P}(E) = 2^n}
+\]
+
+\textcolor{red}{\underline{exemple :}} Soit $E = \{1\, ;\, 2\, ;\, 3\}$\\
+$\text{card}(E) = 3$\\
+$\text{card}(\mathcal{P}(E)) = 2^3 = 8$\\
+\[
+\mathcal{P}(E) = \left\{ 
+E\, ;\,
+\varnothing\, ;\,
+\{1\}\, ;\,
+\{2\}\, ;\,
+\{3\}\, ;\,
+\{1,2\}\, ;\,
+\{1,3\}\, ;\,
+\{2,3\}
+\right\}
+\]
+
+\end{document}
